@@ -1,0 +1,9 @@
+name: spark
+version: 0.1.0
+
+authors:
+  - Stephen Dolan <dolan.stephen1@gmail.com>
+
+crystal: 1.0.0
+
+license: MIT
