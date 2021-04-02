@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="spark">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="spark">
+  <title>Spark::Prompt - spark main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          spark
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="spark/Spark" data-name="spark">
+      <a href="../Spark.html">Spark</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="spark/Spark/Prompt" data-name="spark::prompt">
+      <a href="../Spark/Prompt.html">Prompt</a>
+      
+        <ul>
+  
+  <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+      <a href="../Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Spark::Prompt
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Spark/Prompt.html">Spark::Prompt</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Spark::Prompt allows you to interact with users to gather input or display messages</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L5" target="_blank">
+        spark/prompt.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt/statement.cr#L2" target="_blank">
+        spark/prompt/statement.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(input:IO::FileDescriptor=STDIN,output:IO::FileDescriptor=STDOUT)-class-method" class="signature"><strong>.new</strong>(input : IO::FileDescriptor = <span class="t">STDIN</span>, output : IO::FileDescriptor = <span class="t">STDOUT</span>)</a>
+        
+          <div class="summary"><p>Initialize a new Spark::Prompt</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#decorate(string:String,color:Symbol?=nil,style:Symbol?=nil)-instance-method" class="signature"><strong>#decorate</strong>(string : String, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Color and stylize a given string.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(*args,**options)-instance-method" class="signature"><strong>#print</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#print(*args,**options,&)-instance-method" class="signature"><strong>#print</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#puts(*args,**options)-instance-method" class="signature"><strong>#puts</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#puts(*args,**options,&)-instance-method" class="signature"><strong>#puts</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#say(message:String=&quot;&quot;,**options)-instance-method" class="signature"><strong>#say</strong>(message : String = <span class="s">&quot;&quot;</span>, **options)</a>
+        
+          <div class="summary"><p>Output some text to a user, with an optional color and style.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(input:IO::FileDescriptor=STDIN,output:IO::FileDescriptor=STDOUT)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(input : IO::FileDescriptor = <span class="t">STDIN</span>, output : IO::FileDescriptor = <span class="t">STDOUT</span>)
+
+        <a class="method-permalink" href="#new(input:IO::FileDescriptor=STDIN,output:IO::FileDescriptor=STDOUT)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initialize a new Spark::Prompt</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="decorate(string:String,color:Symbol?=nil,style:Symbol?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>decorate</strong>(string : String, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#decorate(string:String,color:Symbol?=nil,style:Symbol?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Color and stylize a given string.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
+prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <span class="n">:green</span>, style: <span class="n">:bold</span>) <span class="c"># =&gt; &quot;\e[32;1mHello, there!\e[0m\n&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(*args, **options)
+
+        <a class="method-permalink" href="#print(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="print(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>print</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#print(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="puts(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>puts</strong>(*args, **options)
+
+        <a class="method-permalink" href="#puts(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="puts(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>puts</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#puts(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="say(message:String=&quot;&quot;,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>say</strong>(message : String = <span class="s">&quot;&quot;</span>, **options)
+
+        <a class="method-permalink" href="#say(message:String=&quot;&quot;,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output some text to a user, with an optional color and style.</p>
+
+<p>Plain example:</p>
+
+<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
+prompt.say(<span class="s">&quot;This is an example&quot;</span>) <span class="c"># =&gt; &quot;This is an example\n&quot;</span></code></pre>
+
+<p>Without a newline:</p>
+
+<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
+prompt.say(<span class="s">&quot;This is an example&quot;</span>, newline: <span class="n">false</span>) <span class="c"># =&gt; &quot;This is an example&quot;</span></code></pre>
+
+<p>With color and style (see Spark::Prompt#decorate):</p>
+
+<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
+prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span class="n">:green</span>, style: <span class="n">:bold</span>) <span class="c"># =&gt; &quot;\e[32;1mHello, there!\e[0m\n&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b3e21e13d8401250d3c749c087ea7b1fc68fbcd2/src/spark/prompt.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
