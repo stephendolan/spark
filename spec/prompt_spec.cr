@@ -1,6 +1,40 @@
 require "./spec_helper"
 
 describe Spark::Prompt do
+  describe "#ask" do
+    it "does nothing with a zero-length message" do
+      File.tempfile do |io|
+        prompt = Spark::Prompt.new(output: io)
+        prompt.ask("")
+        io.rewind.gets_to_end.should eq("")
+      end
+    end
+
+    it "does nothing with a message of only whitespace" do
+      File.tempfile do |io|
+        prompt = Spark::Prompt.new(output: io)
+        prompt.ask(" " * 20)
+        io.rewind.gets_to_end.should eq("")
+      end
+    end
+
+    it "correctly asks a styled question" do
+      File.tempfile do |output|
+        tempfile = File.tempfile do |input|
+          input.puts "Dingus"
+        end
+
+        File.open(tempfile.path) do |input|
+          prompt = Spark::Prompt.new(output: output, input: input)
+
+          answer = prompt.ask("What is your name?", color: :yellow, style: :bold)
+          output.rewind.gets_to_end.should eq("\e[33;1mWhat is your name? \e[0m")
+          answer.should eq "Dingus"
+        end
+      end
+    end
+  end
+
   describe "#decorate" do
     context "with no options" do
       it "decorates with the default color" do

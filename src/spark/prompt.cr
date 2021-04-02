@@ -1,15 +1,14 @@
-require "./prompt/**"
+require "./prompt/*"
 
 module Spark
   # Spark::Prompt allows you to interact with users to gather input or display messages
   class Prompt
     delegate :print, :puts, to: @output
+    delegate :gets, to: @input
+    delegate :subscribe, to: @reader
 
     # Initialize a new Spark::Prompt
-    def initialize(
-      @input : IO::FileDescriptor = STDIN,
-      @output : IO::FileDescriptor = STDOUT
-    )
+    def initialize(@input : IO::FileDescriptor = STDIN, @output : IO::FileDescriptor = STDOUT)
     end
 
     # Output some text to a user, with an optional color and style.
@@ -36,6 +35,20 @@ module Spark
 
       statement = Statement.new(self, **options)
       statement.call(message)
+    end
+
+    # Ask the user a question.
+    #
+    # Example:
+    # ```
+    # prompt = Spark::Prompt.new
+    # prompt.ask?("What is your name?") # => "What is your name?"
+    # ```
+    def ask(message : String, **options)
+      return if message.blank?
+
+      question = Question.new(self, **options)
+      question.call(message)
     end
 
     # Color and stylize a given string.
