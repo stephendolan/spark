@@ -53,12 +53,12 @@ module Spark
                  string.colorize(:default)
                end
 
-      string = case style
-               in Symbol
-                 string.mode(style)
-               in Nil
-                 string
-               end
+      case style
+      in Symbol
+        string.mode(style)
+      in Nil
+        string
+      end
     end
   end
 end
