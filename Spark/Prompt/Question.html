@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="spark">
-  <title>Spark::Prompt::Statement - spark main</title>
+  <title>Spark::Prompt::Question - spark main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -61,12 +61,12 @@
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" current" data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
   
-  <li class=" current" data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+  <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
       <a href="../../Spark/Prompt/Statement.html">Statement</a>
       
     </li>
@@ -90,12 +90,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Spark::Prompt::Statement
+  <span class="kind">class</span> Spark::Prompt::Question
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Statement.html">Spark::Prompt::Statement</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -109,7 +109,7 @@
     Overview
   </h2>
 
-  <p>Represents a statement output to the user's prompt.</p>
+  <p>A Question is used to gather user input.</p>
 
 
 
@@ -134,8 +134,8 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L4" target="_blank">
-        spark/prompt/statement.cr
+      <a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/question.cr#L4" target="_blank">
+        spark/prompt/question.cr
       </a>
     
     <br/>
@@ -156,9 +156,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,newline:Bool=true,color:Symbol?=nil,style:Symbol?=nil)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, newline : Bool = <span class="n">true</span>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
-        
-          <div class="summary"><p>Create a new Statement that can be rendered as output to the user's prompt.</p></div>
+        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
         
       </li>
     
@@ -181,17 +179,10 @@
       <li class="entry-summary">
         <a href="#call(message:String)-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
         
-          <div class="summary"><p>Output the Statement message to the prompt</p></div>
-        
       </li>
     
       <li class="entry-summary">
         <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#newline?:Bool-instance-method" class="signature"><strong>#newline?</strong> : Bool</a>
         
       </li>
     
@@ -240,23 +231,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,newline:Bool=true,color:Symbol?=nil,style:Symbol?=nil)-class-method">
+    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, newline : Bool = <span class="n">true</span>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,newline:Bool=true,color:Symbol?=nil,style:Symbol?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Create a new Statement that can be rendered as output to the user's prompt.</p>
-        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/question.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -283,15 +269,10 @@
         <a class="method-permalink" href="#call(message:String)-instance-method">#</a>
       </div>
       
-        <div class="doc">
-          
-          <p>Output the Statement message to the prompt</p>
-        </div>
-      
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/question.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -307,23 +288,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L6" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="newline?:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>newline?</strong> : Bool
-
-        <a class="method-permalink" href="#newline?:Bool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -339,7 +304,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/statement.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/bf38999b325ed49fbae2bf63ce02a9bd360dca04/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
