@@ -6,6 +6,7 @@ module Spark
       getter style
       getter default
 
+      # Creates a new Question.
       def initialize(
         @prompt : Spark::Prompt,
         @color : Symbol | Nil = nil,
@@ -15,6 +16,11 @@ module Spark
       )
       end
 
+      # Ask the question to the user.
+      #
+      # This handles adding the default text, a space before user input, and decoration.
+      #
+      # It also gathers user input.
       def call(message : String)
         message = add_default_to_message(message)
         message = message + " "
@@ -37,6 +43,14 @@ module Spark
         end
       end
 
+      # If a default is provided, we add the default to the end of the question in square brackets ("[ ]")
+      #
+      # Example:
+      # ```
+      # prompt = Spark::Prompt.new
+      # prompt.ask "What is your name?", default: "LuckyCasts"
+      # # => What is your name? [LuckyCasts]
+      # ```
       private def add_default_to_message(message : String)
         case default
         when Bool
