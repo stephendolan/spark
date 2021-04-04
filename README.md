@@ -11,30 +11,48 @@
    ```yaml
    dependencies:
      spark:
-       github: your-github-user/spark
+       github: stephendolan/spark
    ```
 
 2. Run `shards install`
 
 ## Usage
 
+Require the shard:
+
 ```crystal
 require "spark"
 ```
 
-TODO: Write usage instructions here
+Then get to work:
+
+```crystal
+prompt = Spark::Prompt.new
+
+prompt.say "We're going to start our CLI, now", color: :yellow, style: :bold
+user_name = prompt.ask "What is your name?"
+prompt.say "Great, thank you #{user_name}.", color: :green
+```
 
 ## Development
 
-TODO: Write development instructions here
+1. Add your code
+1. Ensure specs pass with `crystal spec`
+1. Ensure correct formatting with `crystal tool format --check`
+1. Ensure correct style with `./bin/ameba`
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/spark/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Fork it (<https://github.com/stephendolan/spark/fork>)
+1. Create your feature branch (`git checkout -b my-new-feature`)
+1. Commit your changes (`git commit -am 'Add some feature'`)
+1. Push to the branch (`git push origin my-new-feature`)
+1. Create a new Pull Request
+
+## Credits & Inspirations
+
+- [TTY](https://github.com/piotrmurach/tty)
+- [Thor](https://github.com/erikhuda/thor)
 
 ## Contributors
 
