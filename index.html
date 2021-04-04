@@ -110,7 +110,7 @@
    dependencies:</p>
 
 <pre><code class="language-crystal"> spark:
-   github: your-github-user/spark</code></pre>
+   github: stephendolan/spark</code></pre>
 
 <p><code></code>`</p>
 
@@ -122,9 +122,17 @@
   </svg>
 </a>Usage</h2>
 
+<p>Require the shard:</p>
+
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;spark&quot;</span></code></pre>
 
-<p><span class="flag orange">TODO</span>  Write usage instructions here</p>
+<p>Then get to work:</p>
+
+<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
+
+prompt.say <span class="s">&quot;We&#39;re going to start our CLI, now&quot;</span>, color: <span class="n">:yellow</span>, style: <span class="n">:bold</span>
+user_name <span class="o">=</span> prompt.ask <span class="s">&quot;What is your name?&quot;</span>
+prompt.say <span class="s">&quot;Great, thank you </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span></code></pre>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
@@ -132,7 +140,7 @@
   </svg>
 </a>Development</h2>
 
-<p><span class="flag orange">TODO</span>  Write development instructions here</p>
+<ol><li>Add your code</li><li>Ensure specs pass with <code>crystal spec</code></li><li>Ensure correct formatting with <code>crystal tool format --check</code></li><li>Ensure correct style with <code>./bin/ameba</code></li></ol>
 
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
@@ -140,7 +148,15 @@
   </svg>
 </a>Contributing</h2>
 
-<ol><li>Fork it (&lt;https://github.com/your-github-user/spark/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+<ol><li>Fork it (&lt;https://github.com/stephendolan/spark/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="credits-inspirations" class="anchor" href="#credits-inspirations">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Credits & Inspirations</h2>
+
+<ul><li><a href="https://github.com/piotrmurach/tty">TTY</a></li><li><a href="https://github.com/erikhuda/thor">Thor</a></li></ul>
 
 <h2><a id="contributors" class="anchor" href="#contributors">
   <svg class="octicon-link" aria-hidden="true">
