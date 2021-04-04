@@ -29,9 +29,20 @@ Then get to work:
 ```crystal
 prompt = Spark::Prompt.new
 
-prompt.say "We're going to start our CLI, now", color: :yellow, style: :bold
+prompt.say "We're going to start our CLI now.", color: :yellow, style: :bold
 user_name = prompt.ask "What is your name?"
-prompt.say "Great, thank you #{user_name}.", color: :green
+
+if prompt.yes? "Did you tell me the truth?"
+  prompt.say "Great! Thank you, #{user_name}.", color: :green
+else
+  prompt.say "Shame on you!"
+end
+
+if prompt.no? "Are you feeling happy today?"
+  prompt.say "I'm sorry to hear that."
+else
+  prompt.say "Then it's going to be a great day!"
+end
 ```
 
 ## Development

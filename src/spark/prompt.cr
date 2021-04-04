@@ -55,9 +55,11 @@ module Spark
     # Example:
     # ```
     # prompt = Spark::Prompt.new
-    # prompt.yes?("Are you sure?") # => "Are you sure? [Y/n]"
-    # # => "Yes"
-    # # => true
+    # if prompt.yes? "Did you tell me the truth?"
+    #   prompt.say "Great! Thank you, #{user_name}.", color: :green
+    # else
+    #   prompt.say "Shame on you!"
+    # end
     # ```
     def yes?(message : String, **options)
       return if message.blank?
@@ -72,9 +74,11 @@ module Spark
     # Example:
     # ```
     # prompt = Spark::Prompt.new
-    # prompt.no?("Are you sure?") # => "Are you sure? [y/N]"
-    # # => "No"
-    # # => true
+    # if prompt.no? "Are you feeling happy today?"
+    #   prompt.say "I'm sorry to hear that."
+    # else
+    #   prompt.say "Then it's going to be a great day!"
+    # end
     # ```
     def no?(message : String, **options)
       return if message.blank?
