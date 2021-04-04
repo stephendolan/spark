@@ -131,9 +131,20 @@
 
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 
-prompt.say <span class="s">&quot;We&#39;re going to start our CLI, now&quot;</span>, color: <span class="n">:yellow</span>, style: <span class="n">:bold</span>
+prompt.say <span class="s">&quot;We&#39;re going to start our CLI now.&quot;</span>, color: <span class="n">:yellow</span>, style: <span class="n">:bold</span>
 user_name <span class="o">=</span> prompt.ask <span class="s">&quot;What is your name?&quot;</span>
-prompt.say <span class="s">&quot;Great, thank you </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span></code></pre>
+
+<span class="k">if</span> prompt.yes? <span class="s">&quot;Did you tell me the truth?&quot;</span>
+  prompt.say <span class="s">&quot;Great! Thank you, </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span>
+<span class="k">else</span>
+  prompt.say <span class="s">&quot;Shame on you!&quot;</span>
+<span class="k">end</span>
+
+<span class="k">if</span> prompt.no? <span class="s">&quot;Are you feeling happy today?&quot;</span>
+  prompt.say <span class="s">&quot;I&#39;m sorry to hear that.&quot;</span>
+<span class="k">else</span>
+  prompt.say <span class="s">&quot;Then it&#39;s going to be a great day!&quot;</span>
+<span class="k">end</span></code></pre>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">

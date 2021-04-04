@@ -139,28 +139,28 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L5" target="_blank">
         spark/prompt.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt/question.cr#L2" target="_blank">
         spark/prompt/question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/statement.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt/statement.cr#L2" target="_blank">
         spark/prompt/statement.cr
       </a>
     
@@ -325,7 +325,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -365,7 +365,7 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L46" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -391,7 +391,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L98" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -407,7 +407,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -423,7 +423,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -443,15 +443,17 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
 <p>Example:</p>
 
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
-prompt.no?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =&gt; &quot;Are you sure? [y/N]&quot;</span>
-<span class="c"># =&gt; &quot;No&quot;</span>
-<span class="c"># =&gt; true</span></code></pre>
+<span class="k">if</span> prompt.no? <span class="s">&quot;Are you feeling happy today?&quot;</span>
+  prompt.say <span class="s">&quot;I&#39;m sorry to hear that.&quot;</span>
+<span class="k">else</span>
+  prompt.say <span class="s">&quot;Then it&#39;s going to be a great day!&quot;</span>
+<span class="k">end</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L83" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -467,7 +469,7 @@ prompt.no?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -483,7 +485,7 @@ prompt.no?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -499,7 +501,7 @@ prompt.no?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -515,7 +517,7 @@ prompt.no?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -551,7 +553,7 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -571,15 +573,17 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
 <p>Example:</p>
 
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
-prompt.yes?(<span class="s">&quot;Are you sure?&quot;</span>) <span class="c"># =&gt; &quot;Are you sure? [Y/n]&quot;</span>
-<span class="c"># =&gt; &quot;Yes&quot;</span>
-<span class="c"># =&gt; true</span></code></pre>
+<span class="k">if</span> prompt.yes? <span class="s">&quot;Did you tell me the truth?&quot;</span>
+  prompt.say <span class="s">&quot;Great! Thank you, </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span>
+<span class="k">else</span>
+  prompt.say <span class="s">&quot;Shame on you!&quot;</span>
+<span class="k">end</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt.cr#L62" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/09bdd1e8bb5c3eb88beb9b7a23dd3c2e0d0b9b70/src/spark/prompt.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
