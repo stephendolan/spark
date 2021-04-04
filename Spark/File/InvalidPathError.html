@@ -9,13 +9,13 @@
 
 
 
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/doc.js"></script>
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="spark">
-  <title>Spark - spark main</title>
+  <title>Spark::File::InvalidPathError - spark main</title>
   <script type="text/javascript">
-    CrystalDocs.base_path = "";
+    CrystalDocs.base_path = "../../";
   </script>
 </head>
 <body>
@@ -33,7 +33,7 @@
 
     <div class="project-summary">
       <h1 class="project-name">
-        <a href="index.html">
+        <a href="../../index.html">
           spark
         </a>
       </h1>
@@ -52,17 +52,17 @@
     <ul>
   
   <li class="parent open current" data-id="spark/Spark" data-name="spark">
-      <a href="Spark.html">Spark</a>
+      <a href="../../Spark.html">Spark</a>
       
         <ul>
   
-  <li class="parent " data-id="spark/Spark/File" data-name="spark::file">
-      <a href="Spark/File.html">File</a>
+  <li class="parent open current" data-id="spark/Spark/File" data-name="spark::file">
+      <a href="../../Spark/File.html">File</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/File/InvalidPathError" data-name="spark::file::invalidpatherror">
-      <a href="Spark/File/InvalidPathError.html">InvalidPathError</a>
+  <li class=" current" data-id="spark/Spark/File/InvalidPathError" data-name="spark::file::invalidpatherror">
+      <a href="../../Spark/File/InvalidPathError.html">InvalidPathError</a>
       
     </li>
   
@@ -72,22 +72,22 @@
     </li>
   
   <li class="parent " data-id="spark/Spark/Prompt" data-name="spark::prompt">
-      <a href="Spark/Prompt.html">Prompt</a>
+      <a href="../../Spark/Prompt.html">Prompt</a>
       
         <ul>
   
   <li class=" " data-id="spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
-      <a href="Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
+      <a href="../../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
       
     </li>
   
   <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
-      <a href="Spark/Prompt/Question.html">Question</a>
+      <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
   
   <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
-      <a href="Spark/Prompt/Statement.html">Statement</a>
+      <a href="../../Spark/Prompt/Statement.html">Statement</a>
       
     </li>
   
@@ -110,10 +110,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Spark
+  <span class="kind">class</span> Spark::File::InvalidPathError
 
 </h1>
 
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/File/InvalidPathError.html">Spark::File::InvalidPathError</a></li><li class="superclass">ArgumentError</li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -127,8 +129,7 @@
     Overview
   </h2>
 
-  <p>Spark is a CLI Utility library that makes working with users on the
-command line simpler than ever.</p>
+  <p>Thrown when a provided file path does not exist.</p>
 
 
 
@@ -153,68 +154,14 @@ command line simpler than ever.</p>
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark.cr#L5" target="_blank">
-        spark.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L7" target="_blank">
         spark/file.cr
       </a>
     
     <br/>
   
-    
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/prompt.cr#L3" target="_blank">
-        spark/prompt.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/prompt/confirmation_question.cr#L3" target="_blank">
-        spark/prompt/confirmation_question.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/prompt/question.cr#L1" target="_blank">
-        spark/prompt/question.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/prompt/statement.cr#L1" target="_blank">
-        spark/prompt/statement.cr
-      </a>
-    
-    <br/>
-  
 
 
-
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code>{{ (<span class="s">`shards version \&quot;/__w/spark/spark/src\&quot;`</span>).chomp.stringify }}</code>
-      </dt>
-      
-    
-  </dl>
 
 
 
@@ -227,6 +174,46 @@ command line simpler than ever.</p>
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
   
 </div>
 

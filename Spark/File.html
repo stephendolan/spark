@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="spark">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="spark">
+  <title>Spark::File - spark main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          spark
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="spark/Spark" data-name="spark">
+      <a href="../Spark.html">Spark</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="spark/Spark/File" data-name="spark::file">
+      <a href="../Spark/File.html">File</a>
+      
+        <ul>
+  
+  <li class=" " data-id="spark/Spark/File/InvalidPathError" data-name="spark::file::invalidpatherror">
+      <a href="../Spark/File/InvalidPathError.html">InvalidPathError</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="spark/Spark/Prompt" data-name="spark::prompt">
+      <a href="../Spark/Prompt.html">Prompt</a>
+      
+        <ul>
+  
+  <li class=" " data-id="spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+      <a href="../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
+      
+    </li>
+  
+  <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+      <a href="../Spark/Prompt/Question.html">Question</a>
+      
+    </li>
+  
+  <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+      <a href="../Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Spark::File
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Spark::File allows you to interact with the user's filesystem.</p>
+
+
+
+
+
+
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Spark/File.html">Spark::File</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L3" target="_blank">
+        spark/file.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#inject_into_file(relative_path:String,*args,afterpattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *args, after pattern : Regex | String)</a>
+        
+          <div class="summary"><p>Inject any number of strings <em>after</em> the provided pattern.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inject_into_file(relative_path:String,beforepattern:Regex%7CString,&block:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, before pattern : Regex | String, &block :  -> String)</a>
+        
+          <div class="summary"><p>Inject the provided block content <em>before</em> the provided pattern.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inject_into_file(relative_path:String,*args,beforepattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *args, before pattern : Regex | String)</a>
+        
+          <div class="summary"><p>Inject any number of strings <em>before</em> the provided pattern.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raise_unless_exists(path:String)-instance-method" class="signature"><strong>#raise_unless_exists</strong>(path : String)</a>
+        
+          <div class="summary"><p>Raises a <code><a href="../Spark/File/InvalidPathError.html">Spark::File::InvalidPathError</a></code> if the provided path does not exist.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method" class="signature"><strong>#replace_in_file</strong>(relative_path : String, pattern : Regex | String, replacement : String)</a>
+        
+          <div class="summary"><p>Replace a specific pattern with some replacement text throughout a given file.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*args,afterpattern:Regex|String)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject_into_file</strong>(relative_path : String, *args, after pattern : Regex | String)
+
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*args,afterpattern:Regex%7CString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inject any number of strings <em>after</em> the provided pattern.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inject_into_file(relative_path:String,beforepattern:Regex|String,&block:->String)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject_into_file</strong>(relative_path : String, before pattern : Regex | String, &block :  -> String)
+
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,beforepattern:Regex%7CString,&block:-%3EString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inject the provided block content <em>before</em> the provided pattern.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>) <span class="k">do</span>
+  <span class="s">&lt;&lt;-CONTENT</span>
+<span class="s">  This is some new file content.
+  It&#39;s going to be great!\n
+  CONTENT</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*args,beforepattern:Regex|String)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject_into_file</strong>(relative_path : String, *args, before pattern : Regex | String)
+
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*args,beforepattern:Regex%7CString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inject any number of strings <em>before</em> the provided pattern.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raise_unless_exists(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>raise_unless_exists</strong>(path : String)
+
+        <a class="method-permalink" href="#raise_unless_exists(path:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Raises a <code><a href="../Spark/File/InvalidPathError.html">Spark::File::InvalidPathError</a></code> if the provided path does not exist.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="replace_in_file(relative_path:String,pattern:Regex|String,replacement:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>replace_in_file</strong>(relative_path : String, pattern : Regex | String, replacement : String)
+
+        <a class="method-permalink" href="#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Replace a specific pattern with some replacement text throughout a given file.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.replace_in_file(<span class="s">&quot;shard.yml&quot;</span>, pattern: <span class="s">&quot;MIT&quot;</span>, replacement: <span class="s">&quot;Apache&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9ad1eb3c552098b2432b460edafeb53121c76a65/src/spark/file.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
