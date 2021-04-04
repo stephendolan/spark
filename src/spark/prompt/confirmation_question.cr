@@ -3,25 +3,22 @@ require "./question"
 module Spark
   class Prompt
     class ConfirmationQuestion < Question
+      # ConfirmationQuestions need to process user input a bit differently.
+      #
+      # We support variations of "yes" and "no" as answers, as well as empty answers.
       private def process_input(input : String?)
-        case input
-        when /y(es)?/i
-          if default.is_a?(Bool) && default == false
+        case default
+        when Bool && false
+          if input =~ /y(es)?/i
             false
           else
             true
           end
-        when /n(o)?/i
-          if default.is_a?(Bool) && default == true
+        when Bool && true
+          if input =~ /n(o)?/i
             false
           else
             true
-          end
-        else
-          if default.is_a?(Bool) && default == false
-            true
-          else
-            default
           end
         end
       end
