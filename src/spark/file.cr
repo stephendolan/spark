@@ -32,10 +32,10 @@ module Spark
     # ```
     # Spark::File.inject_into_file("README.md", "# New Section", after: "# Last Section\n")
     # ```
-    def inject_into_file(relative_path : String, *args, after pattern : Regex | String)
+    def inject_into_file(relative_path : String, *args, after : Regex | String)
       replacement = "\\0" + args.join
 
-      replace_in_file(relative_path, pattern, replacement)
+      replace_in_file(relative_path, after, replacement)
     end
 
     # Inject the provided block content *after* the provided pattern.
@@ -49,10 +49,10 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, after pattern : Regex | String, &block : -> String)
+    def inject_into_file(relative_path : String, after : Regex | String, &block : -> String)
       replacement = "\\0" + block.call
 
-      replace_in_file(relative_path, pattern, replacement)
+      replace_in_file(relative_path, after, replacement)
     end
 
     # Inject any number of strings *before* the provided pattern.
@@ -61,10 +61,10 @@ module Spark
     # ```
     # Spark::File.inject_into_file("README.md", "# New Section", before: "# First Section\n")
     # ```
-    def inject_into_file(relative_path : String, *args, before pattern : Regex | String)
+    def inject_into_file(relative_path : String, *args, before : Regex | String)
       replacement = args.join + "\\0"
 
-      replace_in_file(relative_path, pattern, replacement)
+      replace_in_file(relative_path, before, replacement)
     end
 
     # Inject the provided block content *before* the provided pattern.
@@ -78,10 +78,10 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, before pattern : Regex | String, &block : -> String)
+    def inject_into_file(relative_path : String, before : Regex | String, &block : -> String)
       replacement = block.call + "\\0"
 
-      replace_in_file(relative_path, pattern, replacement)
+      replace_in_file(relative_path, before, replacement)
     end
 
     # Given a `String` or `Regex`, ensure that a `Regex` is returned.
