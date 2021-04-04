@@ -61,6 +61,11 @@
       
         <ul>
   
+  <li class=" " data-id="spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+      <a href="../../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
+      
+    </li>
+  
   <li class=" current" data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
@@ -119,6 +124,20 @@
 
 
 
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li>
+    
+  </ul>
+
 
 
 
@@ -134,7 +153,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/b9b20f71872c5b55fde955ad74b1cee3b81d65f4/src/spark/prompt/question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L4" target="_blank">
         spark/prompt/question.cr
       </a>
     
@@ -156,7 +175,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)</a>
         
       </li>
     
@@ -183,6 +202,11 @@
     
       <li class="entry-summary">
         <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#default:Bool%7CString%7CNil-instance-method" class="signature"><strong>#default</strong> : Bool | String | Nil</a>
         
       </li>
     
@@ -231,18 +255,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method">
+    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool|String|Nil=nil,**options)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
+        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/b9b20f71872c5b55fde955ad74b1cee3b81d65f4/src/spark/prompt/question.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -272,7 +296,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/b9b20f71872c5b55fde955ad74b1cee3b81d65f4/src/spark/prompt/question.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -288,7 +312,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/b9b20f71872c5b55fde955ad74b1cee3b81d65f4/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="default:Bool|String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>default</strong> : Bool | String | Nil
+
+        <a class="method-permalink" href="#default:Bool%7CString%7CNil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -304,7 +344,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/b9b20f71872c5b55fde955ad74b1cee3b81d65f4/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/0a546331d491a00dfc64a22e15c88b2d2dea4601/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
