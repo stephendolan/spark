@@ -5,7 +5,6 @@ module Spark
   class Prompt
     delegate :print, :puts, to: @output
     delegate :gets, to: @input
-    delegate :subscribe, to: @reader
 
     # Initialize a new Spark::Prompt
     def initialize(@input : IO::FileDescriptor = STDIN, @output : IO::FileDescriptor = STDOUT)
