@@ -8,11 +8,11 @@
 
 1. Add the dependency to your `shard.yml`:
 
-   ```yaml
-   dependencies:
-     spark:
-       github: stephendolan/spark
-   ```
+```yaml
+dependencies:
+  spark:
+    github: stephendolan/spark
+```
 
 2. Run `shards install`
 
