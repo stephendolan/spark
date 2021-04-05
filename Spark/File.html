@@ -166,7 +166,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L3" target="_blank">
         spark/file.cr
       </a>
     
@@ -192,23 +192,30 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*args,after:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *args, after : Regex | String)</a>
+        <a href="#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)</a>
         
           <div class="summary"><p>Inject any number of strings <em>after</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,before:Regex%7CString,&block:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, before : Regex | String, &block :  -> String)</a>
+        <a href="#inject_into_file(relative_path:String,*_ignored_positional_arguments,afterpattern:Regex%7CString,&:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *_ignored_positional_arguments, after pattern : Regex | String, & :  -> String)</a>
         
-          <div class="summary"><p>Inject the provided block content <em>before</em> the provided pattern.</p></div>
+          <div class="summary"><p>Inject the provided block content <em>after</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*args,before:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *args, before : Regex | String)</a>
+        <a href="#inject_into_file(relative_path:String,*content,beforepattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, before pattern : Regex | String)</a>
         
           <div class="summary"><p>Inject any number of strings <em>before</em> the provided pattern.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inject_into_file(relative_path:String,*_ignored_positional_arguments,beforepattern:Regex%7CString,&:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *_ignored_positional_arguments, before pattern : Regex | String, & :  -> String)</a>
+        
+          <div class="summary"><p>Inject the provided block content <em>before</em> the provided pattern.</p></div>
         
       </li>
     
@@ -250,12 +257,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="inject_into_file(relative_path:String,*args,after:Regex|String)-instance-method">
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*content,afterpattern:Regex|String)-instance-method">
       <div class="signature">
         
-        def <strong>inject_into_file</strong>(relative_path : String, *args, after : Regex | String)
+        def <strong>inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*args,after:Regex%7CString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -270,17 +277,72 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="inject_into_file(relative_path:String,before:Regex|String,&block:->String)-instance-method">
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*_ignored_positional_arguments,afterpattern:Regex|String,&:->String)-instance-method">
       <div class="signature">
         
-        def <strong>inject_into_file</strong>(relative_path : String, before : Regex | String, &block :  -> String)
+        def <strong>inject_into_file</strong>(relative_path : String, *_ignored_positional_arguments, after pattern : Regex | String, & :  -> String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,before:Regex%7CString,&block:-%3EString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*_ignored_positional_arguments,afterpattern:Regex%7CString,&:-%3EString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inject the provided block content <em>after</em> the provided pattern.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>) <span class="k">do</span>
+  <span class="s">&lt;&lt;-CONTENT</span>
+<span class="s">  This is some new file content.
+  It&#39;s going to be great!\n
+  CONTENT</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*content,beforepattern:Regex|String)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject_into_file</strong>(relative_path : String, *content, before pattern : Regex | String)
+
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*content,beforepattern:Regex%7CString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Inject any number of strings <em>before</em> the provided pattern.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*_ignored_positional_arguments,beforepattern:Regex|String,&:->String)-instance-method">
+      <div class="signature">
+        
+        def <strong>inject_into_file</strong>(relative_path : String, *_ignored_positional_arguments, before pattern : Regex | String, & :  -> String)
+
+        <a class="method-permalink" href="#inject_into_file(relative_path:String,*_ignored_positional_arguments,beforepattern:Regex%7CString,&:-%3EString)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -300,32 +362,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L81" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="inject_into_file(relative_path:String,*args,before:Regex|String)-instance-method">
-      <div class="signature">
-        
-        def <strong>inject_into_file</strong>(relative_path : String, *args, before : Regex | String)
-
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*args,before:Regex%7CString)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Inject any number of strings <em>before</em> the provided pattern.</p>
-
-<p>Example:</p>
-
-<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)</code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -346,7 +383,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -371,7 +408,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/6fd0b59bad2a00eb235da2cccf8b67e0981b4050/src/spark/file.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/b5a7eab2400a0ae8a62227e2aae3c3e4b9b44c05/src/spark/file.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
