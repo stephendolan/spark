@@ -142,56 +142,9 @@
 
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;spark&quot;</span></code></pre>
 
-<h3><a id="sparkprompthttpsstephendolan.github.iosparksparkprompt.html" class="anchor" href="#sparkprompthttpsstephendolan.github.iosparksparkprompt.html">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></h3>
+<p>Then, use any of the fully documented modules below to interact with your user:</p>
 
-<pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
-
-prompt.say <span class="s">&quot;We&#39;re going to start our CLI now.&quot;</span>, color: <span class="n">:yellow</span>, style: <span class="n">:bold</span>
-user_name <span class="o">=</span> prompt.ask <span class="s">&quot;What is your name?&quot;</span>
-
-<span class="k">if</span> prompt.yes? <span class="s">&quot;Did you tell me the truth?&quot;</span>
-  prompt.say <span class="s">&quot;Great! Thank you, </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span>
-<span class="k">else</span>
-  prompt.say <span class="s">&quot;Shame on you!&quot;</span>
-<span class="k">end</span>
-
-<span class="k">if</span> prompt.no? <span class="s">&quot;Are you feeling happy today?&quot;</span>
-  prompt.say <span class="s">&quot;I&#39;m sorry to hear that.&quot;</span>
-<span class="k">else</span>
-  prompt.say <span class="s">&quot;Then it&#39;s going to be a great day!&quot;</span>
-<span class="k">end</span></code></pre>
-
-<h3><a id="sparkfilehttpsstephendolan.github.iosparksparkfile.html" class="anchor" href="#sparkfilehttpsstephendolan.github.iosparksparkfile.html">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></h3>
-
-<pre><code class="language-crystal"><span class="c"># Insert content before a given regular expression or string:</span>
-<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)
-
-<span class="c"># Insert content after a given regular expression or string:</span>
-<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>)
-
-<span class="c"># Insert a block of content before a given regular expression or string:</span>
-<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>) <span class="k">do</span>
-  <span class="s">&lt;&lt;-CONTENT</span>
-<span class="s">  This is some new file content.
-  It&#39;s going to be great!\n
-  CONTENT</span>
-<span class="k">end</span>
-
-<span class="c"># Insert a block of content after a given regular expression or string:</span>
-<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>) <span class="k">do</span>
-  <span class="s">&lt;&lt;-CONTENT</span>
-<span class="s">  This is some new file content.
-  It&#39;s going to be great!\n
-  CONTENT</span>
-<span class="k">end</span></code></pre>
+<ul><li>💬 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></strong></li><li>🗄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></strong></li></ul>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
