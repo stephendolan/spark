@@ -3,6 +3,9 @@ module Spark
   module File
     extend self
 
+    BEGINNING_OF_FILE_REGEX = /\A/
+    END_OF_FILE_REGEX       = /\z/
+
     # Thrown when a provided file path does not exist.
     class InvalidPathError < ArgumentError; end
 
@@ -24,6 +27,58 @@ module Spark
       existing_file_content = ::File.read(relative_path)
       new_file_content = existing_file_content.gsub(pattern, replacement)
       ::File.write(relative_path, new_file_content)
+    end
+
+    # Prepend any number of strings to the beginning of a file.
+    #
+    # Example:
+    # ```
+    # Spark::File.prepend_to_file("README.md", "# Welcome!", "You're at the top of the README.")
+    # ```
+    def prepend_to_file(relative_path : String, *content)
+      inject_into_file(relative_path, *content, before: BEGINNING_OF_FILE_REGEX)
+    end
+
+    # Prepend the provided block content to the beginning of a file.
+    #
+    # Example:
+    # ```
+    # Spark::File.prepend_to_file("README.md") do
+    #   <<-CONTENT
+    #   # Welcome
+    #
+    #   You're at the top of the README.
+    #   CONTENT
+    # end
+    # ```
+    def prepend_to_file(relative_path : String, & : -> String)
+      inject_into_file(relative_path, yield, before: BEGINNING_OF_FILE_REGEX)
+    end
+
+    # Append any number of strings to the end of a file.
+    #
+    # Example:
+    # ```
+    # Spark::File.append_to_file("README.md", "# Goodbye!", "You're at the bottom of the README.")
+    # ```
+    def append_to_file(relative_path : String, *content)
+      inject_into_file(relative_path, *content, after: END_OF_FILE_REGEX)
+    end
+
+    # Append the provided block content to the end of a file.
+    #
+    # Example:
+    # ```
+    # Spark::File.append_to_file("README.md") do
+    #   <<-CONTENT
+    #   # Goodbye
+    #
+    #   You're at the bottom of the README.
+    #   CONTENT
+    # end
+    # ```
+    def append_to_file(relative_path : String, & : -> String)
+      inject_into_file(relative_path, yield, after: END_OF_FILE_REGEX)
     end
 
     # Inject any number of strings *after* the provided pattern.

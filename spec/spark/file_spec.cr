@@ -1,6 +1,62 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe ".append_to_file" do
+    it "appends multiple arguments" do
+      file = File.tempfile("temp2") do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.append_to_file(file.path, "One", "Two", "Woohoo")
+
+      File.read(file.path).should eq "Line one\nLine two\nOneTwoWoohoo"
+    end
+
+    it "appends a block argument" do
+      file = File.tempfile("temp3") do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.append_to_file(file.path) do
+        <<-CONTENT
+        One
+        Two
+        Woohoo
+        CONTENT
+      end
+
+      File.read(file.path).should eq "Line one\nLine two\nOne\nTwo\nWoohoo"
+    end
+  end
+
+  describe ".prepend_to_file" do
+    it "prepends multiple arguments" do
+      file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.prepend_to_file(file.path, "One", "Two", "Woohoo\n")
+
+      File.read(file.path).should eq "OneTwoWoohoo\nLine one\nLine two\n"
+    end
+
+    it "prepends a block argument" do
+      file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.prepend_to_file(file.path) do
+        <<-CONTENT
+        One
+        Two
+        Woohoo\n
+        CONTENT
+      end
+
+      File.read(file.path).should eq "One\nTwo\nWoohoo\nLine one\nLine two\n"
+    end
+  end
+
   describe ".inject_into_file" do
     it "injects multiple arguments" do
       file = File.tempfile do |io|
