@@ -49,7 +49,7 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, *_ignored_positional_arguments, after pattern : Regex | String, & : -> String)
+    def inject_into_file(relative_path : String, *, after pattern : Regex | String, & : -> String)
       replacement = "\\0#{yield}"
 
       replace_in_file(relative_path, pattern, replacement)
@@ -78,7 +78,7 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, *_ignored_positional_arguments, before pattern : Regex | String, & : -> String)
+    def inject_into_file(relative_path : String, *, before pattern : Regex | String, & : -> String)
       replacement = "#{yield}\\0"
 
       replace_in_file(relative_path, pattern, replacement)
