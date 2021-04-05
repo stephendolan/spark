@@ -32,10 +32,10 @@ module Spark
     # ```
     # Spark::File.inject_into_file("README.md", "# New Section", after: "# Last Section\n")
     # ```
-    def inject_into_file(relative_path : String, *args, after : Regex | String)
-      replacement = "\\0" + args.join
+    def inject_into_file(relative_path : String, *content, after pattern : Regex | String)
+      replacement = "\\0" + content.join
 
-      replace_in_file(relative_path, after, replacement)
+      replace_in_file(relative_path, pattern, replacement)
     end
 
     # Inject the provided block content *after* the provided pattern.
@@ -49,10 +49,10 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, after : Regex | String, &block : -> String)
-      replacement = "\\0" + block.call
+    def inject_into_file(relative_path : String, *_ignored_positional_arguments, after pattern : Regex | String, & : -> String)
+      replacement = "\\0#{yield}"
 
-      replace_in_file(relative_path, after, replacement)
+      replace_in_file(relative_path, pattern, replacement)
     end
 
     # Inject any number of strings *before* the provided pattern.
@@ -61,10 +61,10 @@ module Spark
     # ```
     # Spark::File.inject_into_file("README.md", "# New Section", before: "# First Section\n")
     # ```
-    def inject_into_file(relative_path : String, *args, before : Regex | String)
-      replacement = args.join + "\\0"
+    def inject_into_file(relative_path : String, *content, before pattern : Regex | String)
+      replacement = content.join + "\\0"
 
-      replace_in_file(relative_path, before, replacement)
+      replace_in_file(relative_path, pattern, replacement)
     end
 
     # Inject the provided block content *before* the provided pattern.
@@ -78,10 +78,10 @@ module Spark
     #   CONTENT
     # end
     # ```
-    def inject_into_file(relative_path : String, before : Regex | String, &block : -> String)
-      replacement = block.call + "\\0"
+    def inject_into_file(relative_path : String, *_ignored_positional_arguments, before pattern : Regex | String, & : -> String)
+      replacement = "#{yield}\\0"
 
-      replace_in_file(relative_path, before, replacement)
+      replace_in_file(relative_path, pattern, replacement)
     end
 
     # Given a `String` or `Regex`, ensure that a `Regex` is returned.
