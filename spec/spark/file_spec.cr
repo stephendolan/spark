@@ -1,9 +1,41 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe ".create_file" do
+    it "writes multiple arguments to the file" do
+      file_path = Spark::File.create_file(File.tempfile.path, "Line one\n", "Line two")
+
+      File.read(file_path).should eq "Line one\nLine two"
+    end
+
+    it "writes block content to the file" do
+      file_path = Spark::File.create_file(File.tempfile.path) do
+        <<-CONTENT
+        Line one
+        Line two
+        CONTENT
+      end
+
+      File.read(file_path).should eq "Line one\nLine two"
+    end
+  end
+
+  describe ".copy_file" do
+    it "copies a simple file identically" do
+      original_file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      new_file = File.tempfile
+
+      Spark::File.copy_file(original_file.path, new_file.path)
+      File.read(new_file.path).should eq File.read(original_file.path)
+    end
+  end
+
   describe ".append_to_file" do
     it "appends multiple arguments" do
-      file = File.tempfile("temp2") do |io|
+      file = File.tempfile do |io|
         io.puts "Line one\nLine two"
       end
 
@@ -13,7 +45,7 @@ describe Spark::Prompt do
     end
 
     it "appends a block argument" do
-      file = File.tempfile("temp3") do |io|
+      file = File.tempfile do |io|
         io.puts "Line one\nLine two"
       end
 

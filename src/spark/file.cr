@@ -1,3 +1,5 @@
+require "./file/*"
+
 module Spark
   # Spark::File allows you to interact with the user's filesystem.
   module File
@@ -79,6 +81,43 @@ module Spark
     # ```
     def append_to_file(relative_path : String, & : -> String)
       inject_into_file(relative_path, yield, after: END_OF_FILE_REGEX)
+    end
+
+    # Create a new file with the provided content.
+    #
+    # Example:
+    # ```
+    # Spark::File.create_file("README.md", "# Welcome\n\n", "This is my new file.")
+    # ```
+    def create_file(relative_path : String, *content) : String
+      file_content = content.join
+
+      CreateFile.new(relative_path, file_content).call
+    end
+
+    # Create a new file with the provided block content.
+    #
+    # Example:
+    # ```
+    # Spark::File.create_file("README.md") do
+    #   <<-CONTENT
+    #   # Welcome
+    #
+    #   This is my new file.
+    #   CONTENT
+    # ```
+    def create_file(relative_path : String, & : -> String) : String
+      CreateFile.new(relative_path, yield).call
+    end
+
+    # Copy a file from a provided source path to a provided destination.
+    #
+    # Example:
+    # ```
+    # Spark::File.copy_file("README.md", "IDENTICAL_README.md")
+    # ```
+    def copy_file(source_path : String, destination_path : String) : String
+      create_file(destination_path, ::File.read(source_path))
     end
 
     # Inject any number of strings *after* the provided pattern.

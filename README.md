@@ -35,6 +35,8 @@ Then, use any of the fully documented modules below to interact with your user:
   - `.inject_into_file` - Insert content into a file before or after a pattern
   - `.prepend_to_file` - Insert content at the beginning of a file
   - `.append_to_file` - Insert content at the end of a file
+  - `.copy_file` - Copy a file
+  - `.create_file` - Create a file
 
 ## Development
 
