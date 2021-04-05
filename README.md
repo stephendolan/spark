@@ -24,52 +24,10 @@ Require the shard:
 require "spark"
 ```
 
-### [Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)
+Then, use any of the fully documented modules below to interact with your user:
 
-```crystal
-prompt = Spark::Prompt.new
-
-prompt.say "We're going to start our CLI now.", color: :yellow, style: :bold
-user_name = prompt.ask "What is your name?"
-
-if prompt.yes? "Did you tell me the truth?"
-  prompt.say "Great! Thank you, #{user_name}.", color: :green
-else
-  prompt.say "Shame on you!"
-end
-
-if prompt.no? "Are you feeling happy today?"
-  prompt.say "I'm sorry to hear that."
-else
-  prompt.say "Then it's going to be a great day!"
-end
-```
-
-### [Spark::File](https://stephendolan.github.io/spark/Spark/File.html)
-
-```crystal
-# Insert content before a given regular expression or string:
-Spark::File.inject_into_file("README.md", "# New Section", before: "# First Section\n")
-
-# Insert content after a given regular expression or string:
-Spark::File.inject_into_file("README.md", "# New Section", after: "# Last Section\n")
-
-# Insert a block of content before a given regular expression or string:
-Spark::File.inject_into_file("README.md", after: "# Last Section\n") do
-  <<-CONTENT
-  This is some new file content.
-  It's going to be great!\n
-  CONTENT
-end
-
-# Insert a block of content after a given regular expression or string:
-Spark::File.inject_into_file("README.md", before: "# First Section\n") do
-  <<-CONTENT
-  This is some new file content.
-  It's going to be great!\n
-  CONTENT
-end
-```
+- 💬 &nbsp; **[Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)**
+- 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
 
 ## Development
 
