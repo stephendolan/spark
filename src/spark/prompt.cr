@@ -3,7 +3,16 @@ require "./prompt/*"
 module Spark
   # Spark::Prompt allows you to interact with users to gather input or display messages
   class Prompt
+    # :nodoc:
+    #
+    # These delegations are mainly used for testing with File-based input/output,
+    # but could certainly be leveraged by end users as well.
     delegate :print, :puts, to: @output
+
+    # :nodoc:
+    #
+    # These delegations are mainly used for testing with File-based input/output,
+    # but could certainly be leveraged by end users as well.
     delegate :gets, to: @input
 
     # Initialize a new Spark::Prompt
