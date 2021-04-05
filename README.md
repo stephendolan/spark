@@ -24,7 +24,7 @@ Require the shard:
 require "spark"
 ```
 
-Then get to work:
+### [Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)
 
 ```crystal
 prompt = Spark::Prompt.new
@@ -42,6 +42,32 @@ if prompt.no? "Are you feeling happy today?"
   prompt.say "I'm sorry to hear that."
 else
   prompt.say "Then it's going to be a great day!"
+end
+```
+
+### [Spark::File](https://stephendolan.github.io/spark/Spark/File.html)
+
+```crystal
+# Insert content before a given regular expression or string:
+Spark::File.inject_into_file("src/app.cr", "require \"spark\"\n", before: /require "\./app_database"/)
+
+# Insert content after a given regular expression or string:
+Spark::File.inject_into_file("README.md", "# New Section", after: "# Last Section\n")
+
+# Insert a block of content before a given regular expression or string:
+Spark::File.inject_into_file("README.md", after: "# Last Section\n") do
+  <<-CONTENT
+  This is some new file content.
+  It's going to be great!\n
+  CONTENT
+end
+
+# Insert a block of content after a given regular expression or string:
+Spark::File.inject_into_file("README.md", before: "# First Section\n") do
+  <<-CONTENT
+  This is some new file content.
+  It's going to be great!\n
+  CONTENT
 end
 ```
 
