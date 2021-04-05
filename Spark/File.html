@@ -166,7 +166,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L3" target="_blank">
         spark/file.cr
       </a>
     
@@ -174,6 +174,30 @@
   
 
 
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="BEGINNING_OF_FILE_REGEX">
+        <strong>BEGINNING_OF_FILE_REGEX</strong> = <code><span class="s">/\A/</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="END_OF_FILE_REGEX">
+        <strong>END_OF_FILE_REGEX</strong> = <code><span class="s">/\z/</span></code>
+      </dt>
+      
+    
+  </dl>
 
 
 
@@ -190,6 +214,20 @@
     Instance Method Summary
   </h2>
   <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#append_to_file(relative_path:String,*content)-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, *content)</a>
+        
+          <div class="summary"><p>Append any number of strings to the end of a file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#append_to_file(relative_path:String,&:-%3EString)-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, & :  -> String)</a>
+        
+          <div class="summary"><p>Append the provided block content to the end of a file.</p></div>
+        
+      </li>
     
       <li class="entry-summary">
         <a href="#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)</a>
@@ -216,6 +254,20 @@
         <a href="#inject_into_file(relative_path:String,*,beforepattern:Regex%7CString,&:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *, before pattern : Regex | String, & :  -> String)</a>
         
           <div class="summary"><p>Inject the provided block content <em>before</em> the provided pattern.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prepend_to_file(relative_path:String,*content)-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, *content)</a>
+        
+          <div class="summary"><p>Prepend any number of strings to the beginning of a file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#prepend_to_file(relative_path:String,&:-%3EString)-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, & :  -> String)</a>
+        
+          <div class="summary"><p>Prepend the provided block content to the beginning of a file.</p></div>
         
       </li>
     
@@ -257,6 +309,62 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="append_to_file(relative_path:String,*content)-instance-method">
+      <div class="signature">
+        
+        def <strong>append_to_file</strong>(relative_path : String, *content)
+
+        <a class="method-permalink" href="#append_to_file(relative_path:String,*content)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Append any number of strings to the end of a file.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.append_to_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Goodbye!&quot;</span>, <span class="s">&quot;You&#39;re at the bottom of the README.&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="append_to_file(relative_path:String,&:->String)-instance-method">
+      <div class="signature">
+        
+        def <strong>append_to_file</strong>(relative_path : String, & :  -> String)
+
+        <a class="method-permalink" href="#append_to_file(relative_path:String,&:-%3EString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Append the provided block content to the end of a file.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.append_to_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
+  <span class="s">&lt;&lt;-CONTENT</span>
+<span class="s">  # Goodbye
+
+  You&#39;re at the bottom of the README.
+  CONTENT</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="inject_into_file(relative_path:String,*content,afterpattern:Regex|String)-instance-method">
       <div class="signature">
         
@@ -277,7 +385,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L90" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -307,7 +415,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L52" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -332,7 +440,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -362,7 +470,63 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L136" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prepend_to_file(relative_path:String,*content)-instance-method">
+      <div class="signature">
+        
+        def <strong>prepend_to_file</strong>(relative_path : String, *content)
+
+        <a class="method-permalink" href="#prepend_to_file(relative_path:String,*content)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Prepend any number of strings to the beginning of a file.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.prepend_to_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Welcome!&quot;</span>, <span class="s">&quot;You&#39;re at the top of the README.&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="prepend_to_file(relative_path:String,&:->String)-instance-method">
+      <div class="signature">
+        
+        def <strong>prepend_to_file</strong>(relative_path : String, & :  -> String)
+
+        <a class="method-permalink" href="#prepend_to_file(relative_path:String,&:-%3EString)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Prepend the provided block content to the beginning of a file.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.prepend_to_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
+  <span class="s">&lt;&lt;-CONTENT</span>
+<span class="s">  # Welcome
+
+  You&#39;re at the top of the README.
+  CONTENT</span>
+<span class="k">end</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -383,7 +547,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -408,7 +572,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/e7c743d71cab79c392cab3b2aa7e55fa8c798036/src/spark/file.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
