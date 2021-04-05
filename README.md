@@ -27,7 +27,12 @@ require "spark"
 Then, use any of the fully documented modules below to interact with your user:
 
 - 💬 &nbsp; **[Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)**
+  - `#say` - Display a message to a user
+  - `#ask` - Get information from a user
+  - `#yes?` - Get confirmation from a user, with a default of "Yes"
+  - `#no?` - Get confirmation from a user, with a default of "No"
 - 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
+  - `.inject_into_file` - Insert content into a file
 
 ## Development
 
