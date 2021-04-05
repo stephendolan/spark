@@ -172,10 +172,10 @@ user_name <span class="o">=</span> prompt.ask <span class="s">&quot;What is your
 </a><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></h3>
 
 <pre><code class="language-crystal"><span class="c"># Insert content before a given regular expression or string:</span>
-<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;src/app.cr&quot;</span>, <span class="s">&quot;require \&quot;spark\&quot;\n&quot;</span>, before: <span class="s">/require &quot;\./</span>app_database<span class="s">&quot;/)
+<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)
 
-# Insert content after a given regular expression or string:
-Spark::File.inject_into_file(&quot;</span><span class="t">README</span>.md<span class="s">&quot;, &quot;</span><span class="c"># New Section&quot;, after: &quot;# Last Section\n&quot;)</span>
+<span class="c"># Insert content after a given regular expression or string:</span>
+<span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>)
 
 <span class="c"># Insert a block of content before a given regular expression or string:</span>
 <span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>) <span class="k">do</span>
