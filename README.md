@@ -49,7 +49,7 @@ end
 
 ```crystal
 # Insert content before a given regular expression or string:
-Spark::File.inject_into_file("src/app.cr", "require \"spark\"\n", before: /require "\./app_database"/)
+Spark::File.inject_into_file("README.md", "# New Section", before: "# First Section\n")
 
 # Insert content after a given regular expression or string:
 Spark::File.inject_into_file("README.md", "# New Section", after: "# Last Section\n")
