@@ -61,6 +61,11 @@
       
         <ul>
   
+  <li class=" " data-id="spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+      <a href="../Spark/File/CreateFile.html">CreateFile</a>
+      
+    </li>
+  
   <li class=" " data-id="spark/Spark/File/InvalidPathError" data-name="spark::file::invalidpatherror">
       <a href="../Spark/File/InvalidPathError.html">InvalidPathError</a>
       
@@ -166,8 +171,15 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L5" target="_blank">
         spark/file.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L2" target="_blank">
+        spark/file/create_file.cr
       </a>
     
     <br/>
@@ -226,6 +238,27 @@
         <a href="#append_to_file(relative_path:String,&:-%3EString)-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, & :  -> String)</a>
         
           <div class="summary"><p>Append the provided block content to the end of a file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#copy_file(source_path:String,destination_path:String):String-instance-method" class="signature"><strong>#copy_file</strong>(source_path : String, destination_path : String) : String</a>
+        
+          <div class="summary"><p>Copy a file from a provided source path to a provided destination.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_file(relative_path:String,*content):String-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, *content) : String</a>
+        
+          <div class="summary"><p>Create a new file with the provided content.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#create_file(relative_path:String,&:-%3EString):String-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, & :  -> String) : String</a>
+        
+          <div class="summary"><p>Create a new file with the provided block content.</p></div>
         
       </li>
     
@@ -329,7 +362,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L66" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -360,7 +393,87 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L80" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="copy_file(source_path:String,destination_path:String):String-instance-method">
+      <div class="signature">
+        
+        def <strong>copy_file</strong>(source_path : String, destination_path : String) : String
+
+        <a class="method-permalink" href="#copy_file(source_path:String,destination_path:String):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Copy a file from a provided source path to a provided destination.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.copy_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;IDENTICAL_README.md&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L119" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_file(relative_path:String,*content):String-instance-method">
+      <div class="signature">
+        
+        def <strong>create_file</strong>(relative_path : String, *content) : String
+
+        <a class="method-permalink" href="#create_file(relative_path:String,*content):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create a new file with the provided content.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.create_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Welcome\n\n&quot;</span>, <span class="s">&quot;This is my new file.&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L92" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create_file(relative_path:String,&:->String):String-instance-method">
+      <div class="signature">
+        
+        def <strong>create_file</strong>(relative_path : String, & :  -> String) : String
+
+        <a class="method-permalink" href="#create_file(relative_path:String,&:-%3EString):String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Create a new file with the provided block content.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.create_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
+  <span class="s">&lt;&lt;-CONTENT</span>
+<span class="s">  # Welcome
+
+  This is my new file.
+  CONTENT</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L109" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -385,7 +498,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L129" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -415,7 +528,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L107" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L146" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -440,7 +553,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L158" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -470,7 +583,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L136" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -495,7 +608,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -526,7 +639,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -547,7 +660,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -572,7 +685,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/9d26b5c47202b1d7e544b07588e93c62993c56a8/src/spark/file.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>

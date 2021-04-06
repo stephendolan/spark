@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="spark">
-  <title>Spark::Prompt::Question - spark main</title>
+  <title>Spark::File::CreateFile - spark main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -56,12 +56,12 @@
       
         <ul>
   
-  <li class="parent " data-id="spark/Spark/File" data-name="spark::file">
+  <li class="parent open current" data-id="spark/Spark/File" data-name="spark::file">
       <a href="../../Spark/File.html">File</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+  <li class=" current" data-id="spark/Spark/File/CreateFile" data-name="spark::file::createfile">
       <a href="../../Spark/File/CreateFile.html">CreateFile</a>
       
     </li>
@@ -76,7 +76,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="spark/Spark/Prompt" data-name="spark::prompt">
+  <li class="parent " data-id="spark/Spark/Prompt" data-name="spark::prompt">
       <a href="../../Spark/Prompt.html">Prompt</a>
       
         <ul>
@@ -86,7 +86,7 @@
       
     </li>
   
-  <li class=" current" data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -115,12 +115,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Spark::Prompt::Question
+  <span class="kind">class</span> Spark::File::CreateFile
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/File/CreateFile.html">Spark::File::CreateFile</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -134,7 +134,7 @@
     Overview
   </h2>
 
-  <p>A Question is used to gather user input.</p>
+  <p>CreateFile acts as a convenient wrapper to perform file creation.</p>
 
 
 
@@ -143,20 +143,6 @@
 
 
 
-
-  <h2>
-    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Direct Known Subclasses
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li>
-    
-  </ul>
 
 
 
@@ -173,8 +159,8 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L4" target="_blank">
-        spark/prompt/question.cr
+      <a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L4" target="_blank">
+        spark/file/create_file.cr
       </a>
     
     <br/>
@@ -195,9 +181,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)</a>
+        <a href="#new(relative_path:String,content:String)-class-method" class="signature"><strong>.new</strong>(relative_path : String, content : String)</a>
         
-          <div class="summary"><p>Creates a new Question.</p></div>
+          <div class="summary"><p>Set up a new CreateFile object for creation.</p></div>
         
       </li>
     
@@ -218,24 +204,24 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call(message:String)-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
-        
-          <div class="summary"><p>Ask the question to the user.</p></div>
+        <a href="#base-instance-method" class="signature"><strong>#base</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+        <a href="#call-instance-method" class="signature"><strong>#call</strong></a>
+        
+          <div class="summary"><p>Create the initialized <code><a href="../../Spark/File/CreateFile.html">CreateFile</a></code> object.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default:Bool%7CString%7CNil-instance-method" class="signature"><strong>#default</strong> : Bool | String | Nil</a>
+        <a href="#content:String-instance-method" class="signature"><strong>#content</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#style:Symbol?-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
+        <a href="#relative_path:String-instance-method" class="signature"><strong>#relative_path</strong> : String</a>
         
       </li>
     
@@ -279,23 +265,23 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool|String|Nil=nil,**options)-class-method">
+    <div class="entry-detail" id="new(relative_path:String,content:String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)
+        def self.<strong>new</strong>(relative_path : String, content : String)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method">#</a>
+        <a class="method-permalink" href="#new(relative_path:String,content:String)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Creates a new Question.</p>
+          <p>Set up a new CreateFile object for creation.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -314,75 +300,71 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="call(message:String)-instance-method">
+    <div class="entry-detail" id="base-instance-method">
       <div class="signature">
         
-        def <strong>call</strong>(message : String)
+        def <strong>base</strong>
 
-        <a class="method-permalink" href="#call(message:String)-instance-method">#</a>
+        <a class="method-permalink" href="#base-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="call-instance-method">
+      <div class="signature">
+        
+        def <strong>call</strong>
+
+        <a class="method-permalink" href="#call-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Ask the question to the user.</p>
-
-<p>This handles adding the default text, a space before user input, and decoration.</p>
-
-<p>It also gathers user input.</p>
+          <p>Create the initialized <code><a href="../../Spark/File/CreateFile.html">CreateFile</a></code> object.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="color:Symbol?-instance-method">
+    <div class="entry-detail" id="content:String-instance-method">
       <div class="signature">
         
-        def <strong>color</strong> : Symbol?
+        def <strong>content</strong> : String
 
-        <a class="method-permalink" href="#color:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#content:String-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="default:Bool|String|Nil-instance-method">
+    <div class="entry-detail" id="relative_path:String-instance-method">
       <div class="signature">
         
-        def <strong>default</strong> : Bool | String | Nil
+        def <strong>relative_path</strong> : String
 
-        <a class="method-permalink" href="#default:Bool%7CString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#relative_path:String-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L7" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="style:Symbol?-instance-method">
-      <div class="signature">
-        
-        def <strong>style</strong> : Symbol?
-
-        <a class="method-permalink" href="#style:Symbol?-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/51fb4ca7dbc47c1a4e10999e8eddb85e166c2326/src/spark/file/create_file.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
