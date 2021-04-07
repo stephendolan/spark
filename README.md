@@ -32,6 +32,7 @@ Then, use any of the fully documented modules below to interact with your user:
   - `#yes?` - Get confirmation from a user, with a default of "Yes"
   - `#no?` - Get confirmation from a user, with a default of "No"
 - 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
+  - `.replace_in_file` - Replace some content in a file
   - `.inject_into_file` - Insert content into a file before or after a pattern
   - `.prepend_to_file` - Insert content at the beginning of a file
   - `.append_to_file` - Insert content at the end of a file
