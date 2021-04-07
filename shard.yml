@@ -1,8 +1,8 @@
 name: spark
-version: 1.3.0
+version: 1.4.0
 
 authors:
-  - Stephen Dolan <dolan.stephen1@gmail.com>
+  - Stephen Dolan <stephen@luckycasts.com>
 
 crystal: 1.0.0
 

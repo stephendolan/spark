@@ -1,5 +1,7 @@
 require "./file/*"
 
+require "file_utils"
+
 module Spark
   # Spark::File allows you to interact with the user's filesystem.
   module File
@@ -105,9 +107,27 @@ module Spark
     #
     #   This is my new file.
     #   CONTENT
+    # end
     # ```
     def create_file(relative_path : String, & : -> String) : String
       CreateFile.new(relative_path, yield).call
+    end
+
+    # Remove a file.
+    #
+    # Removing a single file:
+    # ```
+    # Spark::File.remove_file("README.md")
+    # ```
+    #
+    # Removing a directory:
+    # ```
+    # Spark::File.remove_file("src/")
+    # ```
+    def remove_file(relative_path : String)
+      return unless ::File.exists?(relative_path)
+
+      ::FileUtils.rm_r(relative_path)
     end
 
     # Copy a file from a provided source path to a provided destination.

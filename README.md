@@ -38,6 +38,7 @@ Then, use any of the fully documented modules below to interact with your user:
   - `.append_to_file` - Insert content at the end of a file
   - `.copy_file` - Copy a file (very few safeguards in place currently)
   - `.create_file` - Create a file (very few safeguards in place currently)
+  - `.remove_file` - Remove a file
 
 ## Development
 

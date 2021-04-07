@@ -8,6 +8,18 @@ describe Spark::Prompt do
       File.read(file_path).should eq "Line one\nLine two"
     end
 
+    it "creates a file with a directory structure" do
+      file_path = Spark::File.create_file("spec/tmp/a_file_directory/a_file_path.txt") do
+        <<-CONTENT
+        Line one
+        Line two
+        CONTENT
+      end
+
+      File.read(file_path).should eq "Line one\nLine two"
+      Spark::File.remove_file("spec/tmp")
+    end
+
     it "writes block content to the file" do
       file_path = Spark::File.create_file(File.tempfile.path) do
         <<-CONTENT
@@ -17,6 +29,36 @@ describe Spark::Prompt do
       end
 
       File.read(file_path).should eq "Line one\nLine two"
+    end
+  end
+
+  describe ".remove_file" do
+    it "handles non-existent files gracefully" do
+      Spark::File.remove_file("file_that_does_not_exist").should eq nil
+    end
+
+    it "handles non-existent directories gracefully" do
+      Spark::File.remove_file("spec/tmp/file_that_does_not_exist").should eq nil
+    end
+
+    it "removes an existing file" do
+      file = File.tempfile
+
+      Spark::File.remove_file(file.path)
+
+      File.exists?(file.path).should eq false
+    end
+
+    it "removes an existing directory" do
+      file_path = Spark::File.create_file("spec/tmp/a_file_directory/a_file_path.txt") do
+        <<-CONTENT
+        Line one
+        Line two
+        CONTENT
+      end
+
+      File.read(file_path).should eq "Line one\nLine two"
+      Spark::File.remove_file("spec/tmp")
     end
   end
 
