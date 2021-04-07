@@ -21,6 +21,14 @@ describe Spark::Prompt do
   end
 
   describe ".copy_file" do
+    it "raises an exception for non-existent source files" do
+      new_file = File.tempfile
+
+      expect_raises(InvalidPathError) do
+        Spark::File.copy_file("nonexistent_file.test", new_file.path)
+      end
+    end
+
     it "copies a simple file identically" do
       original_file = File.tempfile do |io|
         io.puts "Line one\nLine two"
@@ -33,7 +41,41 @@ describe Spark::Prompt do
     end
   end
 
+  describe ".replace_in_file" do
+    it "raises an exception for non-existent files" do
+      expect_raises(InvalidPathError) do
+        Spark::File.replace_in_file("nonexistent_file.test", /.*/, "New content")
+      end
+    end
+
+    it "correctly replaces content by Regex pattern" do
+      file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.replace_in_file(file.path, /Line one/, "First line")
+
+      File.read(file.path).should eq "First line\nLine two\n"
+    end
+
+    it "correctly replaces content by String pattern" do
+      file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+
+      Spark::File.replace_in_file(file.path, "Line one", "First line")
+
+      File.read(file.path).should eq "First line\nLine two\n"
+    end
+  end
+
   describe ".append_to_file" do
+    it "raises an exception for non-existent files" do
+      expect_raises(InvalidPathError) do
+        Spark::File.append_to_file("nonexistent_file.test", "One", "Two", "Woohoo\n")
+      end
+    end
+
     it "appends multiple arguments" do
       file = File.tempfile do |io|
         io.puts "Line one\nLine two"
@@ -62,6 +104,12 @@ describe Spark::Prompt do
   end
 
   describe ".prepend_to_file" do
+    it "raises an exception for non-existent files" do
+      expect_raises(InvalidPathError) do
+        Spark::File.prepend_to_file("nonexistent_file.test", "One", "Two", "Woohoo\n")
+      end
+    end
+
     it "prepends multiple arguments" do
       file = File.tempfile do |io|
         io.puts "Line one\nLine two"
@@ -90,6 +138,12 @@ describe Spark::Prompt do
   end
 
   describe ".inject_into_file" do
+    it "raises an exception for non-existent files" do
+      expect_raises(InvalidPathError) do
+        Spark::File.inject_into_file("nonexistent_file.test", "One", "Two", "Woohoo\n", before: /Line two\n/)
+      end
+    end
+
     it "injects multiple arguments" do
       file = File.tempfile do |io|
         io.puts "Line one\nLine two"
@@ -177,7 +231,7 @@ describe Spark::Prompt do
 
   describe ".raise_unless_exists" do
     it "raises when a file does not exist" do
-      expect_raises(ArgumentError) do
+      expect_raises(InvalidPathError) do
         Spark::File.raise_unless_exists("really_does_not_exist")
       end
     end

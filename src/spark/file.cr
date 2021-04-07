@@ -8,9 +8,6 @@ module Spark
     BEGINNING_OF_FILE_REGEX = /\A/
     END_OF_FILE_REGEX       = /\z/
 
-    # Thrown when a provided file path does not exist.
-    class InvalidPathError < ArgumentError; end
-
     # Raises a `Spark::File::InvalidPathError` if the provided path does not exist.
     def raise_unless_exists(path : String)
       return if ::File.exists?(path)
@@ -25,9 +22,12 @@ module Spark
     # Spark::File.replace_in_file("shard.yml", pattern: "MIT", replacement: "Apache")
     # ```
     def replace_in_file(relative_path : String, pattern : Regex | String, replacement : String)
+      raise_unless_exists(relative_path)
+
       pattern = process_pattern(pattern)
       existing_file_content = ::File.read(relative_path)
       new_file_content = existing_file_content.gsub(pattern, replacement)
+
       ::File.write(relative_path, new_file_content)
     end
 
@@ -117,6 +117,8 @@ module Spark
     # Spark::File.copy_file("README.md", "IDENTICAL_README.md")
     # ```
     def copy_file(source_path : String, destination_path : String) : String
+      raise_unless_exists(source_path)
+
       create_file(destination_path, ::File.read(source_path))
     end
 
