@@ -10,8 +10,8 @@ module Spark
       def initialize(
         @prompt : Spark::Prompt,
         @newline : Bool = true,
-        @color : Symbol | Nil = nil,
-        @style : Symbol | Nil = nil
+        @color : Symbol? = nil,
+        @style : Symbol? = nil
       )
       end
 

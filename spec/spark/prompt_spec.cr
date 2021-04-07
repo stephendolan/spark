@@ -1,6 +1,35 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe "#log_action" do
+    it "works with an action and message" do
+      File.tempfile do |io|
+        Spark.quiet = false
+        Spark.logger = Spark::Prompt.new(output: io)
+        Spark.logger.log_action("TESTING", "This is a test")
+        io.rewind.gets_to_end.should eq("\e[1mTESTING\e[0m -- This is a test\n")
+      end
+    end
+
+    it "works with only an action" do
+      File.tempfile do |io|
+        Spark.quiet = false
+        Spark.logger = Spark::Prompt.new(output: io)
+        Spark.logger.log_action("TESTING")
+        io.rewind.gets_to_end.should eq("\e[1mTESTING\e[0m\n")
+      end
+    end
+
+    it "colorizes output" do
+      File.tempfile do |io|
+        Spark.quiet = false
+        Spark.logger = Spark::Prompt.new(output: io)
+        Spark.logger.log_action("TESTING", "This is a test", color: :yellow)
+        io.rewind.gets_to_end.should eq("\e[33;1mTESTING\e[0m -- This is a test\n")
+      end
+    end
+  end
+
   describe "#ask" do
     it "does nothing with a zero-length message" do
       File.tempfile do |io|

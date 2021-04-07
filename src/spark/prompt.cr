@@ -104,7 +104,7 @@ module Spark
     # prompt = Spark::Prompt.new
     # prompt.decorate("This is an example", color: :green, style: :bold) # => "\e[32;1mHello, there!\e[0m\n"
     # ```
-    def decorate(string : String, color : Symbol | Nil = nil, style : Symbol | Nil = nil)
+    def decorate(string : String, color : Symbol? = nil, style : Symbol? = nil)
       string = case color
                in Symbol
                  string.colorize(color)
@@ -118,6 +118,28 @@ module Spark
       in Nil
         string
       end
+    end
+
+    # :nodoc:
+    #
+    # Print a colorized action and plain message to the user.
+    #
+    # This is mainly for internal use by other `Spark` modules.
+    #
+    # Example:
+    # ```
+    # prompt = Spark::Prompt.new
+    # prompt.log_action("COMPILING", "src/start_server.cr", color: :yellow)
+    # prompt.log_action("DONE", color: :green)
+    # ```
+    def log_action(action : String, message : String? = nil, **options)
+      return if Spark.quiet?
+
+      options_with_default_bolding = options.merge(style: :bold)
+      action = decorate(action, **options_with_default_bolding)
+      message = [action, message].compact.join(" -- ")
+
+      Statement.new(self).call(message)
     end
   end
 end

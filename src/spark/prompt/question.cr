@@ -9,8 +9,8 @@ module Spark
       # Creates a new Question.
       def initialize(
         @prompt : Spark::Prompt,
-        @color : Symbol | Nil = nil,
-        @style : Symbol | Nil = nil,
+        @color : Symbol? = nil,
+        @style : Symbol? = nil,
         @default : Bool | String | Nil = nil,
         **options
       )

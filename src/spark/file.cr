@@ -26,6 +26,8 @@ module Spark
     def replace_in_file(relative_path : String, pattern : Regex | String, replacement : String)
       raise_unless_exists(relative_path)
 
+      Spark.logger.log_action "REPLACING CONTENT", relative_path, color: :yellow
+
       pattern = process_pattern(pattern)
       existing_file_content = ::File.read(relative_path)
       new_file_content = existing_file_content.gsub(pattern, replacement)
@@ -125,6 +127,8 @@ module Spark
     # Spark::File.remove_file("src/")
     # ```
     def remove_file(relative_path : String)
+      Spark.logger.log_action "REMOVING", relative_path, color: :red
+
       return unless ::File.exists?(relative_path)
 
       ::FileUtils.rm_r(relative_path)
