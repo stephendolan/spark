@@ -141,6 +141,20 @@ command line simpler than ever.</p>
 
 
 
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="Spark.html">Spark</a></li>
+    
+  </ul>
+
 
 
 
@@ -158,49 +172,49 @@ command line simpler than ever.</p>
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark.cr#L5" target="_blank">
         spark.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/file.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L5" target="_blank">
         spark/file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/file/create_file.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file/create_file.cr#L1" target="_blank">
         spark/file/create_file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/prompt.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/prompt.cr#L3" target="_blank">
         spark/prompt.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/prompt/confirmation_question.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/prompt/confirmation_question.cr#L3" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/prompt/question.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/prompt/question.cr#L1" target="_blank">
         spark/prompt/question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/74ac7fd925948c99e7089a3c5801f7ee07f29c8f/src/spark/prompt/statement.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/prompt/statement.cr#L1" target="_blank">
         spark/prompt/statement.cr
       </a>
     
@@ -234,6 +248,46 @@ command line simpler than ever.</p>
 
 
 
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#logger:Spark::Prompt-instance-method" class="signature"><strong>#logger</strong> : Spark::Prompt</a>
+        
+          <div class="summary"><p>Which object to use for logging optional output to users.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#logger=(logger:Spark::Prompt)-instance-method" class="signature"><strong>#logger=</strong>(logger : Spark::Prompt)</a>
+        
+          <div class="summary"><p>Control which object is used to log optional output to users.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quiet=(quiet)-instance-method" class="signature"><strong>#quiet=</strong>(quiet)</a>
+        
+          <div class="summary"><p>Control whether or not optional terminal output is displayed to users.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quiet?-instance-method" class="signature"><strong>#quiet?</strong></a>
+        
+          <div class="summary"><p>Whether or not to suppress optional terminal output to users.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
 
@@ -246,6 +300,110 @@ command line simpler than ever.</p>
 
 
 
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="logger:Spark::Prompt-instance-method">
+      <div class="signature">
+        
+        def <strong>logger</strong> : <a href="Spark/Prompt.html">Spark::Prompt</a>
+
+        <a class="method-permalink" href="#logger:Spark::Prompt-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Which object to use for logging optional output to users.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="logger=(logger:Spark::Prompt)-instance-method">
+      <div class="signature">
+        
+        def <strong>logger=</strong>(logger : <a href="Spark/Prompt.html">Spark::Prompt</a>)
+
+        <a class="method-permalink" href="#logger=(logger:Spark::Prompt)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Control which object is used to log optional output to users.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span>.logger <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>(input: <span class="t">File</span>.tempfile.open, output: <span class="t">File</span>.tempfile.open)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quiet=(quiet)-instance-method">
+      <div class="signature">
+        
+        def <strong>quiet=</strong>(quiet)
+
+        <a class="method-permalink" href="#quiet=(quiet)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Control whether or not optional terminal output is displayed to users.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span>.logger.log_status(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; This will print something to the user</span>
+<span class="t">Spark</span>.quiet <span class="o">=</span> <span class="n">true</span>
+<span class="t">Spark</span>.logger.log_status(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; Nothing will print to the user</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quiet?-instance-method">
+      <div class="signature">
+        
+        def <strong>quiet?</strong>
+
+        <a class="method-permalink" href="#quiet?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Whether or not to suppress optional terminal output to users.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
