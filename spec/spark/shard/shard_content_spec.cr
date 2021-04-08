@@ -44,6 +44,21 @@ describe Spark::Shard::ShardContent do
   end
 
   describe "#to_s" do
-    pending "works"
+    it "handles just a source" do
+      content = Spark::Shard::ShardContent.new(name: "test", github: "testing/test").to_s
+      content.should eq <<-CONTENT
+        test:
+          github: testing/test\n
+      CONTENT
+    end
+
+    it "handles a source and version" do
+      content = Spark::Shard::ShardContent.new(name: "test", github: "testing/test", version: "~> 1.0.3").to_s
+      content.should eq <<-CONTENT
+        test:
+          github: testing/test
+          version: ~> 1.0.3\n
+      CONTENT
+    end
   end
 end

@@ -40,11 +40,14 @@ module Spark
 
       # Every shard should be nested under a header section, so we always indent with two spaces.
       def to_s
-        <<-CONTENT
+        output = <<-CONTENT
           #{name}:
             #{source}
             #{version_or_branch}
         CONTENT
+
+        # Remove any trailing whitespace
+        output.rstrip(" ")
       end
     end
   end
