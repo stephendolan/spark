@@ -12,14 +12,14 @@ describe Spark::Shard::ShardFile do
       content = <<-CONTENT
         name: spark
         version: x.x.x
-    
+
         authors:
           - Test Author <testauthor@example.com>
-    
+
         crystal: x.x.x
-    
+
         license: MIT
-    
+
         development_dependencies:
           spark:
             github: stephendolan/spark
@@ -39,14 +39,14 @@ describe Spark::Shard::ShardFile do
       content = <<-CONTENT
         name: spark
         version: x.x.x
-    
+
         authors:
           - Test Author <testauthor@example.com>
-    
+
         crystal: x.x.x
-    
+
         license: MIT
-    
+
         dependencies:
           spark:
             github: stephendolan/spark
@@ -66,14 +66,14 @@ describe Spark::Shard::ShardFile do
       content = <<-CONTENT
         name: spark
         version: x.x.x
-    
+
         authors:
           - Test Author <testauthor@example.com>
-    
+
         crystal: x.x.x
-    
+
         license: MIT
-    
+
         dependencies:
           spark:
             github: stephendolan/spark
@@ -99,14 +99,14 @@ describe Spark::Shard::ShardFile do
         content = <<-CONTENT
           name: spark
           version: x.x.x
-      
+
           authors:
             - Test Author <testauthor@example.com>
-      
+
           crystal: x.x.x
-      
+
           license: MIT
-      
+
           dependencies:
             spark:
               github: stephendolan/spark
@@ -125,14 +125,14 @@ describe Spark::Shard::ShardFile do
         content = <<-CONTENT
           name: spark
           version: x.x.x
-      
+
           authors:
             - Test Author <testauthor@example.com>
-      
+
           crystal: x.x.x
-      
+
           license: MIT
-      
+
           dependencies:
             not_spark:
               github: stephendolan/spark

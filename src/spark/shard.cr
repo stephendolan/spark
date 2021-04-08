@@ -4,10 +4,21 @@ module Spark
   module Shard
     extend self
 
-    SHARD_FILE_PATH = "shard.yml"
+    # Which path to search to find the Crystal shard definition.
+    def shard_file_path
+      if (value = @@shard_file_path).nil?
+        @@shard_file_path = "shard.yml"
+      else
+        value
+      end
+    end
+
+    # Control which path to search to find the Crystal shard definition.
+    def shard_file_path=(@@shard_file_path)
+    end
 
     def add_shard(name : String, *, development_only : Bool = false, **options)
-      shard_file = ShardFile.new(SHARD_FILE_PATH)
+      shard_file = ShardFile.new(shard_file_path)
 
       Spark.logger.log_action("ADD SHARD", name, color: :green)
 
@@ -28,11 +39,11 @@ module Spark
 
       case shard_file
       when .has_production_dependencies_section?
-        Spark::File.inject_into_file(SHARD_FILE_PATH, content, after: /\b#{header}\s*\n/)
+        Spark::File.inject_into_file(shard_file_path, content, after: /\b#{header}\s*\n/)
       when .has_development_dependencies_section?
-        Spark::File.inject_into_file(SHARD_FILE_PATH, "#{content_with_header}\n", before: /\bdevelopment_#{header}\s*\n/)
+        Spark::File.inject_into_file(shard_file_path, "#{content_with_header}\n", before: /\bdevelopment_#{header}\s*\n/)
       else
-        Spark::File.append_to_file(SHARD_FILE_PATH, content_with_header)
+        Spark::File.append_to_file(shard_file_path, "\n#{content_with_header}")
       end
     end
 
@@ -42,9 +53,9 @@ module Spark
 
       case shard_file
       when .has_development_dependencies_section?
-        Spark::File.inject_into_file(SHARD_FILE_PATH, content, after: /\b#{header}\s*\n/)
+        Spark::File.inject_into_file(shard_file_path, content, after: /\b#{header}\s*\n/)
       else
-        Spark::File.append_to_file(SHARD_FILE_PATH, content_with_header)
+        Spark::File.append_to_file(shard_file_path, "\n#{content_with_header}")
       end
     end
   end
