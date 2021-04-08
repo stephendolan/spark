@@ -39,6 +39,8 @@ Then, use any of the fully documented modules below to interact with your user:
   - `.copy_file` - Copy a file (very few safeguards in place currently)
   - `.create_file` - Create a file (very few safeguards in place currently)
   - `.remove_file` - Remove a file
+- 💎 &nbsp; **[Spark::Shard](https://stephendolan.github.io/spark/Spark/Shard.html)**
+  - `#add_shard` - Adds a shard to the `shard.yml` file
 
 ## Development
 
