@@ -5,6 +5,7 @@ module Spark
       getter? has_development_dependencies_section : Bool
       getter? has_production_dependencies_section : Bool
 
+      # Creates a new `ShardFile` that parses the given path for `shard.yml` content.
       def initialize(path : String)
         raise_unless_exists(path)
 
@@ -13,6 +14,23 @@ module Spark
         @has_production_dependencies_section = check_for_dependencies_section
       end
 
+      # Determine whether or not the `ShardFile` already has an entry for the given shard.
+      #
+      # Example:
+      # ```yaml
+      #   name: test_shard_yml
+      #
+      #   version: x.x.x
+      #
+      #   dependencies:
+      #     spark:
+      #       github: stephendolan/spark
+      # ```
+      #
+      # ```
+      # Spark::Shard::ShardFile.new("shard.yml").contains_shard?("spark") # => true
+      # Spark::Shard::ShardFile.new("shard.yml").contains_shard?("lucky") # => false
+      # ```
       def contains_shard?(name : String)
         /\b#{name}:\s*\n/.matches?(content)
       end
@@ -24,10 +42,12 @@ module Spark
         raise MissingShardFileError.new("Shard file does not exist at '#{path}'.")
       end
 
+      # Check the `ShardFile` for a `development_dependencies` header.
       private def check_for_development_dependencies_section
         /\bdevelopment_dependencies:\s*\n/.matches?(content)
       end
 
+      # Check the `ShardFile` for a `dependencies` header.
       private def check_for_dependencies_section
         /\bdependencies:\s*\n/.matches?(content)
       end

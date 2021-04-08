@@ -5,9 +5,19 @@ module Spark
       getter github, git
       getter version, branch
 
+      # Given some basic shard information, provides an object that can be written to `shard.yml` with `#to_s`.
       def initialize(@name : String, @github : String? = nil, @git : String? = nil, @version : String? = nil, @branch : String? = nil)
       end
 
+      # Intelligently determine whether to use the GitHub or git source for a shard.
+      #
+      # Outputs a `shard.yml`-friendly version of the source.
+      #
+      # Example:
+      # ```
+      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark").source                         # => "github: stephendolan/spark"
+      # Spark::Shard::ShardContent.new(name: "test", git: "https://custom-git.com/stephendolan/spark.git").source # => "git: https://custom-git.com/stephendolan/spark.git"
+      # ```
       def source
         if github.nil? && git.nil?
           raise ArgumentError.new("Must provide either `git` or `github` for shard content.")
@@ -24,6 +34,16 @@ module Spark
         end
       end
 
+      # Intelligently determine whether to use the branch or a version string for the shard.
+      #
+      # Outputs a `shard.yml`-friendly variant of the version or branch, which is always suffixed
+      # with a newline since it is the last line in a shard definition. This allows for a simpler `#to_s` implementation.
+      #
+      # Example:
+      # ```
+      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", version: "~> 1.0.3").version_or_branch # => "version: ~> 1.0.3\n"
+      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", branch: "master").version_or_branch    # => "branch: master\n"
+      # ```
       def version_or_branch
         if version && branch
           raise ArgumentError.new("Cannot provide both `version` and `branch` for shard content.")
@@ -38,7 +58,19 @@ module Spark
         end
       end
 
+      # Outputs a `shard.yml`-friendly representation of the given shard content.
+      #
       # Every shard should be nested under a header section, so we always indent with two spaces.
+      #
+      # Example:
+      # ```
+      # shard_content = Spark::Shard::ShardContent.new(name: "spark", github: "stephendolan/spark", version: "~> 1.0.3")
+      # shard_content.to_s # => <<-CONTENT
+      #   spark:
+      #     github: stephendolan/spark
+      #     version: ~> 1.0.3
+      # CONTENT
+      # ```
       def to_s
         output = <<-CONTENT
           #{name}:
