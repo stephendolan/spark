@@ -45,6 +45,10 @@ module Spark
       statement.call(message)
     end
 
+    def newline
+      Statement.new(self).call("")
+    end
+
     # Ask the user a question.
     #
     # Example:
@@ -52,11 +56,11 @@ module Spark
     # prompt = Spark::Prompt.new
     # prompt.ask("What is your name?") # => "What is your name?"
     # ```
-    def ask(message : String, **options)
-      return if message.blank?
+    def ask(message : String, **options) : String
+      return "" if message.blank?
 
       question = Question.new(self, **options)
-      question.call(message)
+      question.call(message).to_s
     end
 
     # Ask the user a question with optional validation.
@@ -69,11 +73,11 @@ module Spark
     # end
     # # => "What is your name?"
     # ```
-    def ask(message : String, **options, &block : Spark::Prompt::Question -> _)
-      return if message.blank?
+    def ask(message : String, **options, &block : Spark::Prompt::Question -> _) : String
+      return "" if message.blank?
 
       question = Question.new(self, **options)
-      question.call(message, &block)
+      question.call(message, &block).to_s
     end
 
     # Ask the user a yes/no question, where the default is "Yes".
@@ -87,8 +91,8 @@ module Spark
     #   prompt.say "Shame on you!"
     # end
     # ```
-    def yes?(message : String, **options)
-      return if message.blank?
+    def yes?(message : String, **options) : Bool
+      return false if message.blank?
 
       options_with_default = options.merge(default: true)
       question = ConfirmationQuestion.new(self, **options_with_default)
@@ -106,8 +110,8 @@ module Spark
     #   prompt.say "Then it's going to be a great day!"
     # end
     # ```
-    def no?(message : String, **options)
-      return if message.blank?
+    def no?(message : String, **options) : Bool
+      return false if message.blank?
 
       options_with_default = options.merge(default: false)
       question = ConfirmationQuestion.new(self, **options_with_default)

@@ -1,6 +1,18 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe "#newline" do
+    it "prints a blank line in the output" do
+      File.tempfile do |io|
+        prompt = Spark::Prompt.new(output: io)
+        prompt.say("Testing")
+        prompt.newline
+        prompt.say("Testing again")
+        io.rewind.gets_to_end.should eq("Testing\n\nTesting again\n")
+      end
+    end
+  end
+
   describe "#log_action" do
     it "works with an action and message" do
       File.tempfile do |io|
@@ -73,7 +85,7 @@ describe Spark::Prompt do
 
             output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
 
-            answer.should eq nil
+            answer.should be_empty
           end
         end
       end
@@ -93,7 +105,7 @@ describe Spark::Prompt do
 
             output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
 
-            answer.should eq nil
+            answer.should be_empty
           end
         end
       end
@@ -113,7 +125,7 @@ describe Spark::Prompt do
 
             output.rewind.gets_to_end.should contain("You must input 'LuckyCasts' as your answer.")
 
-            answer.should eq nil
+            answer.should be_empty
           end
         end
       end
@@ -171,7 +183,7 @@ describe Spark::Prompt do
       end
     end
 
-    it "returns nil for an empty answer" do
+    it "returns an empty string for an empty answer" do
       File.tempfile do |output|
         tempfile = File.tempfile do |input|
           input.puts ""
@@ -182,7 +194,7 @@ describe Spark::Prompt do
 
           answer = prompt.ask("What is your name?")
           output.rewind.gets_to_end.should eq("What is your name? ")
-          answer.should eq nil
+          answer.should eq ""
         end
       end
     end

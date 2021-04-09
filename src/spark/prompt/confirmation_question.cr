@@ -6,7 +6,7 @@ module Spark
       # ConfirmationQuestions need to process user input a bit differently.
       #
       # We support variations of "yes" and "no" as answers, as well as empty answers.
-      private def process_input(input : String?)
+      private def process_input(input : String?) : Bool
         case default
         when Bool && false
           if input =~ /y(es)?/i
@@ -20,6 +20,8 @@ module Spark
           else
             true
           end
+        else
+          raise ArgumentError.new("The `default` supplied to a ConfirmationQuestion must be `true` or `false`.")
         end
       end
     end

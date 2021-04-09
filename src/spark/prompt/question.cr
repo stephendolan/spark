@@ -41,7 +41,7 @@ module Spark
         @prompt : Spark::Prompt,
         @color : Symbol? = nil,
         @style : Symbol? = nil,
-        @default : Bool | String | Nil = nil,
+        @default : Bool? | String? = nil,
         **options
       )
       end
