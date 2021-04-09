@@ -1,6 +1,31 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe ".move_file" do
+    it "raises an exception for non-existent source files" do
+      new_file = File.tempfile
+
+      expect_raises(InvalidPathError) do
+        Spark::File.move_file("nonexistent_file.test", new_file.path)
+      end
+    end
+
+    it "successfully moves a file" do
+      original_file = File.tempfile do |io|
+        io.puts "Line one\nLine two"
+      end
+      original_content = File.read(original_file.path)
+
+      new_file = File.tempfile
+
+      moved_file_path = Spark::File.move_file(original_file.path, new_file.path)
+
+      File.read(moved_file_path).should eq original_content
+      File.exists?(original_file.path).should be_false
+      moved_file_path.should eq new_file.path
+    end
+  end
+
   describe ".create_file" do
     it "writes multiple arguments to the file" do
       file_path = Spark::File.create_file(File.tempfile.path, "Line one\n", "Line two")
@@ -78,8 +103,9 @@ describe Spark::Prompt do
 
       new_file = File.tempfile
 
-      Spark::File.copy_file(original_file.path, new_file.path)
+      copied_file_path = Spark::File.copy_file(original_file.path, new_file.path)
       File.read(new_file.path).should eq File.read(original_file.path)
+      copied_file_path.should eq new_file.path
     end
   end
 

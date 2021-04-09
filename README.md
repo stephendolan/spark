@@ -38,6 +38,7 @@ Then, use any of the fully documented modules below to interact with your user:
   - [`.prepend_to_file`](<https://stephendolan.github.io/spark/Spark/File.html#prepend_to_file(relative_path:String,*content)-instance-method>) - Insert content at the beginning of a file
   - [`.append_to_file`](<https://stephendolan.github.io/spark/Spark/File.html#append_to_file(relative_path:String,*content)-instance-method>) - Insert content at the end of a file
   - [`.copy_file`](<https://stephendolan.github.io/spark/Spark/File.html#copy_file(source_path:String,destination_path:String):String-instance-method>) - Copy a file (very few safeguards in place currently)
+  - [`.move_file`](<https://stephendolan.github.io/spark/Spark/File.html#move_file(source_path:String,destination_path:String):String-instance-method>) - Move a file (very few safeguards in place currently)
   - [`.create_file`](<https://stephendolan.github.io/spark/Spark/File.html#create_file(relative_path:String,*content):String-instance-method>) - Create a file (very few safeguards in place currently)
   - [`.remove_file`](<https://stephendolan.github.io/spark/Spark/File.html#remove_file(relative_path:String)-instance-method>) - Remove a file
 - 💎 &nbsp; **[Spark::Shard](https://stephendolan.github.io/spark/Spark/Shard.html)**

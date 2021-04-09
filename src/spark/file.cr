@@ -19,7 +19,7 @@ module Spark
     def replace_in_file(relative_path : String, pattern : Regex | String, replacement : String)
       raise_unless_exists(relative_path)
 
-      Spark.logger.log_action "REPLACING CONTENT", relative_path, color: :yellow
+      Spark.logger.log_action "REPLACING CONTENT", "#{relative_path} - '#{pattern.inspect}' for '#{replacement}'", color: :yellow
 
       pattern = process_pattern(pattern)
       existing_file_content = ::File.read(relative_path)
@@ -137,6 +137,24 @@ module Spark
       raise_unless_exists(source_path)
 
       create_file(destination_path, ::File.read(source_path))
+    end
+
+    # Move a file from the provided source path to the provided destination.
+    #
+    # Note that the source file will no longer exist after this action.
+    # If you wish to preserve the source file, use `Spark::File.copy_file`.
+    #
+    # Example:
+    # ```
+    # Spark::File.move_file("README.md", "NEW_README.md")
+    # ```
+    def move_file(source_path : String, destination_path : String) : String
+      raise_unless_exists(source_path)
+
+      new_file_path = copy_file(source_path, destination_path)
+      remove_file(source_path)
+
+      new_file_path
     end
 
     # Inject any number of strings *after* the provided pattern.
