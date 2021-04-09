@@ -130,8 +130,7 @@ module Spark
       private def print_validation_error_message
         return unless (error_message = @validation_error_message)
 
-        error_message = @prompt.decorate(error_message, color: :red)
-        @prompt.puts(error_message)
+        Spark.logger.log_action("Invalid input", error_message, color: :light_red)
       end
 
       # Collect input from the user.

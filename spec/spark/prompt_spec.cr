@@ -34,7 +34,7 @@ describe Spark::Prompt do
         Spark.quiet = false
         Spark.logger = Spark::Prompt.new(output: io)
         Spark.logger.log_action("TESTING", "This is a test")
-        io.rewind.gets_to_end.should eq("\e[1mTESTING\e[0m -- This is a test\n")
+        io.rewind.gets_to_end.should contain("TESTING -- This is a test")
       end
     end
 
@@ -43,16 +43,16 @@ describe Spark::Prompt do
         Spark.quiet = false
         Spark.logger = Spark::Prompt.new(output: io)
         Spark.logger.log_action("TESTING")
-        io.rewind.gets_to_end.should eq("\e[1mTESTING\e[0m\n")
+        io.rewind.gets_to_end.should contain("TESTING")
       end
     end
 
-    it "colorizes output" do
+    it "colorizes the first part of the output" do
       File.tempfile do |io|
         Spark.quiet = false
         Spark.logger = Spark::Prompt.new(output: io)
         Spark.logger.log_action("TESTING", "This is a test", color: :yellow)
-        io.rewind.gets_to_end.should eq("\e[33;1mTESTING\e[0m -- This is a test\n")
+        io.rewind.gets_to_end.should contain("\e[33mTESTING\e[0m -- This is a test")
       end
     end
   end
@@ -61,86 +61,109 @@ describe Spark::Prompt do
     context "with a validation Regex" do
       context "with retry on" do
         it "successfully collects input until a valid answer is provided" do
-          File.tempfile do |output|
-            tempfile = File.tempfile do |input|
-              input.puts ""
-              input.puts "Testing"
-              input.puts "Testing"
-              input.puts "Testing"
-              input.puts "LuckyCasts"
-            end
+          Spark.quiet = false
 
-            File.open(tempfile.path) do |input|
-              prompt = Spark::Prompt.new(output: output, input: input)
+          File.tempfile do |log_output|
+            Spark.logger = Spark::Prompt.new(output: log_output)
 
-              answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
-                question.validate(/LuckyCasts/, "Invalid, please try again!", retry_on_failure: true)
+            File.tempfile do |output|
+              tempfile = File.tempfile do |input|
+                input.puts ""
+                input.puts "Testing"
+                input.puts "Testing"
+                input.puts "Testing"
+                input.puts "LuckyCasts"
               end
 
-              output.rewind.gets_to_end.should contain("Invalid, please try again!")
+              File.open(tempfile.path) do |input|
+                prompt = Spark::Prompt.new(output: output, input: input)
 
-              answer.should eq "LuckyCasts"
+                answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+                  question.validate(/LuckyCasts/, "Invalid, please try again!", retry_on_failure: true)
+                end
+
+                log_output.rewind.gets_to_end.should contain("Invalid, please try again!")
+
+                answer.should eq "LuckyCasts"
+              end
             end
           end
         end
       end
 
       it "correctly fails validations with blank answers" do
-        File.tempfile do |output|
-          tempfile = File.tempfile do |input|
-            input.puts ""
-          end
+        Spark.quiet = false
 
-          File.open(tempfile.path) do |input|
-            prompt = Spark::Prompt.new(output: output, input: input)
+        File.tempfile do |log_output|
+          Spark.logger = Spark::Prompt.new(output: log_output)
 
-            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
-              question.validate(/LuckyCasts/)
+          File.tempfile do |output|
+            tempfile = File.tempfile do |input|
+              input.puts ""
             end
 
-            output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+            File.open(tempfile.path) do |input|
+              prompt = Spark::Prompt.new(output: output, input: input)
 
-            answer.should be_empty
+              answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+                question.validate(/LuckyCasts/)
+              end
+
+              log_output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+
+              answer.should be_empty
+            end
           end
         end
       end
 
       it "displays the default message when the answer does not match" do
-        File.tempfile do |output|
-          tempfile = File.tempfile do |input|
-            input.puts "Dingus"
-          end
+        Spark.quiet = false
 
-          File.open(tempfile.path) do |input|
-            prompt = Spark::Prompt.new(output: output, input: input)
+        File.tempfile do |log_output|
+          Spark.logger = Spark::Prompt.new(output: log_output)
 
-            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
-              question.validate(/LuckyCasts/)
+          File.tempfile do |output|
+            tempfile = File.tempfile do |input|
+              input.puts "Dingus"
             end
 
-            output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+            File.open(tempfile.path) do |input|
+              prompt = Spark::Prompt.new(output: output, input: input)
 
-            answer.should be_empty
+              answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+                question.validate(/LuckyCasts/)
+              end
+
+              log_output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+
+              answer.should be_empty
+            end
           end
         end
       end
 
       it "displays a custom message when the answer does not match" do
-        File.tempfile do |output|
-          tempfile = File.tempfile do |input|
-            input.puts "Dingus"
-          end
+        Spark.quiet = false
+        File.tempfile do |log_output|
+          Spark.logger = Spark::Prompt.new(output: log_output)
 
-          File.open(tempfile.path) do |input|
-            prompt = Spark::Prompt.new(output: output, input: input)
-
-            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
-              question.validate(/LuckyCasts/, "You must input 'LuckyCasts' as your answer.")
+          File.tempfile do |output|
+            tempfile = File.tempfile do |input|
+              input.puts "Dingus"
             end
 
-            output.rewind.gets_to_end.should contain("You must input 'LuckyCasts' as your answer.")
+            File.open(tempfile.path) do |input|
+              prompt = Spark::Prompt.new(output: output, input: input)
 
-            answer.should be_empty
+              answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+                question.validate(/LuckyCasts/, "You must input 'LuckyCasts' as your answer.")
+              end
+
+              log_output.rewind.gets_to_end.should contain("You must input 'LuckyCasts' as your answer.")
+
+              answer.should be_empty
+            end
           end
         end
       end

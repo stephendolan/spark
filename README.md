@@ -26,6 +26,10 @@ require "spark"
 
 Then, use any of the fully documented modules below to interact with your user:
 
+- ⚡️ &nbsp; **[Spark](https://stephendolan.github.io/spark/Spark.html)**
+  - [`.indent`](https://stephendolan.github.io/spark/Spark.html#indent-instance-method) - Increase indentation for all Spark output by one level
+  - [`.outdent`](https://stephendolan.github.io/spark/Spark.html#outdent-instance-method) - Decrease indentation for all Spark output by one level
+  - [`.reset_indentation`](https://stephendolan.github.io/spark/Spark.html#reset_indentation-instance-method) - Set the indentation level for all Spark output back to zero
 - 💬 &nbsp; **[Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)**
   - [`#say`](<https://stephendolan.github.io/spark/Spark/Prompt.html#say(message:String=%22%22,**options)-instance-method>) - Display a message to a user
   - [`#ask`](<https://stephendolan.github.io/spark/Spark/Prompt.html#ask(message:String,**options)-instance-method>) - Get information from a user

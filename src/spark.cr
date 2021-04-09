@@ -7,6 +7,34 @@ module Spark
 
   VERSION = {{ `shards version "#{__DIR__}"`.chomp.stringify }}
 
+  # Determines how much to indent all Spark terminal output by.
+  @@indent_level : Int32 = 0
+
+  def indent_level
+    @@indent_level
+  end
+
+  # Increase the indentation level for `Spark` output by one level.
+  def indent
+    @@indent_level += 1
+  end
+
+  # Decrease the indentation level for `Spark` output by one level.
+  #
+  # Cannot be decreased below zero.
+  def outdent
+    @@indent_level -= 1
+
+    if @@indent_level < 0
+      @@indent_level = 0
+    end
+  end
+
+  # Reset the Spark indentation level back to 0.
+  def reset_indentation
+    @@indent_level = 0
+  end
+
   # Whether or not to suppress optional terminal output to users.
   def quiet?
     if (value = @@quiet).nil?
@@ -16,35 +44,43 @@ module Spark
     end
   end
 
-  # Force a block of code to run in quiet mode.
+  # Control whether or not optional terminal output is displayed to users.
   #
   # Example:
   # ```
+  # Spark.logger.log_action("Testing") # => This will print something to the user
+  # Spark.quiet = true
+  # Spark.logger.log_action("Testing") # => Nothing will print to the user
+  # ```
+  def quiet=(@@quiet)
+  end
+
+  # Force a block of code to run in a temporary quiet mode setting.
+  #
+  # Example temporarily enabling:
+  # ```
   # Spark.quiet do
-  #   Spark::Prompt.new.log_status("TESTING")
+  #   Spark::Prompt.new.log_action("TESTING")
   # end
   # # => ""
   # ```
-  def quiet(&)
+  #
+  # Example temporarily disabling:
+  # ```
+  # Spark.quiet(false) do
+  #   Spark::Prompt.new.log_action("TESTING")
+  # end
+  # # => ""
+  # ```
+  def quiet(active : Bool = true, &)
     old_quiet_value = quiet?
-    @@quiet = true
+    @@quiet = active
 
     output = yield
 
     @@quiet = old_quiet_value
 
     output
-  end
-
-  # Control whether or not optional terminal output is displayed to users.
-  #
-  # Example:
-  # ```
-  # Spark.logger.log_status("Testing") # => This will print something to the user
-  # Spark.quiet = true
-  # Spark.logger.log_status("Testing") # => Nothing will print to the user
-  # ```
-  def quiet=(@@quiet)
   end
 
   # Which object to use for logging optional output to users.

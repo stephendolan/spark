@@ -7,16 +7,26 @@ module Spark
     #
     # These delegations are mainly used for testing with File-based input/output,
     # but could certainly be leveraged by end users as well.
-    delegate :print, :puts, to: @output
-
-    # :nodoc:
-    #
-    # These delegations are mainly used for testing with File-based input/output,
-    # but could certainly be leveraged by end users as well.
     delegate :gets, to: @input
 
     # Initialize a new Spark::Prompt
     def initialize(@input : IO::FileDescriptor = STDIN, @output : IO::FileDescriptor = STDOUT)
+    end
+
+    # :nodoc:
+    #
+    # Provides a simple method delegation to add indentation to the front of all output.
+    def print(*objects : _) : Nil
+      @output.print("\t" * Spark.indent_level)
+      @output.print(*objects)
+    end
+
+    # :nodoc:
+    #
+    # Provides a simple method delegation to add indentation to the front of all output.
+    def puts(*objects : _) : Nil
+      @output.print("\t" * Spark.indent_level)
+      @output.puts(*objects)
     end
 
     # Output some text to a user, with an optional color and style.
@@ -164,9 +174,11 @@ module Spark
     def log_action(action : String, message : String? = nil, **options)
       return if Spark.quiet?
 
-      options_with_default_bolding = options.merge(style: :bold)
-      action = decorate(action, **options_with_default_bolding)
+      action = decorate(action, **options)
       message = [action, message].compact.join(" -- ")
+
+      # Always indent log messages one additional level for prettier output.
+      message = "\t" + message
 
       Statement.new(self).call(message)
     end
