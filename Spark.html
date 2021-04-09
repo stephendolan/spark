@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.11.2">
+<meta name="crystal_docs.project_version" content="v1.12.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark - Spark v1.11.2</title>
+  <title>Spark - Spark v1.12.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.11.2
+        v1.12.0
       </span>
     </div>
   </div>
@@ -197,70 +197,70 @@ command line simpler than ever.</p>
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L5" target="_blank">
         spark.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/file.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/file.cr#L5" target="_blank">
         spark/file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/file/create_file.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/file/create_file.cr#L1" target="_blank">
         spark/file/create_file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/prompt.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/prompt.cr#L3" target="_blank">
         spark/prompt.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/prompt/confirmation_question.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/prompt/confirmation_question.cr#L3" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/prompt/question.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/prompt/question.cr#L1" target="_blank">
         spark/prompt/question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/prompt/statement.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/prompt/statement.cr#L1" target="_blank">
         spark/prompt/statement.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/shard.cr#L3" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/shard.cr#L3" target="_blank">
         spark/shard.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/shard/shard_content.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/shard/shard_content.cr#L1" target="_blank">
         spark/shard/shard_content.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark/shard/shard_file.cr#L1" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark/shard/shard_file.cr#L1" target="_blank">
         spark/shard/shard_file.cr
       </a>
     
@@ -305,6 +305,18 @@ command line simpler than ever.</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#indent-instance-method" class="signature"><strong>#indent</strong></a>
+        
+          <div class="summary"><p>Increase the indentation level for <code><a href="Spark.html">Spark</a></code> output by one level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#indent_level-instance-method" class="signature"><strong>#indent_level</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#logger:Spark::Prompt-instance-method" class="signature"><strong>#logger</strong> : Spark::Prompt</a>
         
           <div class="summary"><p>Which object to use for logging optional output to users.</p></div>
@@ -319,9 +331,16 @@ command line simpler than ever.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#quiet(&)-instance-method" class="signature"><strong>#quiet</strong>(&)</a>
+        <a href="#outdent-instance-method" class="signature"><strong>#outdent</strong></a>
         
-          <div class="summary"><p>Force a block of code to run in quiet mode.</p></div>
+          <div class="summary"><p>Decrease the indentation level for <code><a href="Spark.html">Spark</a></code> output by one level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#quiet(active:Bool=true,&)-instance-method" class="signature"><strong>#quiet</strong>(active : Bool = <span class="n">true</span>, &)</a>
+        
+          <div class="summary"><p>Force a block of code to run in a temporary quiet mode setting.</p></div>
         
       </li>
     
@@ -336,6 +355,13 @@ command line simpler than ever.</p>
         <a href="#quiet?-instance-method" class="signature"><strong>#quiet?</strong></a>
         
           <div class="summary"><p>Whether or not to suppress optional terminal output to users.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset_indentation-instance-method" class="signature"><strong>#reset_indentation</strong></a>
+        
+          <div class="summary"><p>Reset the Spark indentation level back to 0.</p></div>
         
       </li>
     
@@ -363,6 +389,43 @@ command line simpler than ever.</p>
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="indent-instance-method">
+      <div class="signature">
+        
+        def <strong>indent</strong>
+
+        <a class="method-permalink" href="#indent-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Increase the indentation level for <code><a href="Spark.html">Spark</a></code> output by one level.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="indent_level-instance-method">
+      <div class="signature">
+        
+        def <strong>indent_level</strong>
+
+        <a class="method-permalink" href="#indent_level-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="logger:Spark::Prompt-instance-method">
       <div class="signature">
         
@@ -379,7 +442,7 @@ command line simpler than ever.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -404,27 +467,57 @@ command line simpler than ever.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="quiet(&)-instance-method">
+    <div class="entry-detail" id="outdent-instance-method">
       <div class="signature">
         
-        def <strong>quiet</strong>(&)
+        def <strong>outdent</strong>
 
-        <a class="method-permalink" href="#quiet(&)-instance-method">#</a>
+        <a class="method-permalink" href="#outdent-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Force a block of code to run in quiet mode.</p>
+          <p>Decrease the indentation level for <code><a href="Spark.html">Spark</a></code> output by one level.</p>
 
-<p>Example:</p>
+<p>Cannot be decreased below zero.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="quiet(active:Bool=true,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>quiet</strong>(active : Bool = <span class="n">true</span>, &)
+
+        <a class="method-permalink" href="#quiet(active:Bool=true,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Force a block of code to run in a temporary quiet mode setting.</p>
+
+<p>Example temporarily enabling:</p>
 
 <pre><code class="language-crystal"><span class="t">Spark</span>.quiet <span class="k">do</span>
-  <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>.log_status(<span class="s">&quot;TESTING&quot;</span>)
+  <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>.log_action(<span class="s">&quot;TESTING&quot;</span>)
+<span class="k">end</span>
+<span class="c"># =&gt; &quot;&quot;</span></code></pre>
+
+<p>Example temporarily disabling:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span>.quiet(<span class="n">false</span>) <span class="k">do</span>
+  <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>.log_action(<span class="s">&quot;TESTING&quot;</span>)
 <span class="k">end</span>
 <span class="c"># =&gt; &quot;&quot;</span></code></pre>
         </div>
@@ -432,7 +525,7 @@ command line simpler than ever.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -451,15 +544,15 @@ command line simpler than ever.</p>
 
 <p>Example:</p>
 
-<pre><code class="language-crystal"><span class="t">Spark</span>.logger.log_status(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; This will print something to the user</span>
+<pre><code class="language-crystal"><span class="t">Spark</span>.logger.log_action(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; This will print something to the user</span>
 <span class="t">Spark</span>.quiet <span class="o">=</span> <span class="n">true</span>
-<span class="t">Spark</span>.logger.log_status(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; Nothing will print to the user</span></code></pre>
+<span class="t">Spark</span>.logger.log_action(<span class="s">&quot;Testing&quot;</span>) <span class="c"># =&gt; Nothing will print to the user</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -480,7 +573,28 @@ command line simpler than ever.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.11.2/src/spark.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset_indentation-instance-method">
+      <div class="signature">
+        
+        def <strong>reset_indentation</strong>
+
+        <a class="method-permalink" href="#reset_indentation-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reset the Spark indentation level back to 0.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.12.0/src/spark.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
