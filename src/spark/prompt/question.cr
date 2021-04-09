@@ -150,7 +150,7 @@ module Spark
           return false
         end
 
-        return true
+        true
       end
 
       # For any given question, if a non-blank string is provided, that is the answer.
