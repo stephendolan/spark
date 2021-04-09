@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.6.1">
+<meta name="crystal_docs.project_version" content="v1.7.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::Question - Spark v1.6.1</title>
+  <title>Spark::Prompt::Question - Spark v1.7.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.6.1
+        v1.7.0
       </span>
     </div>
   </div>
@@ -198,7 +198,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L4" target="_blank">
         spark/prompt/question.cr
       </a>
     
@@ -250,17 +250,37 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#call(message:String,&)-instance-method" class="signature"><strong>#call</strong>(message : String, &)</a>
+        
+          <div class="summary"><p>Ask the question to the user, including a block with additional settings.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+        
+          <div class="summary"><p>Which color to use to colorize the Question output.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#default:Bool%7CString%7CNil-instance-method" class="signature"><strong>#default</strong> : Bool | String | Nil</a>
         
+          <div class="summary"><p>Which default value to use for a blank/empty response to the Question.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#style:Symbol?-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
+        
+          <div class="summary"><p>Which mode to use to stylize the Question output.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#validate(validation:Regex,error_message:String?=nil)-instance-method" class="signature"><strong>#validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p></div>
         
       </li>
     
@@ -320,7 +340,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -359,7 +379,32 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="call(message:String,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>call</strong>(message : String, &)
+
+        <a class="method-permalink" href="#call(message:String,&)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Ask the question to the user, including a block with additional settings.</p>
+
+<p>This handles adding the default text, a space before user input, and decoration.</p>
+
+<p>It also gathers user input.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -372,10 +417,26 @@
         <a class="method-permalink" href="#color:Symbol?-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Which color to use to colorize the Question output.</p>
+
+<p>See https://crystal-lang.org/api/latest/Colorize.html</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="n">:default</span>
+<span class="n">:black</span>
+<span class="n">:red</span>
+<span class="n">:green</span>
+<span class="n">:yellow</span>
+<span class="n">:blue</span></code></pre>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,10 +449,15 @@
         <a class="method-permalink" href="#default:Bool%7CString%7CNil-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Which default value to use for a blank/empty response to the Question.</p>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -404,10 +470,55 @@
         <a class="method-permalink" href="#style:Symbol?-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Which mode to use to stylize the Question output.</p>
+
+<p>See https://crystal-lang.org/api/latest/Colorize.html</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="n">:bold</span>
+<span class="n">:bright</span>
+<span class="n">:dim</span>
+<span class="n">:underline</span>
+<span class="n">:blink</span>
+<span class="n">:reverse</span>
+<span class="n">:hidden</span></code></pre>
+        </div>
+      
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.1/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="validate(validation:Regex,error_message:String?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#validate(validation:Regex,error_message:String?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
+  question.validate(<span class="s">/LuckyCasts/</span>, <span class="s">&quot;Your name must be &#39;LuckyCasts&#39;&quot;</span>)
+<span class="k">end</span>
+<span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.7.0/src/spark/prompt/question.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
