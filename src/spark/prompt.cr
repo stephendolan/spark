@@ -45,6 +45,14 @@ module Spark
       statement.call(message)
     end
 
+    # Output an empty line to the user's prompt.
+    #
+    # Example:
+    # ```
+    # prompt = Spark::Prompt.new
+    # prompt.say("This is an example") # => "This is an example\n"
+    # prompt.newline                   # => "\n"
+    # ```
     def newline
       Statement.new(self).call("")
     end
