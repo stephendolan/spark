@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="main">
-<meta name="crystal_docs.project_name" content="spark">
+<meta name="crystal_docs.project_version" content="refs/tags/v1.6.0">
+<meta name="crystal_docs.project_name" content="Spark">
 
 
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/doc.js"></script>
 
-  <meta name="repository-name" content="spark">
-  <title>spark main</title>
+  <meta name="repository-name" content="Spark">
+  <title>Spark refs/tags/v1.6.0</title>
   <script type="text/javascript">
   CrystalDocs.base_path = "";
   </script>
@@ -34,12 +34,12 @@
     <div class="project-summary">
       <h1 class="project-name">
         <a href="index.html">
-          spark
+          Spark
         </a>
       </h1>
 
       <span class="project-version">
-        main
+        refs/tags/v1.6.0
       </span>
     </div>
   </div>
@@ -51,22 +51,27 @@
   <div class="types-list">
     <ul>
   
-  <li class=" " data-id="spark/InvalidPathError" data-name="invalidpatherror">
+  <li class=" " data-id="Spark/InvalidPathError" data-name="invalidpatherror">
       <a href="InvalidPathError.html">InvalidPathError</a>
       
     </li>
   
-  <li class="parent " data-id="spark/Spark" data-name="spark">
+  <li class=" " data-id="Spark/MissingShardFileError" data-name="missingshardfileerror">
+      <a href="MissingShardFileError.html">MissingShardFileError</a>
+      
+    </li>
+  
+  <li class="parent " data-id="Spark/Spark" data-name="spark">
       <a href="Spark.html">Spark</a>
       
         <ul>
   
-  <li class="parent " data-id="spark/Spark/File" data-name="spark::file">
+  <li class="parent " data-id="Spark/Spark/File" data-name="spark::file">
       <a href="Spark/File.html">File</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+  <li class=" " data-id="Spark/Spark/File/CreateFile" data-name="spark::file::createfile">
       <a href="Spark/File/CreateFile.html">CreateFile</a>
       
     </li>
@@ -76,23 +81,43 @@
       
     </li>
   
-  <li class="parent " data-id="spark/Spark/Prompt" data-name="spark::prompt">
+  <li class="parent " data-id="Spark/Spark/Prompt" data-name="spark::prompt">
       <a href="Spark/Prompt.html">Prompt</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+  <li class=" " data-id="Spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
       <a href="Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
       
     </li>
   
-  <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="Spark/Prompt/Question.html">Question</a>
       
     </li>
   
-  <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+  <li class=" " data-id="Spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
       <a href="Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="Spark/Spark/Shard" data-name="spark::shard">
+      <a href="Spark/Shard.html">Shard</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardContent" data-name="spark::shard::shardcontent">
+      <a href="Spark/Shard/ShardContent.html">ShardContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
+      <a href="Spark/Shard/ShardFile.html">ShardFile</a>
       
     </li>
   
@@ -149,7 +174,7 @@
 
 <p>Then, use any of the fully documented modules below to interact with your user:</p>
 
-<ul><li>💬 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></strong></li><ul><li><code>#say</code> - Display a message to a user</li><li><code>#ask</code> - Get information from a user</li><li><code>#yes?</code> - Get confirmation from a user, with a default of "Yes"</li><li><code>#no?</code> - Get confirmation from a user, with a default of "No"</li></ul><li>🗄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></strong></li><ul><li><code>.replace_in_file</code> - Replace some content in a file</li><li><code>.inject_into_file</code> - Insert content into a file before or after a pattern</li><li><code>.prepend_to_file</code> - Insert content at the beginning of a file</li><li><code>.append_to_file</code> - Insert content at the end of a file</li><li><code>.copy_file</code> - Copy a file (very few safeguards in place currently)</li><li><code>.create_file</code> - Create a file (very few safeguards in place currently)</li><li><code>.remove_file</code> - Remove a file</li></ul></ul>
+<ul><li>💬 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></strong></li><ul><li><code>#say</code> - Display a message to a user</li><li><code>#ask</code> - Get information from a user</li><li><code>#yes?</code> - Get confirmation from a user, with a default of "Yes"</li><li><code>#no?</code> - Get confirmation from a user, with a default of "No"</li></ul><li>🗄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></strong></li><ul><li><code>.replace_in_file</code> - Replace some content in a file</li><li><code>.inject_into_file</code> - Insert content into a file before or after a pattern</li><li><code>.prepend_to_file</code> - Insert content at the beginning of a file</li><li><code>.append_to_file</code> - Insert content at the end of a file</li><li><code>.copy_file</code> - Copy a file (very few safeguards in place currently)</li><li><code>.create_file</code> - Create a file (very few safeguards in place currently)</li><li><code>.remove_file</code> - Remove a file</li></ul><li>💎 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Shard.html">Spark::Shard</a></strong></li><ul><li><code>#add_shard</code> - Adds a shard to the <code>shard.yml</code> file</li></ul></ul>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">

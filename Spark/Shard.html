@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v1.6.0">
+<meta name="crystal_docs.project_name" content="Spark">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="Spark">
+  <title>Spark::Shard - Spark refs/tags/v1.6.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          Spark
+        </a>
+      </h1>
+
+      <span class="project-version">
+        refs/tags/v1.6.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="Spark/InvalidPathError" data-name="invalidpatherror">
+      <a href="../InvalidPathError.html">InvalidPathError</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/MissingShardFileError" data-name="missingshardfileerror">
+      <a href="../MissingShardFileError.html">MissingShardFileError</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="Spark/Spark" data-name="spark">
+      <a href="../Spark.html">Spark</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="Spark/Spark/File" data-name="spark::file">
+      <a href="../Spark/File.html">File</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+      <a href="../Spark/File/CreateFile.html">CreateFile</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="Spark/Spark/Prompt" data-name="spark::prompt">
+      <a href="../Spark/Prompt.html">Prompt</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+      <a href="../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+      <a href="../Spark/Prompt/Question.html">Question</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+      <a href="../Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="Spark/Spark/Shard" data-name="spark::shard">
+      <a href="../Spark/Shard.html">Shard</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardContent" data-name="spark::shard::shardcontent">
+      <a href="../Spark/Shard/ShardContent.html">ShardContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
+      <a href="../Spark/Shard/ShardFile.html">ShardFile</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Spark::Shard
+
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../Spark/Shard.html">Spark::Shard</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard.cr#L4" target="_blank">
+        spark/shard.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L2" target="_blank">
+        spark/shard/shard_content.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L2" target="_blank">
+        spark/shard/shard_file.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method" class="signature"><strong>#add_shard</strong>(name : String, *, development_only : Bool = <span class="n">false</span>, **options)</a>
+        
+          <div class="summary"><p>Adds a shard to the project's <code>shard.yml</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shard_file_path-instance-method" class="signature"><strong>#shard_file_path</strong></a>
+        
+          <div class="summary"><p>Which path to search to find the Crystal shard definition.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shard_file_path=(shard_file_path)-instance-method" class="signature"><strong>#shard_file_path=</strong>(shard_file_path)</a>
+        
+          <div class="summary"><p>Control which path to search to find the Crystal shard definition.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="add_shard(name:String,*,development_only:Bool=false,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>add_shard</strong>(name : String, *, development_only : Bool = <span class="n">false</span>, **options)
+
+        <a class="method-permalink" href="#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Adds a shard to the project's <code>shard.yml</code>.</p>
+
+<p>Example with a GitHub production dependency:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, branch: <span class="s">&quot;main&quot;</span>)</code></pre>
+
+<p>Example with a GitHub development dependency:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, version: <span class="s">&quot;~&gt; 1.0&quot;</span>, development_only: <span class="n">true</span>)</code></pre>
+
+<p>Example with a git dependency:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, git: <span class="s">&quot;https://mycustomserver.com/stephendolan/spark&quot;</span>, version: <span class="s">&quot;~&gt; 1.0&quot;</span>, development_only: <span class="n">true</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard.cr#L36" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shard_file_path-instance-method">
+      <div class="signature">
+        
+        def <strong>shard_file_path</strong>
+
+        <a class="method-permalink" href="#shard_file_path-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Which path to search to find the Crystal shard definition.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shard_file_path=(shard_file_path)-instance-method">
+      <div class="signature">
+        
+        def <strong>shard_file_path=</strong>(shard_file_path)
+
+        <a class="method-permalink" href="#shard_file_path=(shard_file_path)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Control which path to search to find the Crystal shard definition.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

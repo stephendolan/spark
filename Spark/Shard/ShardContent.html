@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="refs/tags/v1.6.0">
+<meta name="crystal_docs.project_name" content="Spark">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="Spark">
+  <title>Spark::Shard::ShardContent - Spark refs/tags/v1.6.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          Spark
+        </a>
+      </h1>
+
+      <span class="project-version">
+        refs/tags/v1.6.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" " data-id="Spark/InvalidPathError" data-name="invalidpatherror">
+      <a href="../../InvalidPathError.html">InvalidPathError</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/MissingShardFileError" data-name="missingshardfileerror">
+      <a href="../../MissingShardFileError.html">MissingShardFileError</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="Spark/Spark" data-name="spark">
+      <a href="../../Spark.html">Spark</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="Spark/Spark/File" data-name="spark::file">
+      <a href="../../Spark/File.html">File</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+      <a href="../../Spark/File/CreateFile.html">CreateFile</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="Spark/Spark/Prompt" data-name="spark::prompt">
+      <a href="../../Spark/Prompt.html">Prompt</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+      <a href="../../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+      <a href="../../Spark/Prompt/Question.html">Question</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+      <a href="../../Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="Spark/Spark/Shard" data-name="spark::shard">
+      <a href="../../Spark/Shard.html">Shard</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="Spark/Spark/Shard/ShardContent" data-name="spark::shard::shardcontent">
+      <a href="../../Spark/Shard/ShardContent.html">ShardContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
+      <a href="../../Spark/Shard/ShardFile.html">ShardFile</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Spark::Shard::ShardContent
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Shard/ShardContent.html">Spark::Shard::ShardContent</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L3" target="_blank">
+        spark/shard/shard_content.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(name:String,github:String?=nil,git:String?=nil,version:String?=nil,branch:String?=nil)-class-method" class="signature"><strong>.new</strong>(name : String, github : String? = <span class="n">nil</span>, git : String? = <span class="n">nil</span>, version : String? = <span class="n">nil</span>, branch : String? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Given some basic shard information, provides an object that can be written to <code>shard.yml</code> with <code><a href="../../Spark/Shard/ShardContent.html#to_s-instance-method">#to_s</a></code>.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#branch:String?-instance-method" class="signature"><strong>#branch</strong> : String?</a>
+        
+          <div class="summary"><p>The branch of the shard to use.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#git:String?-instance-method" class="signature"><strong>#git</strong> : String?</a>
+        
+          <div class="summary"><p>The git URL of the shard.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#github:String?-instance-method" class="signature"><strong>#github</strong> : String?</a>
+        
+          <div class="summary"><p>The GitHub spath of the shard.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+          <div class="summary"><p>The name of the shard</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#source-instance-method" class="signature"><strong>#source</strong></a>
+        
+          <div class="summary"><p>Intelligently determine whether to use the GitHub or git source for a shard.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s-instance-method" class="signature"><strong>#to_s</strong></a>
+        
+          <div class="summary"><p>Outputs a <code>shard.yml</code>-friendly representation of the given shard content.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version:String?-instance-method" class="signature"><strong>#version</strong> : String?</a>
+        
+          <div class="summary"><p>The version of the shard.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#version_or_branch-instance-method" class="signature"><strong>#version_or_branch</strong></a>
+        
+          <div class="summary"><p>Intelligently determine whether to use the branch or a version string for the shard.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(name:String,github:String?=nil,git:String?=nil,version:String?=nil,branch:String?=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(name : String, github : String? = <span class="n">nil</span>, git : String? = <span class="n">nil</span>, version : String? = <span class="n">nil</span>, branch : String? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new(name:String,github:String?=nil,git:String?=nil,version:String?=nil,branch:String?=nil)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Given some basic shard information, provides an object that can be written to <code>shard.yml</code> with <code><a href="../../Spark/Shard/ShardContent.html#to_s-instance-method">#to_s</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="branch:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>branch</strong> : String?
+
+        <a class="method-permalink" href="#branch:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The branch of the shard to use.
+Either <code><a href="../../Spark/Shard/ShardContent.html#version:String?-instance-method">#version</a></code> or <code><a href="../../Spark/Shard/ShardContent.html#branch:String?-instance-method">#branch</a></code> may be optionally provided, but not both.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">main</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L39" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="git:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>git</strong> : String?
+
+        <a class="method-permalink" href="#git:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The git URL of the shard.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">https<span class="n">://</span>mycustomserver.com<span class="s">/stephendolan/</span>spark</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L21" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="github:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>github</strong> : String?
+
+        <a class="method-permalink" href="#github:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The GitHub spath of the shard.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">stephendolan/spark</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The name of the shard</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="source-instance-method">
+      <div class="signature">
+        
+        def <strong>source</strong>
+
+        <a class="method-permalink" href="#source-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Intelligently determine whether to use the GitHub or git source for a shard.</p>
+
+<p>Outputs a <code>shard.yml</code>-friendly version of the source.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardContent</span>.<span class="k">new</span>(name: <span class="s">&quot;test&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>).source                         <span class="c"># =&gt; &quot;github: stephendolan/spark&quot;</span>
+<span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardContent</span>.<span class="k">new</span>(name: <span class="s">&quot;test&quot;</span>, git: <span class="s">&quot;https://custom-git.com/stephendolan/spark.git&quot;</span>).source <span class="c"># =&gt; &quot;git: https://custom-git.com/stephendolan/spark.git&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L54" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>
+
+        <a class="method-permalink" href="#to_s-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Outputs a <code>shard.yml</code>-friendly representation of the given shard content.</p>
+
+<p>Every shard should be nested under a header section, so we always indent with two spaces.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal">shard_content = Spark::Shard::ShardContent.new(name: "spark", github: "stephendolan/spark", version: "~> 1.0.3")
+shard_content.to_s # => <<-CONTENT
+  spark:
+    github: stephendolan/spark
+    version: ~> 1.0.3
+CONTENT</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L107" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>version</strong> : String?
+
+        <a class="method-permalink" href="#version:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The version of the shard.
+Either <code><a href="../../Spark/Shard/ShardContent.html#version:String?-instance-method">#version</a></code> or <code><a href="../../Spark/Shard/ShardContent.html#branch:String?-instance-method">#branch</a></code> may be optionally provided, but not both.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="o">~</span><span class="o">&gt;</span> <span class="n">1.0</span>.<span class="n">3</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="version_or_branch-instance-method">
+      <div class="signature">
+        
+        def <strong>version_or_branch</strong>
+
+        <a class="method-permalink" href="#version_or_branch-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Intelligently determine whether to use the branch or a version string for the shard.</p>
+
+<p>Outputs a <code>shard.yml</code>-friendly variant of the version or branch, which is always suffixed
+with a newline since it is the last line in a shard definition. This allows for a simpler <code><a href="../../Spark/Shard/ShardContent.html#to_s-instance-method">#to_s</a></code> implementation.</p>
+
+<p>Example:</p>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardContent</span>.<span class="k">new</span>(name: <span class="s">&quot;test&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, version: <span class="s">&quot;~&gt; 1.0.3&quot;</span>).version_or_branch <span class="c"># =&gt; &quot;version: ~&gt; 1.0.3\n&quot;</span>
+<span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardContent</span>.<span class="k">new</span>(name: <span class="s">&quot;test&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, branch: <span class="s">&quot;main&quot;</span>).version_or_branch      <span class="c"># =&gt; &quot;branch: main\n&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_content.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

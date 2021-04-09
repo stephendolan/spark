@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::Question - Spark refs/tags/v1.6.0</title>
+  <title>Spark::Shard::ShardFile - Spark refs/tags/v1.6.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -81,7 +81,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="Spark/Spark/Prompt" data-name="spark::prompt">
+  <li class="parent " data-id="Spark/Spark/Prompt" data-name="spark::prompt">
       <a href="../../Spark/Prompt.html">Prompt</a>
       
         <ul>
@@ -91,7 +91,7 @@
       
     </li>
   
-  <li class=" current" data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -106,7 +106,7 @@
       
     </li>
   
-  <li class="parent " data-id="Spark/Spark/Shard" data-name="spark::shard">
+  <li class="parent open current" data-id="Spark/Spark/Shard" data-name="spark::shard">
       <a href="../../Spark/Shard.html">Shard</a>
       
         <ul>
@@ -116,7 +116,7 @@
       
     </li>
   
-  <li class=" " data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
+  <li class=" current" data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
       <a href="../../Spark/Shard/ShardFile.html">ShardFile</a>
       
     </li>
@@ -140,26 +140,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Spark::Prompt::Question
+  <span class="kind">class</span> Spark::Shard::ShardFile
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
-
-
-
-
-  <h2>
-    <a id="overview" class="anchor" href="#overview">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Overview
-  </h2>
-
-  <p>A Question is used to gather user input.</p>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Shard/ShardFile.html">Spark::Shard::ShardFile</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -169,19 +155,8 @@
 
 
 
-  <h2>
-    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Direct Known Subclasses
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li>
-    
-  </ul>
+
+
 
 
 
@@ -198,8 +173,8 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L4" target="_blank">
-        spark/prompt/question.cr
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L3" target="_blank">
+        spark/shard/shard_file.cr
       </a>
     
     <br/>
@@ -220,9 +195,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)</a>
+        <a href="#new(path:String)-class-method" class="signature"><strong>.new</strong>(path : String)</a>
         
-          <div class="summary"><p>Creates a new Question.</p></div>
+          <div class="summary"><p>Creates a new <code><a href="../../Spark/Shard/ShardFile.html">ShardFile</a></code> that parses the given path for <code>shard.yml</code> content.</p></div>
         
       </li>
     
@@ -243,24 +218,30 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call(message:String)-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
+        <a href="#contains_shard?(name:String)-instance-method" class="signature"><strong>#contains_shard?</strong>(name : String)</a>
         
-          <div class="summary"><p>Ask the question to the user.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+          <div class="summary"><p>Determine whether or not the <code><a href="../../Spark/Shard/ShardFile.html">ShardFile</a></code> already has an entry for the given shard.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default:Bool%7CString%7CNil-instance-method" class="signature"><strong>#default</strong> : Bool | String | Nil</a>
+        <a href="#content:String-instance-method" class="signature"><strong>#content</strong> : String</a>
+        
+          <div class="summary"><p>The content of the shard file in its entirety.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#style:Symbol?-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
+        <a href="#has_development_dependencies_section?:Bool-instance-method" class="signature"><strong>#has_development_dependencies_section?</strong> : Bool</a>
+        
+          <div class="summary"><p>Whether or not the <code>development_dependencies:</code> header exists in the shard file.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_production_dependencies_section?:Bool-instance-method" class="signature"><strong>#has_production_dependencies_section?</strong> : Bool</a>
+        
+          <div class="summary"><p>Whether or not the <code>dependencies:</code> header exists in the shard file.</p></div>
         
       </li>
     
@@ -304,23 +285,23 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool|String|Nil=nil,**options)-class-method">
+    <div class="entry-detail" id="new(path:String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool | String | Nil = <span class="n">nil</span>, **options)
+        def self.<strong>new</strong>(path : String)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool%7CString%7CNil=nil,**options)-class-method">#</a>
+        <a class="method-permalink" href="#new(path:String)-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Creates a new Question.</p>
+          <p>Creates a new <code><a href="../../Spark/Shard/ShardFile.html">ShardFile</a></code> that parses the given path for <code>shard.yml</code> content.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -339,75 +320,99 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="call(message:String)-instance-method">
+    <div class="entry-detail" id="contains_shard?(name:String)-instance-method">
       <div class="signature">
         
-        def <strong>call</strong>(message : String)
+        def <strong>contains_shard?</strong>(name : String)
 
-        <a class="method-permalink" href="#call(message:String)-instance-method">#</a>
+        <a class="method-permalink" href="#contains_shard?(name:String)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Ask the question to the user.</p>
+          <p>Determine whether or not the <code><a href="../../Spark/Shard/ShardFile.html">ShardFile</a></code> already has an entry for the given shard.</p>
 
-<p>This handles adding the default text, a space before user input, and decoration.</p>
+<p>Example:</p>
 
-<p>It also gathers user input.</p>
+<pre><code class="language-yaml">  name: test_shard_yml
+
+  version: x.x.x
+
+  dependencies:
+    spark:
+      github: stephendolan/spark</code></pre>
+
+<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardFile</span>.<span class="k">new</span>(<span class="s">&quot;shard.yml&quot;</span>).contains_shard?(<span class="s">&quot;spark&quot;</span>) <span class="c"># =&gt; true</span>
+<span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span><span class="t">::</span><span class="t">ShardFile</span>.<span class="k">new</span>(<span class="s">&quot;shard.yml&quot;</span>).contains_shard?(<span class="s">&quot;lucky&quot;</span>) <span class="c"># =&gt; false</span></code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="color:Symbol?-instance-method">
+    <div class="entry-detail" id="content:String-instance-method">
       <div class="signature">
         
-        def <strong>color</strong> : Symbol?
+        def <strong>content</strong> : String
 
-        <a class="method-permalink" href="#color:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#content:String-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>The content of the shard file in its entirety.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="default:Bool|String|Nil-instance-method">
+    <div class="entry-detail" id="has_development_dependencies_section?:Bool-instance-method">
       <div class="signature">
         
-        def <strong>default</strong> : Bool | String | Nil
+        def <strong>has_development_dependencies_section?</strong> : Bool
 
-        <a class="method-permalink" href="#default:Bool%7CString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#has_development_dependencies_section?:Bool-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Whether or not the <code>development_dependencies:</code> header exists in the shard file.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="style:Symbol?-instance-method">
+    <div class="entry-detail" id="has_production_dependencies_section?:Bool-instance-method">
       <div class="signature">
         
-        def <strong>style</strong> : Symbol?
+        def <strong>has_production_dependencies_section?</strong> : Bool
 
-        <a class="method-permalink" href="#style:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#has_production_dependencies_section?:Bool-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Whether or not the <code>dependencies:</code> header exists in the shard file.</p>
+        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/prompt/question.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/shard/shard_file.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>

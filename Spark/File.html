@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="main">
-<meta name="crystal_docs.project_name" content="spark">
+<meta name="crystal_docs.project_version" content="refs/tags/v1.6.0">
+<meta name="crystal_docs.project_name" content="Spark">
 
 
 
 <link href="../css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/doc.js"></script>
 
-  <meta name="repository-name" content="spark">
-  <title>Spark::File - spark main</title>
+  <meta name="repository-name" content="Spark">
+  <title>Spark::File - Spark refs/tags/v1.6.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -34,12 +34,12 @@
     <div class="project-summary">
       <h1 class="project-name">
         <a href="../index.html">
-          spark
+          Spark
         </a>
       </h1>
 
       <span class="project-version">
-        main
+        refs/tags/v1.6.0
       </span>
     </div>
   </div>
@@ -51,22 +51,27 @@
   <div class="types-list">
     <ul>
   
-  <li class=" " data-id="spark/InvalidPathError" data-name="invalidpatherror">
+  <li class=" " data-id="Spark/InvalidPathError" data-name="invalidpatherror">
       <a href="../InvalidPathError.html">InvalidPathError</a>
       
     </li>
   
-  <li class="parent open current" data-id="spark/Spark" data-name="spark">
+  <li class=" " data-id="Spark/MissingShardFileError" data-name="missingshardfileerror">
+      <a href="../MissingShardFileError.html">MissingShardFileError</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="Spark/Spark" data-name="spark">
       <a href="../Spark.html">Spark</a>
       
         <ul>
   
-  <li class="parent open current" data-id="spark/Spark/File" data-name="spark::file">
+  <li class="parent open current" data-id="Spark/Spark/File" data-name="spark::file">
       <a href="../Spark/File.html">File</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/File/CreateFile" data-name="spark::file::createfile">
+  <li class=" " data-id="Spark/Spark/File/CreateFile" data-name="spark::file::createfile">
       <a href="../Spark/File/CreateFile.html">CreateFile</a>
       
     </li>
@@ -76,23 +81,43 @@
       
     </li>
   
-  <li class="parent " data-id="spark/Spark/Prompt" data-name="spark::prompt">
+  <li class="parent " data-id="Spark/Spark/Prompt" data-name="spark::prompt">
       <a href="../Spark/Prompt.html">Prompt</a>
       
         <ul>
   
-  <li class=" " data-id="spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
+  <li class=" " data-id="Spark/Spark/Prompt/ConfirmationQuestion" data-name="spark::prompt::confirmationquestion">
       <a href="../Spark/Prompt/ConfirmationQuestion.html">ConfirmationQuestion</a>
       
     </li>
   
-  <li class=" " data-id="spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
       <a href="../Spark/Prompt/Question.html">Question</a>
       
     </li>
   
-  <li class=" " data-id="spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
+  <li class=" " data-id="Spark/Spark/Prompt/Statement" data-name="spark::prompt::statement">
       <a href="../Spark/Prompt/Statement.html">Statement</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="Spark/Spark/Shard" data-name="spark::shard">
+      <a href="../Spark/Shard.html">Shard</a>
+      
+        <ul>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardContent" data-name="spark::shard::shardcontent">
+      <a href="../Spark/Shard/ShardContent.html">ShardContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="Spark/Spark/Shard/ShardFile" data-name="spark::shard::shardfile">
+      <a href="../Spark/Shard/ShardFile.html">ShardFile</a>
       
     </li>
   
@@ -171,14 +196,14 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L7" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L7" target="_blank">
         spark/file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file/create_file.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file/create_file.cr#L2" target="_blank">
         spark/file/create_file.cr
       </a>
     
@@ -369,7 +394,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -400,7 +425,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L86" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L86" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -425,7 +450,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L143" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L143" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -450,7 +475,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -481,7 +506,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -506,7 +531,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L155" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -536,7 +561,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L172" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L172" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -561,7 +586,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -591,7 +616,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L201" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L201" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -616,7 +641,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -647,7 +672,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L60" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -668,7 +693,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -697,7 +722,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L129" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L129" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -722,7 +747,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/a66de8d95362f25ca616a625ec9eb4a7fd03136c/src/spark/file.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.6.0/src/spark/file.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
