@@ -23,7 +23,7 @@ describe Spark::Shard::ShardFile do
         development_dependencies:
           spark:
             github: stephendolan/spark
-            branch: master
+            branch: main
         CONTENT
 
       io.puts content
@@ -50,7 +50,7 @@ describe Spark::Shard::ShardFile do
         dependencies:
           spark:
             github: stephendolan/spark
-            branch: master
+            branch: main
         CONTENT
 
       io.puts content
@@ -77,12 +77,12 @@ describe Spark::Shard::ShardFile do
         dependencies:
           spark:
             github: stephendolan/spark
-            branch: master
+            branch: main
 
         development_dependencies:
           lucky_flow:
             github: luckyframework/lucky_flow
-            branch: master
+            branch: main
         CONTENT
 
       io.puts content
@@ -110,7 +110,7 @@ describe Spark::Shard::ShardFile do
           dependencies:
             spark:
               github: stephendolan/spark
-              branch: master
+              branch: main
           CONTENT
 
         io.puts content
@@ -136,7 +136,7 @@ describe Spark::Shard::ShardFile do
           dependencies:
             not_spark:
               github: stephendolan/spark
-              branch: master
+              branch: main
           CONTENT
 
         io.puts content

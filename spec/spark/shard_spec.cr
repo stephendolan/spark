@@ -20,7 +20,7 @@ describe Spark::Shard do
               development_dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -46,7 +46,7 @@ describe Spark::Shard do
               version: ~> 1.0.3
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end
@@ -68,7 +68,7 @@ describe Spark::Shard do
               development_dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -93,7 +93,7 @@ describe Spark::Shard do
               github: testing/test
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end
@@ -115,12 +115,12 @@ describe Spark::Shard do
               dependencies:
                 lucky:
                   github: luckyframework/lucky
-                  branch: master
+                  branch: main
 
               development_dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -143,14 +143,14 @@ describe Spark::Shard do
           dependencies:
             lucky:
               github: luckyframework/lucky
-              branch: master
+              branch: main
 
           development_dependencies:
             testing:
               github: testing/test
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end
@@ -213,7 +213,7 @@ describe Spark::Shard do
               development_dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -240,7 +240,7 @@ describe Spark::Shard do
           development_dependencies:
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end
@@ -262,7 +262,7 @@ describe Spark::Shard do
               dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -287,7 +287,7 @@ describe Spark::Shard do
               github: testing/test
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end
@@ -309,12 +309,12 @@ describe Spark::Shard do
               dependencies:
                 lucky:
                   github: luckyframework/lucky
-                  branch: master
+                  branch: main
 
               development_dependencies:
                 spark:
                   github: stephendolan/spark
-                  branch: master
+                  branch: main
               CONTENT
 
             io.puts content
@@ -339,12 +339,12 @@ describe Spark::Shard do
               github: testing/test
             lucky:
               github: luckyframework/lucky
-              branch: master
+              branch: main
 
           development_dependencies:
             spark:
               github: stephendolan/spark
-              branch: master\n
+              branch: main\n
           CONTENT
         end
       end

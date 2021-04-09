@@ -1,8 +1,13 @@
 module Spark
   module Shard
     class ShardFile
+      # The content of the shard file in its entirety.
       getter content : String
+
+      # Whether or not the `development_dependencies:` header exists in the shard file.
       getter? has_development_dependencies_section : Bool
+
+      # Whether or not the `dependencies:` header exists in the shard file.
       getter? has_production_dependencies_section : Bool
 
       # Creates a new `ShardFile` that parses the given path for `shard.yml` content.

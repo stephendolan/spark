@@ -39,7 +39,7 @@ describe Spark::Shard::ShardContent do
 
     it "outputs a valid branch string when a branch is provided" do
       content = Spark::Shard::ShardContent.new(name: "test", branch: "master")
-      content.version_or_branch.should eq "branch: master\n"
+      content.version_or_branch.should eq "branch: main\n"
     end
   end
 

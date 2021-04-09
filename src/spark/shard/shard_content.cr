@@ -1,9 +1,42 @@
 module Spark
   module Shard
     class ShardContent
+      # The name of the shard
       getter name
-      getter github, git
-      getter version, branch
+
+      # The GitHub spath of the shard.
+      #
+      # Example:
+      # ```
+      # stephendolan/spark
+      # ```
+      getter github
+
+      # The git URL of the shard.
+      #
+      # Example:
+      # ```
+      # https://mycustomserver.com/stephendolan/spark
+      # ```
+      getter git
+
+      # The version of the shard.
+      # Either `#version` or `#branch` may be optionally provided, but not both.
+      #
+      # Example:
+      # ```
+      # ~> 1.0.3
+      # ```
+      getter version
+
+      # The branch of the shard to use.
+      # Either `#version` or `#branch` may be optionally provided, but not both.
+      #
+      # Example:
+      # ```
+      # main
+      # ```
+      getter branch
 
       # Given some basic shard information, provides an object that can be written to `shard.yml` with `#to_s`.
       def initialize(@name : String, @github : String? = nil, @git : String? = nil, @version : String? = nil, @branch : String? = nil)
@@ -42,7 +75,7 @@ module Spark
       # Example:
       # ```
       # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", version: "~> 1.0.3").version_or_branch # => "version: ~> 1.0.3\n"
-      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", branch: "master").version_or_branch    # => "branch: master\n"
+      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", branch: "master").version_or_branch    # => "branch: main\n"
       # ```
       def version_or_branch
         if version && branch
