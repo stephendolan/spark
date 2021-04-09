@@ -14,6 +14,21 @@ describe Spark::Prompt do
   end
 
   describe "#log_action" do
+    it "does not emit anything when quiet mode is true" do
+      File.tempfile do |io|
+        Spark.logger = Spark::Prompt.new(output: io)
+        Spark.quiet = false
+
+        Spark.quiet do
+          Spark.logger.log_action("TESTING", "This is a test")
+        end
+
+        Spark.logger.log_action("THIS WILL SHOW")
+
+        io.rewind.gets_to_end.should contain("THIS WILL SHOW")
+      end
+    end
+
     it "works with an action and message" do
       File.tempfile do |io|
         Spark.quiet = false

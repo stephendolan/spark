@@ -136,7 +136,11 @@ module Spark
     def copy_file(source_path : String, destination_path : String) : String
       raise_unless_exists(source_path)
 
-      create_file(destination_path, ::File.read(source_path))
+      Spark.logger.log_action "COPYING", "'#{source_path}' to '#{destination_path}'", color: :green
+
+      Spark.quiet do
+        create_file(destination_path, ::File.read(source_path))
+      end
     end
 
     # Move a file from the provided source path to the provided destination.
@@ -151,10 +155,14 @@ module Spark
     def move_file(source_path : String, destination_path : String) : String
       raise_unless_exists(source_path)
 
-      new_file_path = copy_file(source_path, destination_path)
-      remove_file(source_path)
+      Spark.logger.log_action "MOVING", "'#{source_path}' to '#{destination_path}'", color: :yellow
 
-      new_file_path
+      Spark.quiet do
+        new_path = copy_file(source_path, destination_path)
+        remove_file(source_path)
+
+        new_path
+      end
     end
 
     # Inject any number of strings *after* the provided pattern.

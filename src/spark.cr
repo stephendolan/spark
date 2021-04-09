@@ -16,6 +16,26 @@ module Spark
     end
   end
 
+  # Force a block of code to run in quiet mode.
+  #
+  # Example:
+  # ```
+  # Spark.quiet do
+  #   Spark::Prompt.new.log_status("TESTING")
+  # end
+  # # => ""
+  # ```
+  def quiet(&)
+    old_quiet_value = quiet?
+    @@quiet = true
+
+    output = yield
+
+    @@quiet = old_quiet_value
+
+    output
+  end
+
   # Control whether or not optional terminal output is displayed to users.
   #
   # Example:
