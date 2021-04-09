@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.9.0">
+<meta name="crystal_docs.project_version" content="v1.10.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt - Spark v1.9.0</title>
+  <title>Spark::Prompt - Spark v1.10.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.9.0
+        v1.10.0
       </span>
     </div>
   </div>
@@ -184,28 +184,28 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L5" target="_blank">
         spark/prompt.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt/question.cr#L2" target="_blank">
         spark/prompt/question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/statement.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt/statement.cr#L2" target="_blank">
         spark/prompt/statement.cr
       </a>
     
@@ -250,14 +250,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#ask(message:String,**options)-instance-method" class="signature"><strong>#ask</strong>(message : String, **options)</a>
+        <a href="#ask(message:String,**options):String-instance-method" class="signature"><strong>#ask</strong>(message : String, **options) : String</a>
         
           <div class="summary"><p>Ask the user a question.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_)-instance-method" class="signature"><strong>#ask</strong>(message : String, **options, &block : Spark::Prompt::Question -> _)</a>
+        <a href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_):String-instance-method" class="signature"><strong>#ask</strong>(message : String, **options, &block : Spark::Prompt::Question -> _) : String</a>
         
           <div class="summary"><p>Ask the user a question with optional validation.</p></div>
         
@@ -271,7 +271,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#no?(message:String,**options)-instance-method" class="signature"><strong>#no?</strong>(message : String, **options)</a>
+        <a href="#newline-instance-method" class="signature"><strong>#newline</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#no?(message:String,**options):Bool-instance-method" class="signature"><strong>#no?</strong>(message : String, **options) : Bool</a>
         
           <div class="summary"><p>Ask the user a yes/no question, where the default is "No".</p></div>
         
@@ -285,7 +290,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#yes?(message:String,**options)-instance-method" class="signature"><strong>#yes?</strong>(message : String, **options)</a>
+        <a href="#yes?(message:String,**options):Bool-instance-method" class="signature"><strong>#yes?</strong>(message : String, **options) : Bool</a>
         
           <div class="summary"><p>Ask the user a yes/no question, where the default is "Yes".</p></div>
         
@@ -347,7 +352,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -366,12 +371,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="ask(message:String,**options)-instance-method">
+    <div class="entry-detail" id="ask(message:String,**options):String-instance-method">
       <div class="signature">
         
-        def <strong>ask</strong>(message : String, **options)
+        def <strong>ask</strong>(message : String, **options) : String
 
-        <a class="method-permalink" href="#ask(message:String,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#ask(message:String,**options):String-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -387,17 +392,17 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="ask(message:String,**options,&block:Spark::Prompt::Question->_)-instance-method">
+    <div class="entry-detail" id="ask(message:String,**options,&block:Spark::Prompt::Question->_):String-instance-method">
       <div class="signature">
         
-        def <strong>ask</strong>(message : String, **options, &block : <a href="../Spark/Prompt/Question.html">Spark::Prompt::Question</a> -> _)
+        def <strong>ask</strong>(message : String, **options, &block : <a href="../Spark/Prompt/Question.html">Spark::Prompt::Question</a> -> _) : String
 
-        <a class="method-permalink" href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_)-instance-method">#</a>
+        <a class="method-permalink" href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_):String-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -416,7 +421,7 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="k
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L72" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L76" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -442,17 +447,33 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L124" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L128" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="no?(message:String,**options)-instance-method">
+    <div class="entry-detail" id="newline-instance-method">
       <div class="signature">
         
-        def <strong>no?</strong>(message : String, **options)
+        def <strong>newline</strong>
 
-        <a class="method-permalink" href="#no?(message:String,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#newline-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="no?(message:String,**options):Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>no?</strong>(message : String, **options) : Bool
+
+        <a class="method-permalink" href="#no?(message:String,**options):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -472,7 +493,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L113" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -508,17 +529,17 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L41" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="yes?(message:String,**options)-instance-method">
+    <div class="entry-detail" id="yes?(message:String,**options):Bool-instance-method">
       <div class="signature">
         
-        def <strong>yes?</strong>(message : String, **options)
+        def <strong>yes?</strong>(message : String, **options) : Bool
 
-        <a class="method-permalink" href="#yes?(message:String,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#yes?(message:String,**options):Bool-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -538,7 +559,7 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt.cr#L90" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.10.0/src/spark/prompt.cr#L94" target="_blank">View source</a>]
         
       </div>
     </div>
