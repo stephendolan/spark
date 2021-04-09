@@ -32,6 +32,32 @@ describe Spark::Prompt do
 
   describe "#ask" do
     context "with a validation Regex" do
+      context "with retry on" do
+        it "successfully collects input until a valid answer is provided" do
+          File.tempfile do |output|
+            tempfile = File.tempfile do |input|
+              input.puts ""
+              input.puts "Testing"
+              input.puts "Testing"
+              input.puts "Testing"
+              input.puts "LuckyCasts"
+            end
+
+            File.open(tempfile.path) do |input|
+              prompt = Spark::Prompt.new(output: output, input: input)
+
+              answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+                question.validate(/LuckyCasts/, "Invalid, please try again!", retry_on_failure: true)
+              end
+
+              output.rewind.gets_to_end.should contain("Invalid, please try again!")
+
+              answer.should eq "LuckyCasts"
+            end
+          end
+        end
+      end
+
       it "correctly fails validations with blank answers" do
         File.tempfile do |output|
           tempfile = File.tempfile do |input|

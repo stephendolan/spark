@@ -64,9 +64,10 @@ module Spark
 
       # Ask the question to the user, including a block with additional settings.
       #
-      # This handles adding the default text, a space before user input, and decoration.
+      # We optionally allow the ability to re-collect invalid input.
       #
-      # It also gathers user input.
+      # If `@retry_on_validation_failure` is `true` (set via `#validate`), we collect input until it is valid.
+      # If `@retry_on_validation_failure` is `false` (set via `#validate`), we collect input once and return `nil` if it is invalid.
       def call(message : String, &)
         message = add_default_to_message(message)
         message = message + " "
@@ -74,24 +75,50 @@ module Spark
 
         yield(self)
 
-        @prompt.print message
+        input = collect_input_for(message)
 
-        input = @prompt.gets
+        while !valid_input?(input)
+          print_validation_error_message
 
-        input = validate_input(input)
+          if @retry_on_validation_failure
+            input = collect_input_for(message)
+          else
+            input = nil
+            break
+          end
+        end
+
         process_input(input)
       end
 
       # Provide validation for a `Spark::Prompt::Question`, optionally overriding the default error message.
       #
-      # Example:
+      # Example with the default message:
+      # ```
+      # Question.new(Spark::Prompt.new).call("What is your name") do |question|
+      #   question.validate(/LuckyCasts/)
+      # end
+      # # => "What is your name?"
+      # ```
+      #
+      # Example with a custom message:
       # ```
       # Question.new(Spark::Prompt.new).call("What is your name") do |question|
       #   question.validate(/LuckyCasts/, "Your name must be 'LuckyCasts'")
       # end
       # # => "What is your name?"
       # ```
-      def validate(@validation : Regex, error_message : String? = nil)
+      #
+      # Example that retries on validation failure:
+      # ```
+      # Question.new(Spark::Prompt.new).call("What is your name") do |question|
+      #   question.validate(/LuckyCasts/, "Your name must be 'LuckyCasts'. Please enter a valid value.", retry_on_failure: true)
+      # end
+      # # => "What is your name?"
+      # ```
+      def validate(@validation : Regex, error_message : String? = nil, *, retry_on_failure : Bool = false)
+        @retry_on_validation_failure = retry_on_failure
+
         if (message = error_message)
           @validation_error_message = message
         else
@@ -99,25 +126,31 @@ module Spark
         end
       end
 
+      # Output the validation error defined in `#validate` to the user.
+      private def print_validation_error_message
+        return unless (error_message = @validation_error_message)
+
+        error_message = @prompt.decorate(error_message, color: :red)
+        @prompt.puts(error_message)
+      end
+
+      # Collect input from the user.
+      private def collect_input_for(message : Colorize::Object(String)) : String?
+        @prompt.print message
+        @prompt.gets
+      end
+
       # Validate some user input against an optional, previously-defined `@validation` `Regex`.
       #
       # If the validation fails, print out the appropriate error message to the user.
-      private def validate_input(input : String?)
-        validation = @validation
-        error_message = @validation_error_message
-
-        # `#validate` was not called if either of these are empty, so we eject
-        return unless validation && error_message
+      private def valid_input?(input : String?) : Bool
+        return true unless (validation = @validation)
 
         unless validation.matches?(input.to_s)
-          error_message = @prompt.decorate(error_message, color: :red)
-          @prompt.puts
-          @prompt.puts(error_message)
-
-          return nil
+          return false
         end
 
-        input
+        return true
       end
 
       # For any given question, if a non-blank string is provided, that is the answer.
