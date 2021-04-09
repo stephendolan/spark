@@ -1,6 +1,22 @@
 require "../spec_helper"
 
 describe Spark::Prompt do
+  describe ".chmod_file" do
+    it "raises an excception for non-existent files" do
+      expect_raises(InvalidPathError) do
+        Spark::File.chmod_file("nonexistent_file.test", File::Permissions::All)
+      end
+    end
+
+    it "successfully modifies a file's permissions" do
+      file = File.tempfile
+      File.info(file.path).permissions.value.should eq 0o600
+
+      Spark::File.chmod_file(file.path, File::Permissions::All)
+      File.info(file.path).permissions.value.should eq 0o777
+    end
+  end
+
   describe ".move_file" do
     it "raises an exception for non-existent source files" do
       new_file = File.tempfile

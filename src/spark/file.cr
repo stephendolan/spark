@@ -165,6 +165,21 @@ module Spark
       end
     end
 
+    # Change the permissions of the specified file.
+    #
+    # Example:
+    # ```
+    # Spark::File.chmod_file("README.md", File::Permissions::All)
+    # File.info("README.md").permissions.value # => 0o777
+    # ```
+    def chmod_file(file_path : String, permissions : Int | ::File::Permissions)
+      raise_unless_exists(file_path)
+
+      Spark.logger.log_action "CHANGING PERMISSIONS", file_path, color: :yellow
+
+      ::File.chmod(file_path, permissions)
+    end
+
     # Inject any number of strings *after* the provided pattern.
     #
     # Example:
