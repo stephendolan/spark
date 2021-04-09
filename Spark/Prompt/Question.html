@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.8.0">
+<meta name="crystal_docs.project_version" content="v1.9.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::Question - Spark v1.8.0</title>
+  <title>Spark::Prompt::Question - Spark v1.9.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.8.0
+        v1.9.0
       </span>
     </div>
   </div>
@@ -198,7 +198,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L4" target="_blank">
         spark/prompt/question.cr
       </a>
     
@@ -278,7 +278,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#validate(validation:Regex,error_message:String?=nil)-instance-method" class="signature"><strong>#validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>)</a>
+        <a href="#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method" class="signature"><strong>#validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p></div>
         
@@ -340,7 +340,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -379,7 +379,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -396,15 +396,16 @@
           
           <p>Ask the question to the user, including a block with additional settings.</p>
 
-<p>This handles adding the default text, a space before user input, and decoration.</p>
+<p>We optionally allow the ability to re-collect invalid input.</p>
 
-<p>It also gathers user input.</p>
+<p>If <code>@retry_on_validation_failure</code> is <code>true</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#validate</a></code>), we collect input until it is valid.
+If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#validate</a></code>), we collect input once and return <code>nil</code> if it is invalid.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -436,7 +437,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -457,7 +458,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -490,27 +491,41 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="validate(validation:Regex,error_message:String?=nil)-instance-method">
+    <div class="entry-detail" id="validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">
       <div class="signature">
         
-        def <strong>validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>)
+        def <strong>validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#validate(validation:Regex,error_message:String?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p>
 
-<p>Example:</p>
+<p>Example with the default message:</p>
+
+<pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
+  question.validate(<span class="s">/LuckyCasts/</span>)
+<span class="k">end</span>
+<span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
+
+<p>Example with a custom message:</p>
 
 <pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
   question.validate(<span class="s">/LuckyCasts/</span>, <span class="s">&quot;Your name must be &#39;LuckyCasts&#39;&quot;</span>)
+<span class="k">end</span>
+<span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
+
+<p>Example that retries on validation failure:</p>
+
+<pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
+  question.validate(<span class="s">/LuckyCasts/</span>, <span class="s">&quot;Your name must be &#39;LuckyCasts&#39;. Please enter a valid value.&quot;</span>, retry_on_failure: <span class="n">true</span>)
 <span class="k">end</span>
 <span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
         </div>
@@ -518,7 +533,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.8.0/src/spark/prompt/question.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.9.0/src/spark/prompt/question.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>
