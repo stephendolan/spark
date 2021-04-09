@@ -1,9 +1,8 @@
 name: Deploy documentation
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   deploy:
@@ -21,7 +20,7 @@ jobs:
         run: shards install --ignore-crystal-version
 
       - name: "Generate docs"
-        run: crystal docs
+        run: crystal docs --project-name=Spark --project-version=${{ github.ref }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.8.0
