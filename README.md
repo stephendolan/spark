@@ -6,7 +6,7 @@
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+Add the dependency to your `shard.yml`:
 
 ```yaml
 dependencies:
@@ -14,7 +14,7 @@ dependencies:
     github: stephendolan/spark
 ```
 
-2. Run `shards install`
+Run `shards install`
 
 ## Usage
 

@@ -59,6 +59,23 @@ module Spark
       question.call(message)
     end
 
+    # Ask the user a question with optional validation.
+    #
+    # Example with validation:
+    # ```
+    # prompt = Spark::Prompt.new
+    # prompt.ask("What is your name?") do |question|
+    #   question.validate(/LuckyCasts/, error_message: "Name must be 'LuckyCasts'")
+    # end
+    # # => "What is your name?"
+    # ```
+    def ask(message : String, **options, &block : Spark::Prompt::Question -> _)
+      return if message.blank?
+
+      question = Question.new(self, **options)
+      question.call(message, &block)
+    end
+
     # Ask the user a yes/no question, where the default is "Yes".
     #
     # Example:

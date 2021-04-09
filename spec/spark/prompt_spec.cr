@@ -31,6 +31,88 @@ describe Spark::Prompt do
   end
 
   describe "#ask" do
+    context "with a validation Regex" do
+      it "correctly fails validations with blank answers" do
+        File.tempfile do |output|
+          tempfile = File.tempfile do |input|
+            input.puts ""
+          end
+
+          File.open(tempfile.path) do |input|
+            prompt = Spark::Prompt.new(output: output, input: input)
+
+            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+              question.validate(/LuckyCasts/)
+            end
+
+            output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+
+            answer.should eq nil
+          end
+        end
+      end
+
+      it "displays the default message when the answer does not match" do
+        File.tempfile do |output|
+          tempfile = File.tempfile do |input|
+            input.puts "Dingus"
+          end
+
+          File.open(tempfile.path) do |input|
+            prompt = Spark::Prompt.new(output: output, input: input)
+
+            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+              question.validate(/LuckyCasts/)
+            end
+
+            output.rewind.gets_to_end.should contain("Your answer does not match '/LuckyCasts/'")
+
+            answer.should eq nil
+          end
+        end
+      end
+
+      it "displays a custom message when the answer does not match" do
+        File.tempfile do |output|
+          tempfile = File.tempfile do |input|
+            input.puts "Dingus"
+          end
+
+          File.open(tempfile.path) do |input|
+            prompt = Spark::Prompt.new(output: output, input: input)
+
+            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+              question.validate(/LuckyCasts/, "You must input 'LuckyCasts' as your answer.")
+            end
+
+            output.rewind.gets_to_end.should contain("You must input 'LuckyCasts' as your answer.")
+
+            answer.should eq nil
+          end
+        end
+      end
+
+      it "successfully returns the answer when the answer matches" do
+        File.tempfile do |output|
+          tempfile = File.tempfile do |input|
+            input.puts "LuckyCosts"
+          end
+
+          File.open(tempfile.path) do |input|
+            prompt = Spark::Prompt.new(output: output, input: input)
+
+            answer = prompt.ask("What is your name?", color: :yellow, style: :bold) do |question|
+              question.validate(/LuckyC[a,o]sts/, "You must input 'LuckyCasts' or 'LuckyCosts' as your answer.")
+            end
+
+            output.rewind.gets_to_end.should_not contain("You must input 'LuckyCasts' or 'LuckyCosts' as your answer.")
+
+            answer.should eq "LuckyCosts"
+          end
+        end
+      end
+    end
+
     it "does nothing with a zero-length message" do
       File.tempfile do |io|
         prompt = Spark::Prompt.new(output: io)
