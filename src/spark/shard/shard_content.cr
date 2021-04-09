@@ -75,7 +75,7 @@ module Spark
       # Example:
       # ```
       # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", version: "~> 1.0.3").version_or_branch # => "version: ~> 1.0.3\n"
-      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", branch: "master").version_or_branch    # => "branch: main\n"
+      # Spark::Shard::ShardContent.new(name: "test", github: "stephendolan/spark", branch: "main").version_or_branch      # => "branch: main\n"
       # ```
       def version_or_branch
         if version && branch

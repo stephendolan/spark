@@ -21,7 +21,7 @@ module Spark
     #
     # Example with a GitHub production dependency:
     # ```
-    # Spark::Shard.add_shard("spark", github: "stephendolan/spark", branch: "master")
+    # Spark::Shard.add_shard("spark", github: "stephendolan/spark", branch: "main")
     # ```
     #
     # Example with a GitHub development dependency:
