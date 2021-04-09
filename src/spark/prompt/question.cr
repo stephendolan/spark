@@ -36,12 +36,6 @@ module Spark
       # Which default value to use for a blank/empty response to the Question.
       getter default
 
-      # The `Regex` to use to validate the response to the Question.
-      getter validation : Regex?
-
-      # The message to display if the `#validation` does not match the response to the Question.
-      getter validation_error_message : String?
-
       # Creates a new Question.
       def initialize(
         @prompt : Spark::Prompt,
@@ -88,6 +82,15 @@ module Spark
         process_input(input)
       end
 
+      # Provide validation for a `Spark::Prompt::Question`, optionally overriding the default error message.
+      #
+      # Example:
+      # ```
+      # Question.new(Spark::Prompt.new).call("What is your name") do |question|
+      #   question.validate(/LuckyCasts/, "Your name must be 'LuckyCasts'")
+      # end
+      # # => "What is your name?"
+      # ```
       def validate(@validation : Regex, error_message : String? = nil)
         if (message = error_message)
           @validation_error_message = message
@@ -96,17 +99,22 @@ module Spark
         end
       end
 
+      # Validate some user input against an optional, previously-defined `@validation` `Regex`.
+      #
+      # If the validation fails, print out the appropriate error message to the user.
       private def validate_input(input : String?)
-        if (validation_pattern = validation) && (response = input)
-          unless validation_pattern.matches?(response)
-            if (error_message = validation_error_message)
-              error_message = @prompt.decorate(error_message, color: :red)
-              @prompt.puts
-              @prompt.puts(error_message)
-            end
+        validation = @validation
+        error_message = @validation_error_message
 
-            return nil
-          end
+        # `#validate` was not called if either of these are empty, so we eject
+        return unless validation && error_message
+
+        unless validation.matches?(input.to_s)
+          error_message = @prompt.decorate(error_message, color: :red)
+          @prompt.puts
+          @prompt.puts(error_message)
+
+          return nil
         end
 
         input
