@@ -20,7 +20,7 @@ jobs:
         run: shards install --ignore-crystal-version
 
       - name: "Generate docs"
-        run: crystal docs --project-name=Spark --project-version=${{ github.ref }}
+        run: crystal docs --project-name=Spark --project-version=${GITHUB_REF##*/}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.8.0
