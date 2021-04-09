@@ -27,20 +27,20 @@ require "spark"
 Then, use any of the fully documented modules below to interact with your user:
 
 - 💬 &nbsp; **[Spark::Prompt](https://stephendolan.github.io/spark/Spark/Prompt.html)**
-  - `#say` - Display a message to a user
-  - `#ask` - Get information from a user
-  - `#yes?` - Get confirmation from a user, with a default of "Yes"
-  - `#no?` - Get confirmation from a user, with a default of "No"
+  - [`#say`](<https://stephendolan.github.io/spark/Spark/Prompt.html#say(message:String=%22%22,**options)-instance-method>) - Display a message to a user
+  - [`#ask`](<https://stephendolan.github.io/spark/Spark/Prompt.html#ask(message:String,**options)-instance-method>) - Get information from a user
+  - [`#yes?`](<https://stephendolan.github.io/spark/Spark/Prompt.html#yes?(message:String,**options)-instance-method>) - Get confirmation from a user, with a default of "Yes"
+  - [`#no?`](<https://stephendolan.github.io/spark/Spark/Prompt.html#no?(message:String,**options)-instance-method>) - Get confirmation from a user, with a default of "No"
 - 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
-  - `.replace_in_file` - Replace some content in a file
-  - `.inject_into_file` - Insert content into a file before or after a pattern
-  - `.prepend_to_file` - Insert content at the beginning of a file
-  - `.append_to_file` - Insert content at the end of a file
-  - `.copy_file` - Copy a file (very few safeguards in place currently)
-  - `.create_file` - Create a file (very few safeguards in place currently)
-  - `.remove_file` - Remove a file
+  - [`.replace_in_file`](<https://stephendolan.github.io/spark/Spark/File.html#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method>) - Replace some content in a file
+  - [`.inject_into_file`](<https://stephendolan.github.io/spark/Spark/File.html#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method>) - Insert content into a file before or after a pattern
+  - [`.prepend_to_file`](<https://stephendolan.github.io/spark/Spark/File.html#prepend_to_file(relative_path:String,*content)-instance-method>) - Insert content at the beginning of a file
+  - [`.append_to_file`](<https://stephendolan.github.io/spark/Spark/File.html#append_to_file(relative_path:String,*content)-instance-method>) - Insert content at the end of a file
+  - [`.copy_file`](<https://stephendolan.github.io/spark/Spark/File.html#copy_file(source_path:String,destination_path:String):String-instance-method>) - Copy a file (very few safeguards in place currently)
+  - [`.create_file`](<https://stephendolan.github.io/spark/Spark/File.html#create_file(relative_path:String,*content):String-instance-method>) - Create a file (very few safeguards in place currently)
+  - [`.remove_file`](<https://stephendolan.github.io/spark/Spark/File.html#remove_file(relative_path:String)-instance-method>) - Remove a file
 - 💎 &nbsp; **[Spark::Shard](https://stephendolan.github.io/spark/Spark/Shard.html)**
-  - `#add_shard` - Adds a shard to the `shard.yml` file
+  - [`#add_shard`](<https://stephendolan.github.io/spark/Spark/Shard.html#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method>) - Adds a shard to the `shard.yml` file
 
 ## Development
 

@@ -270,18 +270,4 @@ describe Spark::Prompt do
       end
     end
   end
-
-  describe ".raise_unless_exists" do
-    it "raises when a file does not exist" do
-      expect_raises(InvalidPathError) do
-        Spark::File.raise_unless_exists("really_does_not_exist")
-      end
-    end
-
-    it "does not raise when a file exists" do
-      File.tempfile do |temp_file|
-        Spark::File.raise_unless_exists(temp_file.path).should eq nil
-      end
-    end
-  end
 end
