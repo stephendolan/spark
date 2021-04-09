@@ -156,9 +156,11 @@ module Spark
       # For any given question, if a non-blank string is provided, that is the answer.
       #
       # If `nil` or a blank string is provided, we use the default.
+      #
+      # All leading/trailing whitespace is also removed from Strings.
       private def process_input(input : String?)
         if (valid_string = input) && !valid_string.blank?
-          valid_string
+          valid_string.strip
         else
           default
         end

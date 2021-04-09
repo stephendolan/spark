@@ -183,6 +183,22 @@ describe Spark::Prompt do
       end
     end
 
+    it "strips whitespace from answers" do
+      File.tempfile do |output|
+        tempfile = File.tempfile do |input|
+          input.puts "  Dingus   "
+        end
+
+        File.open(tempfile.path) do |input|
+          prompt = Spark::Prompt.new(output: output, input: input)
+
+          answer = prompt.ask("What is your name?")
+          output.rewind.gets_to_end.should contain("What is your name?")
+          answer.should eq "Dingus"
+        end
+      end
+    end
+
     it "returns an empty string for an empty answer" do
       File.tempfile do |output|
         tempfile = File.tempfile do |input|
