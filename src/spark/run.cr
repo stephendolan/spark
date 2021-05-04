@@ -15,7 +15,7 @@ module Spark
       apply_file(tempfile.path)
     end
 
-    # Execute the Crystal code at a given remote URL.
+    # Execute the Crystal code at a given local file path.
     #
     # USE WITH EXTREME CAUTION. WE DO NOT CHECK FILE CONTENTS BEFORE RUNNING.
     def local_file(file_path : String)
