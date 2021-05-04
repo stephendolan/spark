@@ -1,4 +1,5 @@
 name: spark
+homepage: https://github.com/stephendolan/spark
 description: A command line prompt and file management tool for Crystal apps
 version: 1.13.0
 
@@ -8,6 +9,13 @@ authors:
 crystal: 1.0.0
 
 license: MIT
+
+targets:
+  spark:
+    main: src/cli.cr
+
+scripts:
+  postinstall: shards build
 
 development_dependencies:
   ameba:
