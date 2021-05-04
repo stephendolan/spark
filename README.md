@@ -66,8 +66,9 @@ Then, use any of the fully documented modules below to interact with your user:
 
 ## Credits & Inspirations
 
-- [TTY](https://github.com/piotrmurach/tty)
-- [Thor](https://github.com/erikhuda/thor)
+- [TTY](https://github.com/piotrmurach/tty) because of the excellent code and organization
+- [Thor](https://github.com/erikhuda/thor) because I've loved using it with Ruby and Rails
+- [Ameba](https://github.com/crystal-ameba/ameba) because of their excellent shard CLI
 
 ## Contributors
 

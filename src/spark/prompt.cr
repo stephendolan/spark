@@ -1,4 +1,5 @@
 require "./prompt/*"
+require "colorize"
 
 module Spark
   # Spark::Prompt allows you to interact with users to gather input or display messages
