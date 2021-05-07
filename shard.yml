@@ -1,7 +1,7 @@
 name: spark
 homepage: https://github.com/stephendolan/spark
 description: A command line prompt and file management tool for Crystal apps
-version: 1.13.0
+version: 1.14.0
 
 authors:
   - Stephen Dolan <stephen@luckycasts.com>
@@ -21,3 +21,8 @@ development_dependencies:
   ameba:
     github: crystal-ameba/ameba
     branch: master
+  webmock:
+    github: manastech/webmock.cr
+    version: ~> 0.14
+  spark: # To test run-time code execution, we need to require our own library
+    path: .

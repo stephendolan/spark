@@ -16,7 +16,7 @@ dependencies:
 
 Run `shards install`
 
-## Usage
+## Library usage
 
 Require the shard:
 
@@ -36,6 +36,9 @@ Then, use any of the fully documented modules below to interact with your user:
   - [`#yes?`](<https://stephendolan.github.io/spark/Spark/Prompt.html#yes?(message:String,**options)-instance-method>) - Get confirmation from a user, with a default of "Yes"
   - [`#no?`](<https://stephendolan.github.io/spark/Spark/Prompt.html#no?(message:String,**options)-instance-method>) - Get confirmation from a user, with a default of "No"
   - [`#newline`](https://stephendolan.github.io/spark/Spark/Prompt.html#newline-instance-method) - Output a blank line to the user's prompt
+- 🏃 &nbsp; **[Spark::Run](https://stephendolan.github.io/spark/Spark/Run.html)**
+  - [`.remote_file](https://stephendolan.github.io/spark/Spark/Run.html) - Run Crystal code from a remote source (**USE WITH CAUTION**)
+  - [`.local_file](https://stephendolan.github.io/spark/Spark/Run.html) - Run Crystal code from a local file source (**USE WITH CAUTION**)
 - 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
   - [`.replace_in_file`](<https://stephendolan.github.io/spark/Spark/File.html#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method>) - Replace some content in a file
   - [`.inject_into_file`](<https://stephendolan.github.io/spark/Spark/File.html#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method>) - Insert content into a file before or after a pattern
@@ -48,6 +51,15 @@ Then, use any of the fully documented modules below to interact with your user:
   - [`.chmod_file`](<https://stephendolan.github.io/spark/Spark/File.html#chmod_file(file_path:String,permissions:Int%7C::File::Permissions)-instance-method>) - Change the permissions of a file
 - 💎 &nbsp; **[Spark::Shard](https://stephendolan.github.io/spark/Spark/Shard.html)**
   - [`#add_shard`](<https://stephendolan.github.io/spark/Spark/Shard.html#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method>) - Adds a shard to the `shard.yml` file
+
+## Command line usage
+
+Spark ships with a command line interface, installed in a `postinstall` step when you `shards install`. The resulting binary will be located at `./bin/spark`.
+
+With this CLI installed, you have access to the following commands:
+
+- `./bin/spark apply [Remote Template URL]` - Runs the content returned from the provided URL through `crystal run`
+- `./bin/spark apply --local [Local File Path]` - Runs the content of the provided file path through `crystal run`
 
 ## Development
 
