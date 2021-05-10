@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Shard - Spark v1.14.0</title>
+  <title>Spark::Cli - Spark v1.14.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -66,7 +66,7 @@
       
         <ul>
   
-  <li class=" " data-id="Spark/Spark/Cli" data-name="spark::cli">
+  <li class=" current" data-id="Spark/Spark/Cli" data-name="spark::cli">
       <a href="../Spark/Cli.html">Cli</a>
       
     </li>
@@ -111,7 +111,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="Spark/Spark/Shard" data-name="spark::shard">
+  <li class="parent " data-id="Spark/Spark/Shard" data-name="spark::shard">
       <a href="../Spark/Shard.html">Shard</a>
       
         <ul>
@@ -150,7 +150,7 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> Spark::Shard
+  <span class="kind">module</span> Spark::Cli
 
 </h1>
 
@@ -174,7 +174,7 @@
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type"><a href="../Spark/Shard.html">Spark::Shard</a></li>
+      <li class="other-type"><a href="../Spark/Cli.html">Spark::Cli</a></li>
     
   </ul>
 
@@ -195,22 +195,8 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard.cr#L4" target="_blank">
-        spark/shard.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard/shard_content.cr#L2" target="_blank">
-        spark/shard/shard_content.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard/shard_file.cr#L2" target="_blank">
-        spark/shard/shard_file.cr
+      <a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/cli/runner.cr#L4" target="_blank">
+        spark/cli/runner.cr
       </a>
     
     <br/>
@@ -235,23 +221,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method" class="signature"><strong>#add_shard</strong>(name : String, *, development_only : Bool = <span class="n">false</span>, **options)</a>
-        
-          <div class="summary"><p>Adds a shard to the project's <code>shard.yml</code>.</p></div>
+        <a href="#parse_arguments(args,opts=Opts.new)-instance-method" class="signature"><strong>#parse_arguments</strong>(args, opts = <span class="t">Opts</span>.<span class="k">new</span>)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#shard_file_path-instance-method" class="signature"><strong>#shard_file_path</strong></a>
-        
-          <div class="summary"><p>Which path to search to find the Crystal shard definition.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#shard_file_path=(shard_file_path)-instance-method" class="signature"><strong>#shard_file_path=</strong>(shard_file_path)</a>
-        
-          <div class="summary"><p>Control which path to search to find the Crystal shard definition.</p></div>
+        <a href="#run(args=ARGV)-instance-method" class="signature"><strong>#run</strong>(args = <span class="t">ARGV</span>)</a>
         
       </li>
     
@@ -279,77 +254,34 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="add_shard(name:String,*,development_only:Bool=false,**options)-instance-method">
+    <div class="entry-detail" id="parse_arguments(args,opts=Opts.new)-instance-method">
       <div class="signature">
         
-        def <strong>add_shard</strong>(name : String, *, development_only : Bool = <span class="n">false</span>, **options)
+        def <strong>parse_arguments</strong>(args, opts = <span class="t">Opts</span>.<span class="k">new</span>)
 
-        <a class="method-permalink" href="#add_shard(name:String,*,development_only:Bool=false,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#parse_arguments(args,opts=Opts.new)-instance-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Adds a shard to the project's <code>shard.yml</code>.</p>
-
-<p>Example with a GitHub production dependency:</p>
-
-<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, branch: <span class="s">&quot;main&quot;</span>)</code></pre>
-
-<p>Example with a GitHub development dependency:</p>
-
-<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, github: <span class="s">&quot;stephendolan/spark&quot;</span>, version: <span class="s">&quot;~&gt; 1.0&quot;</span>, development_only: <span class="n">true</span>)</code></pre>
-
-<p>Example with a git dependency:</p>
-
-<pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">Shard</span>.add_shard(<span class="s">&quot;spark&quot;</span>, git: <span class="s">&quot;https://mycustomserver.com/stephendolan/spark&quot;</span>, version: <span class="s">&quot;~&gt; 1.0&quot;</span>, development_only: <span class="n">true</span>)</code></pre>
-        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/cli/runner.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="shard_file_path-instance-method">
+    <div class="entry-detail" id="run(args=ARGV)-instance-method">
       <div class="signature">
         
-        def <strong>shard_file_path</strong>
+        def <strong>run</strong>(args = <span class="t">ARGV</span>)
 
-        <a class="method-permalink" href="#shard_file_path-instance-method">#</a>
+        <a class="method-permalink" href="#run(args=ARGV)-instance-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Which path to search to find the Crystal shard definition.</p>
-        </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard.cr#L8" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="shard_file_path=(shard_file_path)-instance-method">
-      <div class="signature">
-        
-        def <strong>shard_file_path=</strong>(shard_file_path)
-
-        <a class="method-permalink" href="#shard_file_path=(shard_file_path)-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Control which path to search to find the Crystal shard definition.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/shard.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.14.0/src/spark/cli/runner.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>

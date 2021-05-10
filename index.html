@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.13.0">
+<meta name="crystal_docs.project_version" content="v1.14.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark v1.13.0</title>
+  <title>Spark v1.14.0</title>
   <script type="text/javascript">
   CrystalDocs.base_path = "";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.13.0
+        v1.14.0
       </span>
     </div>
   </div>
@@ -65,6 +65,11 @@
       <a href="Spark.html">Spark</a>
       
         <ul>
+  
+  <li class=" " data-id="Spark/Spark/Cli" data-name="spark::cli">
+      <a href="Spark/Cli.html">Cli</a>
+      
+    </li>
   
   <li class="parent " data-id="Spark/Spark/File" data-name="spark::file">
       <a href="Spark/File.html">File</a>
@@ -126,6 +131,11 @@
       
     </li>
   
+  <li class=" " data-id="Spark/Spark/Template" data-name="spark::template">
+      <a href="Spark/Template.html">Template</a>
+      
+    </li>
+  
 </ul>
 
       
@@ -162,11 +172,11 @@
 
 <p>Run <code>shards install</code></p>
 
-<h2><a id="usage" class="anchor" href="#usage">
+<h2><a id="library-usage" class="anchor" href="#library-usage">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
-</a>Usage</h2>
+</a>Library usage</h2>
 
 <p>Require the shard:</p>
 
@@ -174,7 +184,19 @@
 
 <p>Then, use any of the fully documented modules below to interact with your user:</p>
 
-<ul><li>⚡️ &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark.html">Spark</a></strong></li><ul><li><a href="https://stephendolan.github.io/spark/Spark.html#indent-instance-method"><code>.indent</code></a> - Increase indentation for all Spark output by one level</li><li><a href="https://stephendolan.github.io/spark/Spark.html#outdent-instance-method"><code>.outdent</code></a> - Decrease indentation for all Spark output by one level</li><li><a href="https://stephendolan.github.io/spark/Spark.html#reset_indentation-instance-method"><code>.reset_indentation</code></a> - Set the indentation level for all Spark output back to zero</li></ul><li>💬 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#say(message:String=%22%22,**options"><code>#say</code></a>-instance-method>) - Display a message to a user</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#ask(message:String,**options"><code>#ask</code></a>-instance-method>) - Get information from a user</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#yes?(message:String,**options"><code>#yes?</code></a>-instance-method>) - Get confirmation from a user, with a default of "Yes"</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#no?(message:String,**options"><code>#no?</code></a>-instance-method>) - Get confirmation from a user, with a default of "No"</li><li><a href="https://stephendolan.github.io/spark/Spark/Prompt.html#newline-instance-method"><code>#newline</code></a> - Output a blank line to the user's prompt</li></ul><li>🗄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String"><code>.replace_in_file</code></a>-instance-method>) - Replace some content in a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString"><code>.inject_into_file</code></a>-instance-method>) - Insert content into a file before or after a pattern</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#prepend_to_file(relative_path:String,*content"><code>.prepend_to_file</code></a>-instance-method>) - Insert content at the beginning of a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#append_to_file(relative_path:String,*content"><code>.append_to_file</code></a>-instance-method>) - Insert content at the end of a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#copy_file(source_path:String,destination_path:String"><code>.copy_file</code></a>:String-instance-method>) - Copy a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#move_file(source_path:String,destination_path:String"><code>.move_file</code></a>:String-instance-method>) - Move a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#create_file(relative_path:String,*content"><code>.create_file</code></a>:String-instance-method>) - Create a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#remove_file(relative_path:String"><code>.remove_file</code></a>-instance-method>) - Remove a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#chmod_file(file_path:String,permissions:Int%7C::File::Permissions"><code>.chmod_file</code></a>-instance-method>) - Change the permissions of a file</li></ul><li>💎 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Shard.html">Spark::Shard</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/Shard.html#add_shard(name:String,*,development_only:Bool=false,**options"><code>#add_shard</code></a>-instance-method>) - Adds a shard to the <code>shard.yml</code> file</li></ul></ul>
+<ul><li>⚡️ &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark.html">Spark</a></strong></li><ul><li><a href="https://stephendolan.github.io/spark/Spark.html#indent-instance-method"><code>.indent</code></a> - Increase indentation for all Spark output by one level</li><li><a href="https://stephendolan.github.io/spark/Spark.html#outdent-instance-method"><code>.outdent</code></a> - Decrease indentation for all Spark output by one level</li><li><a href="https://stephendolan.github.io/spark/Spark.html#reset_indentation-instance-method"><code>.reset_indentation</code></a> - Set the indentation level for all Spark output back to zero</li></ul><li>💬 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Prompt.html">Spark::Prompt</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#say(message:String=%22%22,**options"><code>#say</code></a>-instance-method>) - Display a message to a user</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#ask(message:String,**options"><code>#ask</code></a>-instance-method>) - Get information from a user</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#yes?(message:String,**options"><code>#yes?</code></a>-instance-method>) - Get confirmation from a user, with a default of "Yes"</li><li><a href="<https://stephendolan.github.io/spark/Spark/Prompt.html#no?(message:String,**options"><code>#no?</code></a>-instance-method>) - Get confirmation from a user, with a default of "No"</li><li><a href="https://stephendolan.github.io/spark/Spark/Prompt.html#newline-instance-method"><code>#newline</code></a> - Output a blank line to the user's prompt</li></ul><li>📄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Template.html">Spark::Template</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/Template.html#run_remote_file(url:String,output:IO::FileDescriptor=STDOUT"><code>.run_remote_file</code></a>-instance-method>) - Run Crystal code from a remote source (<strong>USE WITH CAUTION</strong>)</li><li><a href="<https://stephendolan.github.io/spark/Spark/Template.html#run_local_file(file_path:String,output:IO::FileDescriptor=STDOUT"><code>.run_local_file</code></a>-instance-method>) - Run Crystal code from a local file source (<strong>USE WITH CAUTION</strong>)</li></ul><li>🗄 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/File.html">Spark::File</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String"><code>.replace_in_file</code></a>-instance-method>) - Replace some content in a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString"><code>.inject_into_file</code></a>-instance-method>) - Insert content into a file before or after a pattern</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#prepend_to_file(relative_path:String,*content"><code>.prepend_to_file</code></a>-instance-method>) - Insert content at the beginning of a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#append_to_file(relative_path:String,*content"><code>.append_to_file</code></a>-instance-method>) - Insert content at the end of a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#copy_file(source_path:String,destination_path:String"><code>.copy_file</code></a>:String-instance-method>) - Copy a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#move_file(source_path:String,destination_path:String"><code>.move_file</code></a>:String-instance-method>) - Move a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#create_file(relative_path:String,*content"><code>.create_file</code></a>:String-instance-method>) - Create a file (very few safeguards in place currently)</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#remove_file(relative_path:String"><code>.remove_file</code></a>-instance-method>) - Remove a file</li><li><a href="<https://stephendolan.github.io/spark/Spark/File.html#chmod_file(file_path:String,permissions:Int%7C::File::Permissions"><code>.chmod_file</code></a>-instance-method>) - Change the permissions of a file</li></ul><li>💎 &nbsp; <strong><a href="https://stephendolan.github.io/spark/Spark/Shard.html">Spark::Shard</a></strong></li><ul><li><a href="<https://stephendolan.github.io/spark/Spark/Shard.html#add_shard(name:String,*,development_only:Bool=false,**options"><code>#add_shard</code></a>-instance-method>) - Adds a shard to the <code>shard.yml</code> file</li></ul></ul>
+
+<h2><a id="command-line-usage" class="anchor" href="#command-line-usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Command line usage</h2>
+
+<p>Spark ships with a command line interface, installed in a <code>postinstall</code> step when you <code>shards install</code>. The resulting binary will be located at <code>./bin/spark</code>.</p>
+
+<p>With this CLI installed, you have access to the following commands:</p>
+
+<ul><li><code>./bin/spark apply [Remote Template URL]</code> - Runs the content returned from the provided URL through <code>crystal run</code></li><li><code>./bin/spark apply --local [Local File Path]</code> - Runs the content of the provided file path through <code>crystal run</code></li></ul>
 
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
@@ -198,7 +220,7 @@
   </svg>
 </a>Credits & Inspirations</h2>
 
-<ul><li><a href="https://github.com/piotrmurach/tty">TTY</a></li><li><a href="https://github.com/erikhuda/thor">Thor</a></li></ul>
+<ul><li><a href="https://github.com/piotrmurach/tty">TTY</a> because of the excellent code and organization</li><li><a href="https://github.com/erikhuda/thor">Thor</a> because I've loved using it with Ruby and Rails</li><li><a href="https://github.com/crystal-ameba/ameba">Ameba</a> because of their excellent shard CLI</li></ul>
 
 <h2><a id="contributors" class="anchor" href="#contributors">
   <svg class="octicon-link" aria-hidden="true">
