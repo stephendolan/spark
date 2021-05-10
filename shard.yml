@@ -1,5 +1,7 @@
 name: spark
 homepage: https://github.com/stephendolan/spark
+repository: https://github.com/stephendolan/spark
+documentation: https://stephendolan.github.io/spark
 description: A command line prompt and file management tool for Crystal apps
 version: 1.14.0
 
@@ -17,6 +19,9 @@ targets:
 scripts:
   postinstall: shards build
 
+executables:
+  - spark
+
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
@@ -24,5 +29,5 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
     version: ~> 0.14
-  spark: # To test run-time code execution, we need to require our own library
+  spark: # To test run-time code execution (Spark::Template), we need to require our own library
     path: .

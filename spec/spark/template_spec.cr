@@ -1,12 +1,12 @@
 require "../spec_helper"
 
-describe Spark::Prompt do
+describe Spark::Template do
   describe "#remote_file" do
     it "successfully fetches and runs valid remote code" do
       WebMock.stub(:get, "https://templates.com").to_return(body: sample_crystal_code)
 
       File.tempfile do |io|
-        Spark::Run.remote_file("https://templates.com", output: io)
+        Spark::Template.run_remote_file("https://templates.com", output: io)
 
         output = io.rewind.gets_to_end
         output.should contain("Hello, this is some Crystal code!")
@@ -17,13 +17,13 @@ describe Spark::Prompt do
       WebMock.stub(:get, "https://google.com").to_return(body: sample_html_code)
 
       expect_raises(Exception, "Encountered an error when applying a remote file.") do
-        Spark::Run.remote_file("https://google.com")
+        Spark::Template.run_remote_file("https://google.com")
       end
     end
 
     it "raises an exception when an invalid remote URL is provided" do
       expect_raises(Exception, "Encountered an error when applying a remote file.") do
-        Spark::Run.remote_file("nonexistent")
+        Spark::Template.run_remote_file("nonexistent")
       end
     end
   end
@@ -34,7 +34,7 @@ describe Spark::Prompt do
       ::File.write(crystal_file.path, sample_crystal_code)
 
       File.tempfile do |io|
-        Spark::Run.local_file(crystal_file.path, output: io)
+        Spark::Template.run_local_file(crystal_file.path, output: io)
 
         output = io.rewind.gets_to_end
         output.should contain("Hello, this is some Crystal code!")
@@ -46,13 +46,13 @@ describe Spark::Prompt do
       ::File.write(crystal_file.path, sample_html_code)
 
       expect_raises(Exception, "Encountered an error when applying a local file.") do
-        Spark::Run.local_file(crystal_file.path)
+        Spark::Template.run_local_file(crystal_file.path)
       end
     end
 
     it "raises an exception when an invalid file path is provided" do
       expect_raises(Exception, "Encountered an error when applying a local file.") do
-        Spark::Run.local_file("nonexistent")
+        Spark::Template.run_local_file("nonexistent")
       end
     end
   end

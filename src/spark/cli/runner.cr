@@ -12,9 +12,9 @@ module Spark::Cli
       return unless (templates = options.template_locations)
       templates.each do |template_location|
         if options.local?
-          Spark::Run.local_file(template_location)
+          Spark::Template.run_local_file(template_location)
         else
-          Spark::Run.remote_file(template_location)
+          Spark::Template.run_remote_file(template_location)
         end
       end
     end

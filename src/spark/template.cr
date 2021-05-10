@@ -1,7 +1,7 @@
 require "http/client"
 
 module Spark
-  module Run
+  module Template
     extend self
 
     # Execute the Crystal code at a given remote URL.
@@ -10,9 +10,9 @@ module Spark
     #
     # Example:
     # ```
-    # Spark::Run.remote_file("https://railsbytes.com/script/Xg8sya")
+    # Spark::Template.run_remote_file("https://railsbytes.com/script/Xg8sya")
     # ```
-    def remote_file(url : String, output : IO::FileDescriptor = STDOUT)
+    def run_remote_file(url : String, output : IO::FileDescriptor = STDOUT)
       Spark.logger.log_action "APPLYING REMOTE TEMPLATE", url, color: :yellow
 
       response = HTTP::Client.get url
@@ -32,9 +32,9 @@ module Spark
     #
     # Example:
     # ```
-    # Spark::Run.local_file("/tmp/my_crystal_file.cr")
+    # Spark::Template.run_local_file("/tmp/my_crystal_file.cr")
     # ```
-    def local_file(file_path : String, output : IO::FileDescriptor = STDOUT)
+    def run_local_file(file_path : String, output : IO::FileDescriptor = STDOUT)
       Spark.logger.log_action "APPLYING LOCAL TEMPLATE", file_path, color: :yellow
 
       apply_file(file_path, output: output)
