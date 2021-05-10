@@ -1,6 +1,9 @@
 require "spec"
 require "../src/spark"
 
+# External libraries used for testing
+require "webmock"
+
 # Force colorized output for all spec runs
 # For example, this would be `false` in CI environments by default.
 Spec.before_each { Colorize.enabled = true }

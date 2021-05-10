@@ -1,4 +1,5 @@
 require "./prompt/*"
+
 require "colorize"
 
 module Spark
