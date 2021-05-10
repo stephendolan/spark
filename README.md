@@ -37,8 +37,8 @@ Then, use any of the fully documented modules below to interact with your user:
   - [`#no?`](<https://stephendolan.github.io/spark/Spark/Prompt.html#no?(message:String,**options)-instance-method>) - Get confirmation from a user, with a default of "No"
   - [`#newline`](https://stephendolan.github.io/spark/Spark/Prompt.html#newline-instance-method) - Output a blank line to the user's prompt
 - 📄 &nbsp; **[Spark::Template](https://stephendolan.github.io/spark/Spark/Template.html)**
-  - [`.run_remote_file](https://stephendolan.github.io/spark/Spark/Template.html) - Run Crystal code from a remote source (**USE WITH CAUTION**)
-  - [`.run_local_file](https://stephendolan.github.io/spark/Spark/Template.html) - Run Crystal code from a local file source (**USE WITH CAUTION**)
+  - [`.run_remote_file](<https://stephendolan.github.io/spark/Spark/Template.html#run_remote_file(url:String,output:IO::FileDescriptor=STDOUT)-instance-method>) - Run Crystal code from a remote source (**USE WITH CAUTION**)
+  - [`.run_local_file](<https://stephendolan.github.io/spark/Spark/Template.html#run_local_file(file_path:String,output:IO::FileDescriptor=STDOUT)-instance-method>) - Run Crystal code from a local file source (**USE WITH CAUTION**)
 - 🗄 &nbsp; **[Spark::File](https://stephendolan.github.io/spark/Spark/File.html)**
   - [`.replace_in_file`](<https://stephendolan.github.io/spark/Spark/File.html#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method>) - Replace some content in a file
   - [`.inject_into_file`](<https://stephendolan.github.io/spark/Spark/File.html#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method>) - Insert content into a file before or after a pattern

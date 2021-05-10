@@ -1,12 +1,27 @@
 require "http/client"
 
 module Spark
+  # Spark::Template facilitates the ability to run Crystal code from a local or remote file.
+  #
+  # **USE WITH CAUTION**. We do not check file contents before evaluating.
+  #
+  # Say you have a file with Crystal code you'd like to run that looks like this:
+  # ```
+  # # /tmp/my_crystal_code.cr
+  # prompt = Spark::Prompt.new
+  # prompt.say "Hello, from my Crystal file!"
+  # ```
+  #
+  # You could run that code like this:
+  # ```
+  # Spark::Template.run_local_file("/tmp/my_crystal_code.cr")
+  # ```
   module Template
     extend self
 
     # Execute the Crystal code at a given remote URL.
     #
-    # USE WITH EXTREME CAUTION. WE DO NOT CHECK FILE CONTENTS BEFORE RUNNING.
+    # **USE WITH CAUTION**. We do not check file contents before evaluating.
     #
     # Example:
     # ```
@@ -28,7 +43,7 @@ module Spark
 
     # Execute the Crystal code at a given local file path.
     #
-    # USE WITH EXTREME CAUTION. WE DO NOT CHECK FILE CONTENTS BEFORE RUNNING.
+    # **USE WITH CAUTION**. We do not check file contents before evaluating.
     #
     # Example:
     # ```
