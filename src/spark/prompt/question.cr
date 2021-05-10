@@ -1,5 +1,3 @@
-require "colorize"
-
 module Spark
   class Prompt
     # A Question is used to gather user input.
