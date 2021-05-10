@@ -3,7 +3,8 @@ homepage: https://github.com/stephendolan/spark
 repository: https://github.com/stephendolan/spark
 documentation: https://stephendolan.github.io/spark
 description: A command line prompt and file management tool for Crystal apps
-version: 1.14.0
+
+version: 1.14.1
 
 authors:
   - Stephen Dolan <stephen@luckycasts.com>

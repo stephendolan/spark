@@ -39,6 +39,8 @@ module Spark
     rescue error
       Spark.logger.log_action "INVALID REMOTE TEMPLATE", error.message, color: :red
       raise "Encountered an error when applying a remote file."
+    ensure
+      tempfile.delete if tempfile
     end
 
     # Execute the Crystal code at a given local file path.
