@@ -30,6 +30,3 @@ development_dependencies:
   webmock:
     github: manastech/webmock.cr
     version: ~> 0.14
-  spark: # To test run-time code execution (Spark::Template), we need to require our own library
-    github: stephendolan/spark
-    branch: main

@@ -27,7 +27,7 @@ module Spark
     # ```
     # Spark::Template.run_remote_file("https://railsbytes.com/script/Xg8sya")
     # ```
-    def run_remote_file(url : String, output : IO::FileDescriptor = STDOUT)
+    def run_remote_file(url : String, apply_prefix_content : Bool = true, output : IO::FileDescriptor = STDOUT)
       Spark.logger.log_action "APPLYING REMOTE TEMPLATE", url, color: :yellow
 
       response = HTTP::Client.get url
@@ -35,7 +35,7 @@ module Spark
       tempfile = ::File.tempfile
       ::File.write(tempfile.path, response.body)
 
-      apply_file(tempfile.path, output: output)
+      apply_file(tempfile.path, apply_prefix_content: apply_prefix_content, output: output)
     rescue error
       Spark.logger.log_action "INVALID REMOTE TEMPLATE", error.message, color: :red
       raise "Encountered an error when applying a remote file."
@@ -51,17 +51,17 @@ module Spark
     # ```
     # Spark::Template.run_local_file("/tmp/my_crystal_file.cr")
     # ```
-    def run_local_file(file_path : String, output : IO::FileDescriptor = STDOUT)
+    def run_local_file(file_path : String, apply_prefix_content : Bool = true, output : IO::FileDescriptor = STDOUT)
       Spark.logger.log_action "APPLYING LOCAL TEMPLATE", file_path, color: :yellow
 
-      apply_file(file_path, output: output)
+      apply_file(file_path, apply_prefix_content: apply_prefix_content, output: output)
     rescue error
       Spark.logger.log_action "INVALID LOCAL TEMPLATE", error.message, color: :red
       raise "Encountered an error when applying a local file."
     end
 
     # Run a given file through `crystal run`
-    private def apply_file(file_path : String, output : IO::FileDescriptor = STDOUT)
+    private def apply_file(file_path : String, apply_prefix_content : Bool, output : IO::FileDescriptor = STDOUT)
       unless valid_script_content?(::File.read(file_path))
         raise "Must contain only valid Crystal content"
       end

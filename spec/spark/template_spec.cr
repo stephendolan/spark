@@ -6,7 +6,7 @@ describe Spark::Template do
       WebMock.stub(:get, "https://templates.com").to_return(body: sample_crystal_code)
 
       File.tempfile do |io|
-        Spark::Template.run_remote_file("https://templates.com", output: io)
+        Spark::Template.run_remote_file("https://templates.com", apply_prefix_content: false, output: io)
 
         output = io.rewind.gets_to_end
         output.should contain("Hello, this is some Crystal code!")
@@ -34,7 +34,7 @@ describe Spark::Template do
       ::File.write(crystal_file.path, sample_crystal_code)
 
       File.tempfile do |io|
-        Spark::Template.run_local_file(crystal_file.path, output: io)
+        Spark::Template.run_local_file(crystal_file.path, apply_prefix_content: false, output: io)
 
         output = io.rewind.gets_to_end
         output.should contain("Hello, this is some Crystal code!")
@@ -60,10 +60,7 @@ end
 
 private def sample_crystal_code : String
   <<-CONTENT
-    require "spark"
-
-    prompt = Spark::Prompt.new
-    prompt.say "Hello, this is some Crystal code!"
+    puts "Hello, this is some Crystal code!"
     CONTENT
 end
 
