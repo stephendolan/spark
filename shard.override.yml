@@ -1,3 +1,0 @@
-development_dependencies:
-  spark: # To test run-time code execution (Spark::Template), we want to load the local code
-    path: .
