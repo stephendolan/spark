@@ -138,6 +138,36 @@ module Spark
       question.call(message)
     end
 
+    # Ask the user a question with a list of options.
+    #
+    # Example:
+    # ```
+    # prompt = Spark::Prompt.new
+    # selected_color = prompt.select("What is your favorite color?", ["Red", "Blue", "Green"])
+    # prompt.say "You selected #{selected_color}. Great pick!"
+    # ```
+    def select(message : String, choices : Array(String), **options) : String
+      return "" if message.blank? || choices.empty?
+
+      question = SelectQuestion.new(self, choices, **options)
+      question.call(message).to_s
+    end
+
+    # Ask the user a multiple choice question with a list of options.
+    #
+    # Example:
+    # ```
+    # prompt = Spark::Prompt.new
+    # selected_colors = prompt.multi_select("What are your favorite colors?", ["Red", "Blue", "Green"])
+    # prompt.say "You selected #{selected_colors.join(" and ")}. Great pick!"
+    # ```
+    def multi_select(message : String, choices : Array(String), **options) : Array(String)
+      return [] of String if message.blank? || choices.empty?
+
+      question = MultiSelectQuestion.new(self, choices, **options)
+      question.call(message).to_s
+    end
+
     # Color and stylize a given string.
     #
     # Example:

@@ -24,6 +24,19 @@ module Spark
           raise ArgumentError.new("The `default` supplied to a ConfirmationQuestion must be `true` or `false`.")
         end
       end
+
+      private def add_default_to_message(message : String) : String
+        case default
+        when Bool
+          if default == true
+            message + " [Y/n]"
+          else
+            message + " [y/N]"
+          end
+        else
+          message
+        end
+      end
     end
   end
 end

@@ -173,14 +173,8 @@ module Spark
       # prompt.ask "What is your name?", default: "LuckyCasts"
       # # => What is your name? [LuckyCasts]
       # ```
-      private def add_default_to_message(message : String)
+      private def add_default_to_message(message : String) : String
         case default
-        when Bool
-          if default == true
-            message + " [Y/n]"
-          else
-            message + " [y/N]"
-          end
         when String
           message + " [#{default}]"
         else
