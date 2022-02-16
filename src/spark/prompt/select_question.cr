@@ -2,7 +2,7 @@ require "./question"
 
 module Spark
   class Prompt
-    class SelectQuestion < Question
+    class SelectQuestion < Question(String, String)
       getter choices
 
       # Creates a new Select Question with options.
@@ -22,10 +22,12 @@ module Spark
       # The default message for a Select Question needs to include all of the choices.
       def add_default_to_message(message : String) : String
         choice_string = @choices.map_with_index do |choice, index|
+          choice_number = index + 1
+
           if default == choice.strip
-            "[#{index}] #{choice}"
+            "[#{choice_number}] #{choice}"
           else
-            "(#{index}) #{choice}"
+            "(#{choice_number}) #{choice}"
           end
         end.join(" ")
 

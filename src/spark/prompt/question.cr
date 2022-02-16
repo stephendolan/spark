@@ -68,7 +68,7 @@ module Spark
       #
       # If `@retry_on_validation_failure` is `true` (set via `#validate`), we collect input until it is valid.
       # If `@retry_on_validation_failure` is `false` (set via `#validate`), we collect input once and return `nil` if it is invalid.
-      def call(message : String, &)
+      def call(message : String, &) : AnswerType?
         message = add_default_to_message(message)
         message = message + " "
         message = @prompt.decorate(message, color, style)

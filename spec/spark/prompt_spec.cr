@@ -476,66 +476,6 @@ describe Spark::Prompt do
     end
   end
 
-  describe "#multi_select" do
-    it "does nothing with a zero-length message" do
-      File.tempfile do |io|
-        prompt = Spark::Prompt.new(output: io)
-        prompt.multi_select("", ["red"])
-        io.rewind.gets_to_end.should eq("")
-      end
-    end
-
-    it "raises an ArgumentError when no choices are supplied" do
-      File.tempfile do |io|
-        prompt = Spark::Prompt.new(output: io)
-
-        expect_raises(ArgumentError) do
-          prompt.multi_select("", [] of String)
-        end
-      end
-    end
-
-    it "does nothing with a message of only whitespace" do
-      File.tempfile do |io|
-        prompt = Spark::Prompt.new(output: io)
-        prompt.multi_select(" " * 20, ["red"])
-        io.rewind.gets_to_end.should eq("")
-      end
-    end
-
-    it "correctly asks a question with options" do
-      File.tempfile do |output|
-        tempfile = File.tempfile do |input|
-          input.puts "1,3"
-        end
-
-        File.open(tempfile.path) do |input|
-          prompt = Spark::Prompt.new(output: output, input: input)
-
-          answer = prompt.multi_select("What are your favorite color(s)?", ["red", "blue", "green"])
-          output.rewind.gets_to_end.should eq("What are your favorite color(s)? (1) red (2) blue (3) green ")
-          answer.should eq ["red", "green"]
-        end
-      end
-
-      it "correctly asks a question with options and a default answer" do
-        File.tempfile do |output|
-          tempfile = File.tempfile do |input|
-            input.puts ""
-          end
-
-          File.open(tempfile.path) do |input|
-            prompt = Spark::Prompt.new(output: output, input: input)
-
-            answer = prompt.multi_select("What are your favorite color(s)?", ["red", "blue", "green"], default: ["blue", "green"])
-            output.rewind.gets_to_end.should eq("What are your favorite color(s)? (1) red [2] blue [3] green ")
-            answer.should eq ["blue", "green"]
-          end
-        end
-      end
-    end
-  end
-
   describe "#decorate" do
     context "with no options" do
       it "decorates with the default color" do
