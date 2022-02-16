@@ -66,7 +66,9 @@ module Spark
         raise "Must contain only valid Crystal content"
       end
 
-      add_prefix_file_content(file_path)
+      unless ENV["SPARK_TEST"]?
+        add_prefix_file_content(file_path)
+      end
 
       Process.run(command: "crystal", args: ["run", file_path], shell: true, output: output, error: output)
     end

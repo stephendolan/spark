@@ -79,7 +79,7 @@ module Spark
     def ask(message : String, **options) : String
       return "" if message.blank?
 
-      question = Question.new(self, **options)
+      question = Question(String, String).new(self, **options)
       question.call(message).to_s
     end
 
@@ -93,10 +93,10 @@ module Spark
     # end
     # # => "What is your name?"
     # ```
-    def ask(message : String, **options, &block : Spark::Prompt::Question -> _) : String
+    def ask(message : String, **options, &block : Spark::Prompt::Question(String, String) -> _) : String
       return "" if message.blank?
 
-      question = Question.new(self, **options)
+      question = Question(String, String).new(self, **options)
       question.call(message, &block).to_s
     end
 

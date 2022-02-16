@@ -1,7 +1,7 @@
 module Spark
   class Prompt
     # A Question is used to gather user input.
-    class Question
+    class Question(AnswerType, DefaultAnswerType)
       # Which color to use to colorize the Question output.
       #
       # See https://crystal-lang.org/api/latest/Colorize.html
@@ -41,7 +41,7 @@ module Spark
         @prompt : Spark::Prompt,
         @color : Symbol? = nil,
         @style : Symbol? = nil,
-        @default : Bool? | String? = nil,
+        @default : DefaultAnswerType? = nil,
         **options
       )
       end
@@ -51,7 +51,7 @@ module Spark
       # This handles adding the default text, a space before user input, and decoration.
       #
       # It also gathers user input.
-      def call(message : String)
+      def call(message : String) : AnswerType?
         message = add_default_to_message(message)
         message = message + " "
         message = @prompt.decorate(message, color, style)
