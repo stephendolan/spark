@@ -432,11 +432,9 @@ describe Spark::Prompt do
         output.should eq("Hello, there!".colorize(:green))
       end
 
-      it "raises an error with an invalid color" do
+      it "fails silently with an invalid color" do
         prompt = Spark::Prompt.new
-        expect_raises(ArgumentError) do
-          prompt.decorate("Hello, there!", color: :perrywinkle)
-        end
+        prompt.decorate("Hello, there!", color: :perrywinkle)
       end
     end
 
@@ -447,11 +445,9 @@ describe Spark::Prompt do
         output.should eq("Hello, there!".colorize.mode(:bold))
       end
 
-      it "raises an error with an invalid style" do
+      it "fails silently with an invalid style" do
         prompt = Spark::Prompt.new
-        expect_raises(ArgumentError) do
-          prompt.decorate("Hello, there!", style: :wiggley)
-        end
+        prompt.decorate("Hello, there!", style: :wiggley)
       end
     end
 
