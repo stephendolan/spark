@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.14.3">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="v1.15.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt - Spark v1.14.3</title>
+  <title>Spark::Prompt - Spark v1.15.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.14.3
+        v1.15.0
       </span>
     </div>
   </div>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question(answertype, defaultanswertype)">
       <a href="../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -194,28 +194,28 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L7" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L7" target="_blank">
         spark/prompt.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/confirmation_question.cr#L4" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L2" target="_blank">
         spark/prompt/question.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L2" target="_blank">
         spark/prompt/statement.cr
       </a>
     
@@ -237,7 +237,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(input:IO::FileDescriptor=STDIN,output:IO::FileDescriptor=STDOUT)-class-method" class="signature"><strong>.new</strong>(input : IO::FileDescriptor = <span class="t">STDIN</span>, output : IO::FileDescriptor = <span class="t">STDOUT</span>)</a>
+        <a href="#new%28input%3AIO%3A%3AFileDescriptor%3DSTDIN%2Coutput%3AIO%3A%3AFileDescriptor%3DSTDOUT%29-class-method" class="signature"><strong>.new</strong>(input : IO::FileDescriptor = <span class="t">STDIN</span>, output : IO::FileDescriptor = <span class="t">STDOUT</span>)</a>
         
           <div class="summary"><p>Initialize a new Spark::Prompt</p></div>
         
@@ -260,21 +260,21 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#ask(message:String,**options):String-instance-method" class="signature"><strong>#ask</strong>(message : String, **options) : String</a>
+        <a href="#ask%28message%3AString%2C%2A%2Aoptions%29%3AString-instance-method" class="signature"><strong>#ask</strong>(message : String, **options) : String</a>
         
           <div class="summary"><p>Ask the user a question.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_):String-instance-method" class="signature"><strong>#ask</strong>(message : String, **options, &block : Spark::Prompt::Question -> _) : String</a>
+        <a href="#ask%28message%3AString%2C%2A%2Aoptions%2C%26block%3ASpark%3A%3APrompt%3A%3AQuestion%28String%2CString%29-%3E_%29%3AString-instance-method" class="signature"><strong>#ask</strong>(message : String, **options, &block : Spark::Prompt::Question(String, String) -> _) : String</a>
         
           <div class="summary"><p>Ask the user a question with optional validation.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#decorate(string:String,color:Symbol?=nil,style:Symbol?=nil)-instance-method" class="signature"><strong>#decorate</strong>(string : String, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#decorate%28string%3AString%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%29-instance-method" class="signature"><strong>#decorate</strong>(string : String, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Color and stylize a given string.</p></div>
         
@@ -288,23 +288,23 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#no?(message:String,**options):Bool-instance-method" class="signature"><strong>#no?</strong>(message : String, **options) : Bool</a>
+        <a href="#no%3F%28message%3AString%2C%2A%2Aoptions%29%3ABool-instance-method" class="signature"><strong>#no?</strong>(message : String, **options) : Bool</a>
         
-          <div class="summary"><p>Ask the user a yes/no question, where the default is "No".</p></div>
+          <div class="summary"><p>Ask the user a yes/no question, where the default is &quot;No&quot;.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#say(message:String=&quot;&quot;,**options)-instance-method" class="signature"><strong>#say</strong>(message : String = <span class="s">&quot;&quot;</span>, **options)</a>
+        <a href="#say%28message%3AString%3D%22%22%2C%2A%2Aoptions%29-instance-method" class="signature"><strong>#say</strong>(message : String = <span class="s">&quot;&quot;</span>, **options)</a>
         
           <div class="summary"><p>Output some text to a user, with an optional color and style.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#yes?(message:String,**options):Bool-instance-method" class="signature"><strong>#yes?</strong>(message : String, **options) : Bool</a>
+        <a href="#yes%3F%28message%3AString%2C%2A%2Aoptions%29%3ABool-instance-method" class="signature"><strong>#yes?</strong>(message : String, **options) : Bool</a>
         
-          <div class="summary"><p>Ask the user a yes/no question, where the default is "Yes".</p></div>
+          <div class="summary"><p>Ask the user a yes/no question, where the default is &quot;Yes&quot;.</p></div>
         
       </li>
     
@@ -353,7 +353,7 @@
         
         def self.<strong>new</strong>(input : IO::FileDescriptor = <span class="t">STDIN</span>, output : IO::FileDescriptor = <span class="t">STDOUT</span>)
 
-        <a class="method-permalink" href="#new(input:IO::FileDescriptor=STDIN,output:IO::FileDescriptor=STDOUT)-class-method">#</a>
+        <a class="method-permalink" href="#new%28input%3AIO%3A%3AFileDescriptor%3DSTDIN%2Coutput%3AIO%3A%3AFileDescriptor%3DSTDOUT%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -364,7 +364,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,15 +388,13 @@
         
         def <strong>ask</strong>(message : String, **options) : String
 
-        <a class="method-permalink" href="#ask(message:String,**options):String-instance-method">#</a>
+        <a class="method-permalink" href="#ask%28message%3AString%2C%2A%2Aoptions%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Ask the user a question.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
         </div>
@@ -404,25 +402,23 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="ask(message:String,**options,&block:Spark::Prompt::Question->_):String-instance-method">
+    <div class="entry-detail" id="ask(message:String,**options,&amp;block:Spark::Prompt::Question(String,String)-&gt;_):String-instance-method">
       <div class="signature">
         
-        def <strong>ask</strong>(message : String, **options, &block : <a href="../Spark/Prompt/Question.html">Spark::Prompt::Question</a> -> _) : String
+        def <strong>ask</strong>(message : String, **options, &block : <a href="../Spark/Prompt/Question.html">Spark::Prompt::Question</a>(String, String) -> _) : String
 
-        <a class="method-permalink" href="#ask(message:String,**options,&block:Spark::Prompt::Question-%3E_):String-instance-method">#</a>
+        <a class="method-permalink" href="#ask%28message%3AString%2C%2A%2Aoptions%2C%26block%3ASpark%3A%3APrompt%3A%3AQuestion%28String%2CString%29-%3E_%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Ask the user a question with optional validation.</p>
-
 <p>Example with validation:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
   question.validate(<span class="s">/LuckyCasts/</span>, error_message: <span class="s">&quot;Name must be &#39;LuckyCasts&#39;&quot;</span>)
@@ -433,7 +429,7 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="k
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L96" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L96" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -443,15 +439,13 @@ prompt.ask(<span class="s">&quot;What is your name?&quot;</span>) <span class="k
         
         def <strong>decorate</strong>(string : String, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#decorate(string:String,color:Symbol?=nil,style:Symbol?=nil)-instance-method">#</a>
+        <a class="method-permalink" href="#decorate%28string%3AString%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Color and stylize a given string.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <span class="n">:green</span>, style: <span class="n">:bold</span>) <span class="c"># =&gt; &quot;\e[32;1mHello, there!\e[0m\n&quot;</span></code></pre>
         </div>
@@ -459,7 +453,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -475,9 +469,7 @@ prompt.decorate(<span class="s">&quot;This is an example&quot;</span>, color: <s
         <div class="doc">
           
           <p>Output an empty line to the user's prompt.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.say(<span class="s">&quot;This is an example&quot;</span>) <span class="c"># =&gt; &quot;This is an example\n&quot;</span>
 prompt.newline                   <span class="c"># =&gt; &quot;\n&quot;</span></code></pre>
@@ -486,7 +478,7 @@ prompt.newline                   <span class="c"># =&gt; &quot;\n&quot;</span></
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L68" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L68" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -496,15 +488,13 @@ prompt.newline                   <span class="c"># =&gt; &quot;\n&quot;</span></
         
         def <strong>no?</strong>(message : String, **options) : Bool
 
-        <a class="method-permalink" href="#no?(message:String,**options):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#no%3F%28message%3AString%2C%2A%2Aoptions%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Ask the user a yes/no question, where the default is "No".</p>
-
+          <p>Ask the user a yes/no question, where the default is &quot;No&quot;.</p>
 <p>Example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 <span class="k">if</span> prompt.no? <span class="s">&quot;Are you feeling happy today?&quot;</span>
   prompt.say <span class="s">&quot;I&#39;m sorry to hear that.&quot;</span>
@@ -516,7 +506,7 @@ prompt.newline                   <span class="c"># =&gt; &quot;\n&quot;</span></
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L133" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -526,25 +516,19 @@ prompt.newline                   <span class="c"># =&gt; &quot;\n&quot;</span></
         
         def <strong>say</strong>(message : String = <span class="s">&quot;&quot;</span>, **options)
 
-        <a class="method-permalink" href="#say(message:String=&quot;&quot;,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#say%28message%3AString%3D%22%22%2C%2A%2Aoptions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Output some text to a user, with an optional color and style.</p>
-
 <p>Plain example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.say(<span class="s">&quot;This is an example&quot;</span>) <span class="c"># =&gt; &quot;This is an example\n&quot;</span></code></pre>
-
 <p>Without a newline:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.say(<span class="s">&quot;This is an example&quot;</span>, newline: <span class="n">false</span>) <span class="c"># =&gt; &quot;This is an example&quot;</span></code></pre>
-
 <p>With color and style (see Spark::Prompt#decorate):</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span class="n">:green</span>, style: <span class="n">:bold</span>) <span class="c"># =&gt; &quot;\e[32;1mHello, there!\e[0m\n&quot;</span></code></pre>
         </div>
@@ -552,7 +536,7 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -562,15 +546,13 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
         
         def <strong>yes?</strong>(message : String, **options) : Bool
 
-        <a class="method-permalink" href="#yes?(message:String,**options):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#yes%3F%28message%3AString%2C%2A%2Aoptions%29%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Ask the user a yes/no question, where the default is "Yes".</p>
-
+          <p>Ask the user a yes/no question, where the default is &quot;Yes&quot;.</p>
 <p>Example:</p>
-
 <pre><code class="language-crystal">prompt <span class="o">=</span> <span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>
 <span class="k">if</span> prompt.yes? <span class="s">&quot;Did you tell me the truth?&quot;</span>
   prompt.say <span class="s">&quot;Great! Thank you, </span><span class="i">#{</span>user_name<span class="i">}</span><span class="s">.&quot;</span>, color: <span class="n">:green</span>
@@ -582,7 +564,7 @@ prompt.say(<span class="s">&quot;This is an example&quot;</span>, color: <span c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt.cr#L114" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt.cr#L114" target="_blank">View source</a>]
         
       </div>
     </div>

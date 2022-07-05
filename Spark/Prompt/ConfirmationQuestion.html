@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.14.3">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="v1.15.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::ConfirmationQuestion - Spark v1.14.3</title>
+  <title>Spark::Prompt::ConfirmationQuestion - Spark v1.15.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.14.3
+        v1.15.0
       </span>
     </div>
   </div>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question(answertype, defaultanswertype)">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -155,7 +155,7 @@
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -183,7 +183,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/confirmation_question.cr#L5" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/confirmation_question.cr#L5" target="_blank">
         spark/prompt/confirmation_question.cr
       </a>
     
@@ -193,6 +193,25 @@
 
 
 
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)</a>
+        
+          <div class="summary"><p>Creates a new Question.</p></div>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -206,30 +225,30 @@
   
     
 
-  <h3>Instance methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code></h3>
+  <h3>Instance methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></code></h3>
   
   
-    <a href="../../Spark/Prompt/Question.html#call(message:String)-instance-method" class="tooltip">
-      <span>call(message : String)<br/>call(message : String, &)</span>
+    <a href="../../Spark/Prompt/Question.html#call%28message%3AString%29%3AAnswerType%3F-instance-method" class="tooltip">
+      <span>call(message : String) : AnswerType?<br/>call(message : String, &)</span>
     call</a>, 
     
   
-    <a href="../../Spark/Prompt/Question.html#color:Symbol?-instance-method" class="tooltip">
-      <span>color : Symbol?</span>
+    <a href="../../Spark/Prompt/Question.html#color-instance-method" class="tooltip">
+      <span>color</span>
     color</a>, 
     
   
-    <a href="../../Spark/Prompt/Question.html#default:Bool%7CString%7CNil-instance-method" class="tooltip">
-      <span>default : Bool | String | Nil</span>
+    <a href="../../Spark/Prompt/Question.html#default-instance-method" class="tooltip">
+      <span>default</span>
     default</a>, 
     
   
-    <a href="../../Spark/Prompt/Question.html#style:Symbol?-instance-method" class="tooltip">
-      <span>style : Symbol?</span>
+    <a href="../../Spark/Prompt/Question.html#style-instance-method" class="tooltip">
+      <span>style</span>
     style</a>, 
     
   
-    <a href="../../Spark/Prompt/Question.html#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method" class="tooltip">
+    <a href="../../Spark/Prompt/Question.html#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method" class="tooltip">
       <span>validate(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</span>
     validate</a>
     
@@ -238,11 +257,11 @@
 
     
 
-  <h3>Constructor methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code></h3>
+  <h3>Constructor methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></code></h3>
   
   
-    <a href="../../Spark/Prompt/Question.html#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool?%7CString?=nil,**options)-class-method" class="tooltip">
-      <span>new(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool? | String? = <span class="n">nil</span>, **options)</span>
+    <a href="../../Spark/Prompt/Question.html#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method" class="tooltip">
+      <span>new(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)</span>
     new</a>
     
   
@@ -274,6 +293,37 @@
   
 </div>
 
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:DefaultAnswerType?=nil,**options)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)
+
+        <a class="method-permalink" href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new Question.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 

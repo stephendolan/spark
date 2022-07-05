@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.14.3">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="v1.15.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::Question - Spark v1.14.3</title>
+  <title>Spark::Prompt::Question(AnswerType, DefaultAnswerType) - Spark v1.15.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.14.3
+        v1.15.0
       </span>
     </div>
   </div>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" current" data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" current" data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question(answertype, defaultanswertype)">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -150,12 +150,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Spark::Prompt::Question
+  <span class="kind">class</span> Spark::Prompt::Question(AnswerType, DefaultAnswerType)
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(AnswerType, DefaultAnswerType)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -208,7 +208,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L4" target="_blank">
         spark/prompt/question.cr
       </a>
     
@@ -230,7 +230,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool?%7CString?=nil,**options)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool? | String? = <span class="n">nil</span>, **options)</a>
+        <a href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)</a>
         
           <div class="summary"><p>Creates a new Question.</p></div>
         
@@ -253,42 +253,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call(message:String)-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
+        <a href="#call%28message%3AString%29%3AAnswerType%3F-instance-method" class="signature"><strong>#call</strong>(message : String) : AnswerType?</a>
         
           <div class="summary"><p>Ask the question to the user.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#call(message:String,&)-instance-method" class="signature"><strong>#call</strong>(message : String, &)</a>
+        <a href="#call%28message%3AString%2C%26%29-instance-method" class="signature"><strong>#call</strong>(message : String, &)</a>
         
           <div class="summary"><p>Ask the question to the user, including a block with additional settings.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+        <a href="#color-instance-method" class="signature"><strong>#color</strong></a>
         
           <div class="summary"><p>Which color to use to colorize the Question output.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#default:Bool%7CString%7CNil-instance-method" class="signature"><strong>#default</strong> : Bool | String | Nil</a>
+        <a href="#default-instance-method" class="signature"><strong>#default</strong></a>
         
           <div class="summary"><p>Which default value to use for a blank/empty response to the Question.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#style:Symbol?-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
+        <a href="#style-instance-method" class="signature"><strong>#style</strong></a>
         
           <div class="summary"><p>Which mode to use to stylize the Question output.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method" class="signature"><strong>#validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</a>
+        <a href="#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method" class="signature"><strong>#validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</a>
         
           <div class="summary"><p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p></div>
         
@@ -334,12 +334,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool?|String?=nil,**options)-class-method">
+    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:DefaultAnswerType?=nil,**options)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : Bool? | String? = <span class="n">nil</span>, **options)
+        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:Bool?%7CString?=nil,**options)-class-method">#</a>
+        <a class="method-permalink" href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -350,7 +350,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -369,73 +369,66 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="call(message:String)-instance-method">
+    <div class="entry-detail" id="call(message:String):AnswerType?-instance-method">
       <div class="signature">
         
-        def <strong>call</strong>(message : String)
+        def <strong>call</strong>(message : String) : AnswerType?
 
-        <a class="method-permalink" href="#call(message:String)-instance-method">#</a>
+        <a class="method-permalink" href="#call%28message%3AString%29%3AAnswerType%3F-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Ask the question to the user.</p>
-
 <p>This handles adding the default text, a space before user input, and decoration.</p>
-
 <p>It also gathers user input.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L54" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="call(message:String,&)-instance-method">
+    <div class="entry-detail" id="call(message:String,&amp;)-instance-method">
       <div class="signature">
         
         def <strong>call</strong>(message : String, &)
 
-        <a class="method-permalink" href="#call(message:String,&)-instance-method">#</a>
+        <a class="method-permalink" href="#call%28message%3AString%2C%26%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Ask the question to the user, including a block with additional settings.</p>
-
 <p>We optionally allow the ability to re-collect invalid input.</p>
-
-<p>If <code>@retry_on_validation_failure</code> is <code>true</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#validate</a></code>), we collect input until it is valid.
-If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#validate</a></code>), we collect input once and return <code>nil</code> if it is invalid.</p>
+<p>If <code>@retry_on_validation_failure</code> is <code>true</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method">#validate</a></code>), we collect input until it is valid.
+If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <code><a href="../../Spark/Prompt/Question.html#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method">#validate</a></code>), we collect input once and return <code>nil</code> if it is invalid.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L71" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="color:Symbol?-instance-method">
+    <div class="entry-detail" id="color-instance-method">
       <div class="signature">
         
-        def <strong>color</strong> : Symbol?
+        def <strong>color</strong>
 
-        <a class="method-permalink" href="#color:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#color-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Which color to use to colorize the Question output.</p>
-
 <p>See https://crystal-lang.org/api/latest/Colorize.html</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="n">:default</span>
 <span class="n">:black</span>
 <span class="n">:red</span>
@@ -447,17 +440,17 @@ If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <cod
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="default:Bool|String|Nil-instance-method">
+    <div class="entry-detail" id="default-instance-method">
       <div class="signature">
         
-        def <strong>default</strong> : Bool | String | Nil
+        def <strong>default</strong>
 
-        <a class="method-permalink" href="#default:Bool%7CString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#default-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -468,27 +461,24 @@ If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <cod
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="style:Symbol?-instance-method">
+    <div class="entry-detail" id="style-instance-method">
       <div class="signature">
         
-        def <strong>style</strong> : Symbol?
+        def <strong>style</strong>
 
-        <a class="method-permalink" href="#style:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#style-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Which mode to use to stylize the Question output.</p>
-
 <p>See https://crystal-lang.org/api/latest/Colorize.html</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="n">:bold</span>
 <span class="n">:bright</span>
 <span class="n">:dim</span>
@@ -501,7 +491,7 @@ If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <cod
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -511,29 +501,23 @@ If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <cod
         
         def <strong>validate</strong>(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)
 
-        <a class="method-permalink" href="#validate(validation:Regex,error_message:String?=nil,*,retry_on_failure:Bool=false)-instance-method">#</a>
+        <a class="method-permalink" href="#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Provide validation for a <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question</a></code>, optionally overriding the default error message.</p>
-
 <p>Example with the default message:</p>
-
 <pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
   question.validate(<span class="s">/LuckyCasts/</span>)
 <span class="k">end</span>
 <span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
-
 <p>Example with a custom message:</p>
-
 <pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
   question.validate(<span class="s">/LuckyCasts/</span>, <span class="s">&quot;Your name must be &#39;LuckyCasts&#39;&quot;</span>)
 <span class="k">end</span>
 <span class="c"># =&gt; &quot;What is your name?&quot;</span></code></pre>
-
 <p>Example that retries on validation failure:</p>
-
 <pre><code class="language-crystal"><span class="t">Question</span>.<span class="k">new</span>(<span class="t">Spark</span><span class="t">::</span><span class="t">Prompt</span>.<span class="k">new</span>).call(<span class="s">&quot;What is your name&quot;</span>) <span class="k">do</span> <span class="o">|</span>question<span class="o">|</span>
   question.validate(<span class="s">/LuckyCasts/</span>, <span class="s">&quot;Your name must be &#39;LuckyCasts&#39;. Please enter a valid value.&quot;</span>, retry_on_failure: <span class="n">true</span>)
 <span class="k">end</span>
@@ -543,7 +527,7 @@ If <code>@retry_on_validation_failure</code> is <code>false</code> (set via <cod
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/question.cr#L119" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L119" target="_blank">View source</a>]
         
       </div>
     </div>

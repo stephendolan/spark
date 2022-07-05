@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.14.3">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="v1.15.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::File - Spark v1.14.3</title>
+  <title>Spark::File - Spark v1.15.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.14.3
+        v1.15.0
       </span>
     </div>
   </div>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question(answertype, defaultanswertype)">
       <a href="../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -206,14 +206,14 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L7" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L7" target="_blank">
         spark/file.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file/create_file.cr#L2" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file/create_file.cr#L2" target="_blank">
         spark/file/create_file.cr
       </a>
     
@@ -263,105 +263,105 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#append_to_file(relative_path:String,*content)-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, *content)</a>
+        <a href="#append_to_file%28relative_path%3AString%2C%2Acontent%29-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, *content)</a>
         
           <div class="summary"><p>Append any number of strings to the end of a file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#append_to_file(relative_path:String,&:-%3EString)-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, & :  -> String)</a>
+        <a href="#append_to_file%28relative_path%3AString%2C%26%3A-%3EString%29-instance-method" class="signature"><strong>#append_to_file</strong>(relative_path : String, & :  -> String)</a>
         
           <div class="summary"><p>Append the provided block content to the end of a file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#chmod_file(file_path:String,permissions:Int%7C::File::Permissions)-instance-method" class="signature"><strong>#chmod_file</strong>(file_path : String, permissions : Int | ::File::Permissions)</a>
+        <a href="#chmod_file%28file_path%3AString%2Cpermissions%3AInt%7C%3A%3AFile%3A%3APermissions%29-instance-method" class="signature"><strong>#chmod_file</strong>(file_path : String, permissions : Int | ::File::Permissions)</a>
         
           <div class="summary"><p>Change the permissions of the specified file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#copy_file(source_path:String,destination_path:String):String-instance-method" class="signature"><strong>#copy_file</strong>(source_path : String, destination_path : String) : String</a>
+        <a href="#copy_file%28source_path%3AString%2Cdestination_path%3AString%29%3AString-instance-method" class="signature"><strong>#copy_file</strong>(source_path : String, destination_path : String) : String</a>
         
           <div class="summary"><p>Copy a file from a provided source path to a provided destination.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_file(relative_path:String,*content):String-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, *content) : String</a>
+        <a href="#create_file%28relative_path%3AString%2C%2Acontent%29%3AString-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, *content) : String</a>
         
           <div class="summary"><p>Create a new file with the provided content.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#create_file(relative_path:String,&:-%3EString):String-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, & :  -> String) : String</a>
+        <a href="#create_file%28relative_path%3AString%2C%26%3A-%3EString%29%3AString-instance-method" class="signature"><strong>#create_file</strong>(relative_path : String, & :  -> String) : String</a>
         
           <div class="summary"><p>Create a new file with the provided block content.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)</a>
+        <a href="#inject_into_file%28relative_path%3AString%2C%2Acontent%2Cafterpattern%3ARegex%7CString%29-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)</a>
         
           <div class="summary"><p>Inject any number of strings <em>after</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*,afterpattern:Regex%7CString,&:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *, after pattern : Regex | String, & :  -> String)</a>
+        <a href="#inject_into_file%28relative_path%3AString%2C%2A%2Cafterpattern%3ARegex%7CString%2C%26%3A-%3EString%29-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *, after pattern : Regex | String, & :  -> String)</a>
         
           <div class="summary"><p>Inject the provided block content <em>after</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*content,beforepattern:Regex%7CString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, before pattern : Regex | String)</a>
+        <a href="#inject_into_file%28relative_path%3AString%2C%2Acontent%2Cbeforepattern%3ARegex%7CString%29-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *content, before pattern : Regex | String)</a>
         
           <div class="summary"><p>Inject any number of strings <em>before</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#inject_into_file(relative_path:String,*,beforepattern:Regex%7CString,&:-%3EString)-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *, before pattern : Regex | String, & :  -> String)</a>
+        <a href="#inject_into_file%28relative_path%3AString%2C%2A%2Cbeforepattern%3ARegex%7CString%2C%26%3A-%3EString%29-instance-method" class="signature"><strong>#inject_into_file</strong>(relative_path : String, *, before pattern : Regex | String, & :  -> String)</a>
         
           <div class="summary"><p>Inject the provided block content <em>before</em> the provided pattern.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#move_file(source_path:String,destination_path:String):String-instance-method" class="signature"><strong>#move_file</strong>(source_path : String, destination_path : String) : String</a>
+        <a href="#move_file%28source_path%3AString%2Cdestination_path%3AString%29%3AString-instance-method" class="signature"><strong>#move_file</strong>(source_path : String, destination_path : String) : String</a>
         
           <div class="summary"><p>Move a file from the provided source path to the provided destination.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#prepend_to_file(relative_path:String,*content)-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, *content)</a>
+        <a href="#prepend_to_file%28relative_path%3AString%2C%2Acontent%29-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, *content)</a>
         
           <div class="summary"><p>Prepend any number of strings to the beginning of a file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#prepend_to_file(relative_path:String,&:-%3EString)-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, & :  -> String)</a>
+        <a href="#prepend_to_file%28relative_path%3AString%2C%26%3A-%3EString%29-instance-method" class="signature"><strong>#prepend_to_file</strong>(relative_path : String, & :  -> String)</a>
         
           <div class="summary"><p>Prepend the provided block content to the beginning of a file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#remove_file(relative_path:String)-instance-method" class="signature"><strong>#remove_file</strong>(relative_path : String)</a>
+        <a href="#remove_file%28relative_path%3AString%29-instance-method" class="signature"><strong>#remove_file</strong>(relative_path : String)</a>
         
           <div class="summary"><p>Remove a file.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method" class="signature"><strong>#replace_in_file</strong>(relative_path : String, pattern : Regex | String, replacement : String)</a>
+        <a href="#replace_in_file%28relative_path%3AString%2Cpattern%3ARegex%7CString%2Creplacement%3AString%29-instance-method" class="signature"><strong>#replace_in_file</strong>(relative_path : String, pattern : Regex | String, replacement : String)</a>
         
           <div class="summary"><p>Replace a specific pattern with some replacement text throughout a given file.</p></div>
         
@@ -396,40 +396,36 @@
         
         def <strong>append_to_file</strong>(relative_path : String, *content)
 
-        <a class="method-permalink" href="#append_to_file(relative_path:String,*content)-instance-method">#</a>
+        <a class="method-permalink" href="#append_to_file%28relative_path%3AString%2C%2Acontent%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Append any number of strings to the end of a file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.append_to_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Goodbye!&quot;</span>, <span class="s">&quot;You&#39;re at the bottom of the README.&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="append_to_file(relative_path:String,&:->String)-instance-method">
+    <div class="entry-detail" id="append_to_file(relative_path:String,&amp;:-&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>append_to_file</strong>(relative_path : String, & :  -> String)
 
-        <a class="method-permalink" href="#append_to_file(relative_path:String,&:-%3EString)-instance-method">#</a>
+        <a class="method-permalink" href="#append_to_file%28relative_path%3AString%2C%26%3A-%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Append the provided block content to the end of a file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.append_to_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
   <span class="s">&lt;&lt;-CONTENT</span>
 <span class="s">  # Goodbye
@@ -442,7 +438,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L79" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -452,15 +448,13 @@
         
         def <strong>chmod_file</strong>(file_path : String, permissions : Int | ::File::Permissions)
 
-        <a class="method-permalink" href="#chmod_file(file_path:String,permissions:Int%7C::File::Permissions)-instance-method">#</a>
+        <a class="method-permalink" href="#chmod_file%28file_path%3AString%2Cpermissions%3AInt%7C%3A%3AFile%3A%3APermissions%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Change the permissions of the specified file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.chmod_file(<span class="s">&quot;README.md&quot;</span>, <span class="t">File</span><span class="t">::</span><span class="t">Permissions</span><span class="t">::</span><span class="t">All</span>)
 <span class="t">File</span>.info(<span class="s">&quot;README.md&quot;</span>).permissions.value <span class="c"># =&gt; 0o777</span></code></pre>
         </div>
@@ -468,7 +462,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L175" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -478,22 +472,20 @@
         
         def <strong>copy_file</strong>(source_path : String, destination_path : String) : String
 
-        <a class="method-permalink" href="#copy_file(source_path:String,destination_path:String):String-instance-method">#</a>
+        <a class="method-permalink" href="#copy_file%28source_path%3AString%2Cdestination_path%3AString%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Copy a file from a provided source path to a provided destination.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.copy_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;IDENTICAL_README.md&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L136" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L136" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -503,40 +495,36 @@
         
         def <strong>create_file</strong>(relative_path : String, *content) : String
 
-        <a class="method-permalink" href="#create_file(relative_path:String,*content):String-instance-method">#</a>
+        <a class="method-permalink" href="#create_file%28relative_path%3AString%2C%2Acontent%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Create a new file with the provided content.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.create_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Welcome\n\n&quot;</span>, <span class="s">&quot;This is my new file.&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L89" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="create_file(relative_path:String,&:->String):String-instance-method">
+    <div class="entry-detail" id="create_file(relative_path:String,&amp;:-&gt;String):String-instance-method">
       <div class="signature">
         
         def <strong>create_file</strong>(relative_path : String, & :  -> String) : String
 
-        <a class="method-permalink" href="#create_file(relative_path:String,&:-%3EString):String-instance-method">#</a>
+        <a class="method-permalink" href="#create_file%28relative_path%3AString%2C%26%3A-%3EString%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Create a new file with the provided block content.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.create_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
   <span class="s">&lt;&lt;-CONTENT</span>
 <span class="s">  # Welcome
@@ -549,7 +537,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L107" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -559,40 +547,36 @@
         
         def <strong>inject_into_file</strong>(relative_path : String, *content, after pattern : Regex | String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*content,afterpattern:Regex%7CString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file%28relative_path%3AString%2C%2Acontent%2Cafterpattern%3ARegex%7CString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Inject any number of strings <em>after</em> the provided pattern.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L189" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L189" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="inject_into_file(relative_path:String,*,afterpattern:Regex|String,&:->String)-instance-method">
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*,afterpattern:Regex|String,&amp;:-&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>inject_into_file</strong>(relative_path : String, *, after pattern : Regex | String, & :  -> String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*,afterpattern:Regex%7CString,&:-%3EString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file%28relative_path%3AString%2C%2A%2Cafterpattern%3ARegex%7CString%2C%26%3A-%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Inject the provided block content <em>after</em> the provided pattern.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, after: <span class="s">&quot;# Last Section\n&quot;</span>) <span class="k">do</span>
   <span class="s">&lt;&lt;-CONTENT</span>
 <span class="s">  This is some new file content.
@@ -604,7 +588,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L206" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L206" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -614,40 +598,36 @@
         
         def <strong>inject_into_file</strong>(relative_path : String, *content, before pattern : Regex | String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*content,beforepattern:Regex%7CString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file%28relative_path%3AString%2C%2Acontent%2Cbeforepattern%3ARegex%7CString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Inject any number of strings <em>before</em> the provided pattern.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# New Section&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L218" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L218" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="inject_into_file(relative_path:String,*,beforepattern:Regex|String,&:->String)-instance-method">
+    <div class="entry-detail" id="inject_into_file(relative_path:String,*,beforepattern:Regex|String,&amp;:-&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>inject_into_file</strong>(relative_path : String, *, before pattern : Regex | String, & :  -> String)
 
-        <a class="method-permalink" href="#inject_into_file(relative_path:String,*,beforepattern:Regex%7CString,&:-%3EString)-instance-method">#</a>
+        <a class="method-permalink" href="#inject_into_file%28relative_path%3AString%2C%2A%2Cbeforepattern%3ARegex%7CString%2C%26%3A-%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Inject the provided block content <em>before</em> the provided pattern.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.inject_into_file(<span class="s">&quot;README.md&quot;</span>, before: <span class="s">&quot;# First Section\n&quot;</span>) <span class="k">do</span>
   <span class="s">&lt;&lt;-CONTENT</span>
 <span class="s">  This is some new file content.
@@ -659,7 +639,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L235" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L235" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -669,25 +649,22 @@
         
         def <strong>move_file</strong>(source_path : String, destination_path : String) : String
 
-        <a class="method-permalink" href="#move_file(source_path:String,destination_path:String):String-instance-method">#</a>
+        <a class="method-permalink" href="#move_file%28source_path%3AString%2Cdestination_path%3AString%29%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Move a file from the provided source path to the provided destination.</p>
-
 <p>Note that the source file will no longer exist after this action.
-If you wish to preserve the source file, use <code><a href="../Spark/File.html#copy_file(source_path:String,destination_path:String):String-instance-method">Spark::File.copy_file</a></code>.</p>
-
+If you wish to preserve the source file, use <code><a href="../Spark/File.html#copy_file%28source_path%3AString%2Cdestination_path%3AString%29%3AString-instance-method">Spark::File.copy_file</a></code>.</p>
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.move_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;NEW_README.md&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L155" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L155" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -697,40 +674,36 @@ If you wish to preserve the source file, use <code><a href="../Spark/File.html#c
         
         def <strong>prepend_to_file</strong>(relative_path : String, *content)
 
-        <a class="method-permalink" href="#prepend_to_file(relative_path:String,*content)-instance-method">#</a>
+        <a class="method-permalink" href="#prepend_to_file%28relative_path%3AString%2C%2Acontent%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Prepend any number of strings to the beginning of a file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.prepend_to_file(<span class="s">&quot;README.md&quot;</span>, <span class="s">&quot;# Welcome!&quot;</span>, <span class="s">&quot;You&#39;re at the top of the README.&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="prepend_to_file(relative_path:String,&:->String)-instance-method">
+    <div class="entry-detail" id="prepend_to_file(relative_path:String,&amp;:-&gt;String)-instance-method">
       <div class="signature">
         
         def <strong>prepend_to_file</strong>(relative_path : String, & :  -> String)
 
-        <a class="method-permalink" href="#prepend_to_file(relative_path:String,&:-%3EString)-instance-method">#</a>
+        <a class="method-permalink" href="#prepend_to_file%28relative_path%3AString%2C%26%3A-%3EString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Prepend the provided block content to the beginning of a file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.prepend_to_file(<span class="s">&quot;README.md&quot;</span>) <span class="k">do</span>
   <span class="s">&lt;&lt;-CONTENT</span>
 <span class="s">  # Welcome
@@ -743,7 +716,7 @@ If you wish to preserve the source file, use <code><a href="../Spark/File.html#c
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -753,26 +726,22 @@ If you wish to preserve the source file, use <code><a href="../Spark/File.html#c
         
         def <strong>remove_file</strong>(relative_path : String)
 
-        <a class="method-permalink" href="#remove_file(relative_path:String)-instance-method">#</a>
+        <a class="method-permalink" href="#remove_file%28relative_path%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Remove a file.</p>
-
 <p>Removing a single file:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.remove_file(<span class="s">&quot;README.md&quot;</span>)</code></pre>
-
 <p>Removing a directory:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.remove_file(<span class="s">&quot;src/&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L122" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L122" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -782,22 +751,20 @@ If you wish to preserve the source file, use <code><a href="../Spark/File.html#c
         
         def <strong>replace_in_file</strong>(relative_path : String, pattern : Regex | String, replacement : String)
 
-        <a class="method-permalink" href="#replace_in_file(relative_path:String,pattern:Regex%7CString,replacement:String)-instance-method">#</a>
+        <a class="method-permalink" href="#replace_in_file%28relative_path%3AString%2Cpattern%3ARegex%7CString%2Creplacement%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Replace a specific pattern with some replacement text throughout a given file.</p>
-
 <p>Example:</p>
-
 <pre><code class="language-crystal"><span class="t">Spark</span><span class="t">::</span><span class="t">File</span>.replace_in_file(<span class="s">&quot;shard.yml&quot;</span>, pattern: <span class="s">&quot;MIT&quot;</span>, replacement: <span class="s">&quot;Apache&quot;</span>)</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/file.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/file.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>

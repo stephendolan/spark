@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.36.1">
-<meta name="crystal_docs.project_version" content="v1.14.3">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="v1.15.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::Statement - Spark v1.14.3</title>
+  <title>Spark::Prompt::Statement - Spark v1.15.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        v1.14.3
+        v1.15.0
       </span>
     </div>
   </div>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question">
+  <li class=" " data-id="Spark/Spark/Prompt/Question" data-name="spark::prompt::question(answertype, defaultanswertype)">
       <a href="../../Spark/Prompt/Question.html">Question</a>
       
     </li>
@@ -194,7 +194,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L4" target="_blank">
+      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L4" target="_blank">
         spark/prompt/statement.cr
       </a>
     
@@ -216,7 +216,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(prompt:Spark::Prompt,newline:Bool=true,color:Symbol?=nil,style:Symbol?=nil)-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, newline : Bool = <span class="n">true</span>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
+        <a href="#new%28prompt%3ASpark%3A%3APrompt%2Cnewline%3ABool%3Dtrue%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%29-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, newline : Bool = <span class="n">true</span>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Create a new Statement that can be rendered as output to the user's prompt.</p></div>
         
@@ -239,24 +239,24 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#call(message:String)-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
+        <a href="#call%28message%3AString%29-instance-method" class="signature"><strong>#call</strong>(message : String)</a>
         
           <div class="summary"><p>Output the Statement message to the prompt</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#color:Symbol?-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
+        <a href="#color%3ASymbol%3F-instance-method" class="signature"><strong>#color</strong> : Symbol?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#newline?:Bool-instance-method" class="signature"><strong>#newline?</strong> : Bool</a>
+        <a href="#newline%3F%3ABool-instance-method" class="signature"><strong>#newline?</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#style:Symbol?-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
+        <a href="#style%3ASymbol%3F-instance-method" class="signature"><strong>#style</strong> : Symbol?</a>
         
       </li>
     
@@ -305,7 +305,7 @@
         
         def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, newline : Bool = <span class="n">true</span>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new(prompt:Spark::Prompt,newline:Bool=true,color:Symbol?=nil,style:Symbol?=nil)-class-method">#</a>
+        <a class="method-permalink" href="#new%28prompt%3ASpark%3A%3APrompt%2Cnewline%3ABool%3Dtrue%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -316,7 +316,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -340,7 +340,7 @@
         
         def <strong>call</strong>(message : String)
 
-        <a class="method-permalink" href="#call(message:String)-instance-method">#</a>
+        <a class="method-permalink" href="#call%28message%3AString%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -351,7 +351,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -361,13 +361,13 @@
         
         def <strong>color</strong> : Symbol?
 
-        <a class="method-permalink" href="#color:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#color%3ASymbol%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -377,13 +377,13 @@
         
         def <strong>newline?</strong> : Bool
 
-        <a class="method-permalink" href="#newline?:Bool-instance-method">#</a>
+        <a class="method-permalink" href="#newline%3F%3ABool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -393,13 +393,13 @@
         
         def <strong>style</strong> : Symbol?
 
-        <a class="method-permalink" href="#style:Symbol?-instance-method">#</a>
+        <a class="method-permalink" href="#style%3ASymbol%3F-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.14.3/src/spark/prompt/statement.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/statement.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
