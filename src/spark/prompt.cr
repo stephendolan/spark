@@ -146,17 +146,15 @@ module Spark
     # prompt.decorate("This is an example", color: :green, style: :bold) # => "\e[32;1mHello, there!\e[0m\n"
     # ```
     def decorate(string : String, color : Symbol? = nil, style : Symbol? = nil)
-      string = case color
-               in Symbol
+      string = if (color = Colorize::ColorANSI.parse?(color.to_s))
                  string.colorize(color)
-               in Nil
+               else
                  string.colorize(:default)
                end
 
-      case style
-      in Symbol
+      if (style = Colorize::Mode.parse?(style.to_s))
         string.mode(style)
-      in Nil
+      else
         string
       end
     end
