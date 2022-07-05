@@ -152,7 +152,6 @@ module Spark
                  string.colorize(:default)
                end
 
-      # If we can parse a style, stylize the string.
       if (style = Colorize::Mode.parse?(style.to_s))
         string.mode(style)
       else
