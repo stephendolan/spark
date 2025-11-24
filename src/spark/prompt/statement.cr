@@ -11,7 +11,7 @@ module Spark
         @prompt : Spark::Prompt,
         @newline : Bool = true,
         @color : Symbol? = nil,
-        @style : Symbol? = nil
+        @style : Symbol? = nil,
       )
       end
 

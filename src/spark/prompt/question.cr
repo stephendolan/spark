@@ -42,7 +42,7 @@ module Spark
         @color : Symbol? = nil,
         @style : Symbol? = nil,
         @default : DefaultAnswerType? = nil,
-        **options
+        **options,
       )
       end
 
@@ -119,7 +119,7 @@ module Spark
       def validate(@validation : Regex, error_message : String? = nil, *, retry_on_failure : Bool = false)
         @retry_on_validation_failure = retry_on_failure
 
-        if (message = error_message)
+        if message = error_message
           @validation_error_message = message
         else
           @validation_error_message = "Your answer does not match '#{validation.inspect}'"
@@ -128,7 +128,7 @@ module Spark
 
       # Output the validation error defined in `#validate` to the user.
       private def print_validation_error_message
-        return unless (error_message = @validation_error_message)
+        return unless error_message = @validation_error_message
 
         Spark.logger.log_action("Invalid input", error_message, color: :light_red)
       end
@@ -143,7 +143,7 @@ module Spark
       #
       # If the validation fails, print out the appropriate error message to the user.
       private def valid_input?(input : String?) : Bool
-        return true unless (validation = @validation)
+        return true unless validation = @validation
 
         unless validation.matches?(input.to_s)
           return false

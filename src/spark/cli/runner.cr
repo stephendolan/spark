@@ -9,7 +9,7 @@ module Spark::Cli
 
     case options.command
     when Command::Apply
-      return unless (templates = options.template_locations)
+      return unless templates = options.template_locations
       templates.each do |template_location|
         if options.local?
           Spark::Template.run_local_file(template_location)

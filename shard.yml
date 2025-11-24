@@ -9,7 +9,7 @@ version: 1.15.0
 authors:
   - Stephen Dolan <stephen@luckycasts.com>
 
-crystal: 1.4.1
+crystal: 1.18.2
 
 license: MIT
 
@@ -26,7 +26,7 @@ executables:
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
-    branch: master
+    version: ~> 1.6.4
   webmock:
     github: manastech/webmock.cr
     version: ~> 0.14

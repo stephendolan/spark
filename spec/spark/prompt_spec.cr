@@ -52,7 +52,7 @@ describe Spark::Prompt do
         Spark.quiet = false
         Spark.logger = Spark::Prompt.new(output: io)
         Spark.logger.log_action("TESTING", "This is a test", color: :yellow)
-        io.rewind.gets_to_end.should contain("\e[33mTESTING\e[0m -- This is a test")
+        io.rewind.gets_to_end.should contain("\e[33mTESTING\e[39m -- This is a test")
       end
     end
   end
@@ -215,7 +215,7 @@ describe Spark::Prompt do
           prompt = Spark::Prompt.new(output: output, input: input)
 
           answer = prompt.ask("What is your name?", color: :yellow, style: :bold)
-          output.rewind.gets_to_end.should eq("\e[33;1mWhat is your name? \e[0m")
+          output.rewind.gets_to_end.should eq("\e[33;1mWhat is your name? \e[39;22m")
           answer.should eq "Dingus"
         end
       end
@@ -336,7 +336,7 @@ describe Spark::Prompt do
           prompt = Spark::Prompt.new(output: output, input: input)
 
           answer = prompt.yes?("Are you sure?", color: :yellow, style: :bold)
-          output.rewind.gets_to_end.should eq("\e[33;1mAre you sure? [Y/n] \e[0m")
+          output.rewind.gets_to_end.should eq("\e[33;1mAre you sure? [Y/n] \e[39;22m")
           answer.should eq true
         end
       end
@@ -409,7 +409,7 @@ describe Spark::Prompt do
           prompt = Spark::Prompt.new(output: output, input: input)
 
           answer = prompt.no?("Are you sure?", color: :yellow, style: :bold)
-          output.rewind.gets_to_end.should eq("\e[33;1mAre you sure? [y/N] \e[0m")
+          output.rewind.gets_to_end.should eq("\e[33;1mAre you sure? [y/N] \e[39;22m")
           answer.should eq true
         end
       end
@@ -497,7 +497,7 @@ describe Spark::Prompt do
       File.tempfile do |io|
         prompt = Spark::Prompt.new(output: io)
         prompt.say("Hello, there!", color: :green, style: :bold)
-        io.rewind.gets_to_end.should eq("\e[32;1mHello, there!\e[0m\n")
+        io.rewind.gets_to_end.should eq("\e[32;1mHello, there!\e[39;22m\n")
       end
     end
   end
