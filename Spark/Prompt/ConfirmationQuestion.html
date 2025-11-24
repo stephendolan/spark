@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.2">
-<meta name="crystal_docs.project_version" content="v1.15.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.17.1">
+<meta name="crystal_docs.project_version" content="v1.16.0">
 <meta name="crystal_docs.project_name" content="Spark">
 
 
@@ -13,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="Spark">
-  <title>Spark::Prompt::ConfirmationQuestion - Spark v1.15.0</title>
+  <title>Spark::Prompt::ConfirmationQuestion - Spark v1.16.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -22,9 +23,14 @@
 
 <svg class="hidden">
   <symbol id="octicon-link" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
   </symbol>
 </svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
 <div class="sidebar">
   <div class="sidebar-header">
     <div class="search-box">
@@ -39,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        v1.15.0
+        v1.16.0
       </span>
     </div>
   </div>
@@ -150,12 +156,16 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Spark::Prompt::ConfirmationQuestion
+  <span class="kind">
+    class
+  </span> Spark::<wbr>Prompt::<wbr>ConfirmationQuestion
 
 </h1>
 
 
   <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Spark/Prompt/ConfirmationQuestion.html">Spark::Prompt::ConfirmationQuestion</a></li><li class="superclass"><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
 
 
 
@@ -183,9 +193,7 @@
   </h2>
   
     
-      <a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/confirmation_question.cr#L5" target="_blank">
-        spark/prompt/confirmation_question.cr
-      </a>
+      spark/prompt/confirmation_question.cr
     
     <br/>
   
@@ -194,6 +202,7 @@
 
 
 
+  
   <h2>
     <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
@@ -205,7 +214,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)</a>
+        <a href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%7CNil%3Dnil%2Cstyle%3ASymbol%7CNil%3Dnil%2Cdefault%3ADefaultAnswerType%7CNil%3Dnil%2C%2A%2Aoptions%29-class-method" class="signature"><strong>.new</strong>(prompt : Spark::Prompt, color : Symbol | Nil = <span class="n">nil</span>, style : Symbol | Nil = <span class="n">nil</span>, default : DefaultAnswerType | Nil = <span class="n">nil</span>, **options)</a>
         
           <div class="summary"><p>Creates a new Question.</p></div>
         
@@ -214,22 +223,22 @@
   </ul>
 
 
-
-
-
-
-
-
-
-<div class="methods-inherited">
   
+
+  
+
+  
+
+
+  <div class="methods-inherited">
     
+      
 
   <h3>Instance methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></code></h3>
   
   
-    <a href="../../Spark/Prompt/Question.html#call%28message%3AString%29%3AAnswerType%3F-instance-method" class="tooltip">
-      <span>call(message : String) : AnswerType?<br/>call(message : String, &)</span>
+    <a href="../../Spark/Prompt/Question.html#call%28message%3AString%29%3AAnswerType%7CNil-instance-method" class="tooltip">
+      <span>call(message : String) : AnswerType | Nil<br/>call(message : String, &)</span>
     call</a>, 
     
   
@@ -248,52 +257,61 @@
     style</a>, 
     
   
-    <a href="../../Spark/Prompt/Question.html#validate%28validation%3ARegex%2Cerror_message%3AString%3F%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method" class="tooltip">
-      <span>validate(validation : Regex, error_message : String? = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</span>
+    <a href="../../Spark/Prompt/Question.html#validate%28validation%3ARegex%2Cerror_message%3AString%7CNil%3Dnil%2C%2A%2Cretry_on_failure%3ABool%3Dfalse%29-instance-method" class="tooltip">
+      <span>validate(validation : Regex, error_message : String | Nil = <span class="n">nil</span>, *, retry_on_failure : Bool = <span class="n">false</span>)</span>
     validate</a>
     
   
 
 
-    
+      
 
   <h3>Constructor methods inherited from class <code><a href="../../Spark/Prompt/Question.html">Spark::Prompt::Question(Bool, Bool)</a></code></h3>
   
   
-    <a href="../../Spark/Prompt/Question.html#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method" class="tooltip">
-      <span>new(prompt : Spark::Prompt, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)</span>
+    <a href="../../Spark/Prompt/Question.html#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%7CNil%3Dnil%2Cstyle%3ASymbol%7CNil%3Dnil%2Cdefault%3ADefaultAnswerType%7CNil%3Dnil%2C%2A%2Aoptions%29-class-method" class="tooltip">
+      <span>new(prompt : Spark::Prompt, color : Symbol | Nil = <span class="n">nil</span>, style : Symbol | Nil = <span class="n">nil</span>, default : DefaultAnswerType | Nil = <span class="n">nil</span>, **options)</span>
     new</a>
     
   
 
 
-    
+      
 
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
 
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-</div>
-
-
   <h2>
     <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
@@ -303,12 +321,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol?=nil,style:Symbol?=nil,default:DefaultAnswerType?=nil,**options)-class-method">
+    <div class="entry-detail" id="new(prompt:Spark::Prompt,color:Symbol|Nil=nil,style:Symbol|Nil=nil,default:DefaultAnswerType|Nil=nil,**options)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol? = <span class="n">nil</span>, style : Symbol? = <span class="n">nil</span>, default : DefaultAnswerType? = <span class="n">nil</span>, **options)
+        def self.<strong>new</strong>(prompt : <a href="../../Spark/Prompt.html">Spark::Prompt</a>, color : Symbol | Nil = <span class="n">nil</span>, style : Symbol | Nil = <span class="n">nil</span>, default : DefaultAnswerType | Nil = <span class="n">nil</span>, **options)
 
-        <a class="method-permalink" href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%3F%3Dnil%2Cstyle%3ASymbol%3F%3Dnil%2Cdefault%3ADefaultAnswerType%3F%3Dnil%2C%2A%2Aoptions%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28prompt%3ASpark%3A%3APrompt%2Ccolor%3ASymbol%7CNil%3Dnil%2Cstyle%3ASymbol%7CNil%3Dnil%2Cdefault%3ADefaultAnswerType%7CNil%3Dnil%2C%2A%2Aoptions%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -319,17 +337,16 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/stephendolan/spark/blob/v1.15.0/src/spark/prompt/question.cr#L40" target="_blank">View source</a>]
-        
       </div>
     </div>
   
 
 
+  
 
+  
 
-
-
+  
 
 
 </div>
