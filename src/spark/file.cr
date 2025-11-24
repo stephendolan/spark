@@ -238,11 +238,10 @@ module Spark
       replace_in_file(relative_path, pattern, replacement)
     end
 
-    # Raises a `Spark::File::InvalidPathError` if the provided path does not exist.
     private def raise_unless_exists(path : String)
       return if ::File.exists?(path)
 
-      raise InvalidPathError.new("File path '#{path}' does not exist.")
+      raise InvalidPathError.new("'#{path}' does not exist")
     end
 
     # Given a `String` or `Regex`, ensure that a `Regex` is returned.

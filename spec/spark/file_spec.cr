@@ -3,7 +3,7 @@ require "../spec_helper"
 describe Spark::Prompt do
   describe ".chmod_file" do
     it "raises an excception for non-existent files" do
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.chmod_file("nonexistent_file.test", File::Permissions::All)
       end
     end
@@ -21,7 +21,7 @@ describe Spark::Prompt do
     it "raises an exception for non-existent source files" do
       new_file = File.tempfile
 
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.move_file("nonexistent_file.test", new_file.path)
       end
     end
@@ -107,7 +107,7 @@ describe Spark::Prompt do
     it "raises an exception for non-existent source files" do
       new_file = File.tempfile
 
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.copy_file("nonexistent_file.test", new_file.path)
       end
     end
@@ -127,7 +127,7 @@ describe Spark::Prompt do
 
   describe ".replace_in_file" do
     it "raises an exception for non-existent files" do
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.replace_in_file("nonexistent_file.test", /.*/, "New content")
       end
     end
@@ -155,7 +155,7 @@ describe Spark::Prompt do
 
   describe ".append_to_file" do
     it "raises an exception for non-existent files" do
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.append_to_file("nonexistent_file.test", "One", "Two", "Woohoo\n")
       end
     end
@@ -189,7 +189,7 @@ describe Spark::Prompt do
 
   describe ".prepend_to_file" do
     it "raises an exception for non-existent files" do
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.prepend_to_file("nonexistent_file.test", "One", "Two", "Woohoo\n")
       end
     end
@@ -223,7 +223,7 @@ describe Spark::Prompt do
 
   describe ".inject_into_file" do
     it "raises an exception for non-existent files" do
-      expect_raises(InvalidPathError) do
+      expect_raises(Spark::File::InvalidPathError) do
         Spark::File.inject_into_file("nonexistent_file.test", "One", "Two", "Woohoo\n", before: /Line two\n/)
       end
     end

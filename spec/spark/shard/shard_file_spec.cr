@@ -2,7 +2,7 @@ require "../../spec_helper"
 
 describe Spark::Shard::ShardFile do
   it "throws an error if the provided shard file does not exist" do
-    expect_raises(MissingShardFileError) do
+    expect_raises(Spark::Shard::MissingShardFileError) do
       Spark::Shard::ShardFile.new("nonexistent")
     end
   end

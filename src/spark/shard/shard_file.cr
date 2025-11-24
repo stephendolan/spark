@@ -40,11 +40,10 @@ module Spark
         /\b#{name}:\s*\n/.matches?(content)
       end
 
-      # Raises a `Spark::File::MissingShardFileError` if no shard.yml file exists.
       private def raise_unless_exists(path : String)
         return if ::File.exists?(path)
 
-        raise MissingShardFileError.new("Shard file does not exist at '#{path}'.")
+        raise MissingShardFileError.new("Shard file not found: #{path}")
       end
 
       # Check the `ShardFile` for a `development_dependencies` header.

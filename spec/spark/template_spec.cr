@@ -16,13 +16,13 @@ describe Spark::Template do
     it "raises an exception when invalid content is returned from the remote URL" do
       WebMock.stub(:get, "https://google.com").to_return(body: sample_html_code)
 
-      expect_raises(Exception, "Encountered an error when applying a remote file.") do
+      expect_raises(Exception, /Failed to apply remote template:.*HTML detected/) do
         Spark::Template.run_remote_file("https://google.com")
       end
     end
 
     it "raises an exception when an invalid remote URL is provided" do
-      expect_raises(Exception, "Encountered an error when applying a remote file.") do
+      expect_raises(Exception, /Failed to apply remote template:/) do
         Spark::Template.run_remote_file("nonexistent")
       end
     end
@@ -45,13 +45,13 @@ describe Spark::Template do
       crystal_file = ::File.tempfile
       ::File.write(crystal_file.path, sample_html_code)
 
-      expect_raises(Exception, "Encountered an error when applying a local file.") do
+      expect_raises(Exception, /Failed to apply local template:.*HTML detected/) do
         Spark::Template.run_local_file(crystal_file.path)
       end
     end
 
     it "raises an exception when an invalid file path is provided" do
-      expect_raises(Exception, "Encountered an error when applying a local file.") do
+      expect_raises(Exception, /Failed to apply local template:/) do
         Spark::Template.run_local_file("nonexistent")
       end
     end

@@ -37,8 +37,7 @@ module Spark
 
       apply_file(tempfile.path, apply_prefix_content: apply_prefix_content, output: output)
     rescue error
-      Spark.logger.log_action "INVALID REMOTE TEMPLATE", error.message, color: :red
-      raise "Encountered an error when applying a remote file."
+      raise "Failed to apply remote template: #{error.message}"
     ensure
       tempfile.delete if tempfile
     end
@@ -56,14 +55,13 @@ module Spark
 
       apply_file(file_path, apply_prefix_content: apply_prefix_content, output: output)
     rescue error
-      Spark.logger.log_action "INVALID LOCAL TEMPLATE", error.message, color: :red
-      raise "Encountered an error when applying a local file."
+      raise "Failed to apply local template: #{error.message}"
     end
 
     # Run a given file through `crystal run`
     private def apply_file(file_path : String, apply_prefix_content : Bool, output : IO::FileDescriptor = STDOUT)
       unless valid_script_content?(::File.read(file_path))
-        raise "Must contain only valid Crystal content"
+        raise "Template contains invalid Crystal content (HTML detected)"
       end
 
       unless ENV["SPARK_TEST"]?

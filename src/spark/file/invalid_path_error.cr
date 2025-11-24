@@ -1,3 +1,6 @@
-# Thrown when a provided file path does not exist.
-class InvalidPathError < ArgumentError
+module Spark
+  module File
+    class InvalidPathError < ArgumentError
+    end
+  end
 end
